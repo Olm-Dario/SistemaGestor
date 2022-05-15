@@ -75,7 +75,7 @@ namespace CapaPresentacion
             this.panelTitulo.Dock = System.Windows.Forms.DockStyle.Top;
             this.panelTitulo.Location = new System.Drawing.Point(0, 0);
             this.panelTitulo.Name = "panelTitulo";
-            this.panelTitulo.Size = new System.Drawing.Size(800, 29);
+            this.panelTitulo.Size = new System.Drawing.Size(817, 29);
             this.panelTitulo.TabIndex = 0;
             this.panelTitulo.MouseDown += new System.Windows.Forms.MouseEventHandler(this.panelTitulo_MouseDown);
             // 
@@ -96,7 +96,7 @@ namespace CapaPresentacion
             this.btnRestaurar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btnRestaurar.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnRestaurar.Image = ((System.Drawing.Image)(resources.GetObject("btnRestaurar.Image")));
-            this.btnRestaurar.Location = new System.Drawing.Point(739, 4);
+            this.btnRestaurar.Location = new System.Drawing.Point(756, 4);
             this.btnRestaurar.Name = "btnRestaurar";
             this.btnRestaurar.Size = new System.Drawing.Size(20, 20);
             this.btnRestaurar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -109,7 +109,7 @@ namespace CapaPresentacion
             this.btnMinimizar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btnMinimizar.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnMinimizar.Image = ((System.Drawing.Image)(resources.GetObject("btnMinimizar.Image")));
-            this.btnMinimizar.Location = new System.Drawing.Point(708, 4);
+            this.btnMinimizar.Location = new System.Drawing.Point(725, 4);
             this.btnMinimizar.Name = "btnMinimizar";
             this.btnMinimizar.Size = new System.Drawing.Size(20, 20);
             this.btnMinimizar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -122,7 +122,7 @@ namespace CapaPresentacion
             this.btnMaximizar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btnMaximizar.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnMaximizar.Image = ((System.Drawing.Image)(resources.GetObject("btnMaximizar.Image")));
-            this.btnMaximizar.Location = new System.Drawing.Point(739, 4);
+            this.btnMaximizar.Location = new System.Drawing.Point(756, 4);
             this.btnMaximizar.Name = "btnMaximizar";
             this.btnMaximizar.Size = new System.Drawing.Size(20, 20);
             this.btnMaximizar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -136,7 +136,7 @@ namespace CapaPresentacion
             this.btnCerrar.BackColor = System.Drawing.Color.Red;
             this.btnCerrar.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnCerrar.Image = ((System.Drawing.Image)(resources.GetObject("btnCerrar.Image")));
-            this.btnCerrar.Location = new System.Drawing.Point(768, 5);
+            this.btnCerrar.Location = new System.Drawing.Point(785, 5);
             this.btnCerrar.Name = "btnCerrar";
             this.btnCerrar.Size = new System.Drawing.Size(20, 20);
             this.btnCerrar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -152,7 +152,7 @@ namespace CapaPresentacion
             this.contenedorMenu.Dock = System.Windows.Forms.DockStyle.Top;
             this.contenedorMenu.Location = new System.Drawing.Point(0, 29);
             this.contenedorMenu.Name = "contenedorMenu";
-            this.contenedorMenu.Size = new System.Drawing.Size(800, 61);
+            this.contenedorMenu.Size = new System.Drawing.Size(817, 61);
             this.contenedorMenu.TabIndex = 1;
             // 
             // apellidoUser
@@ -162,7 +162,7 @@ namespace CapaPresentacion
             this.apellidoUser.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(48)))));
             this.apellidoUser.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.apellidoUser.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.apellidoUser.Location = new System.Drawing.Point(675, 32);
+            this.apellidoUser.Location = new System.Drawing.Point(692, 32);
             this.apellidoUser.Name = "apellidoUser";
             this.apellidoUser.Size = new System.Drawing.Size(51, 16);
             this.apellidoUser.TabIndex = 2;
@@ -175,7 +175,7 @@ namespace CapaPresentacion
             this.User.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(48)))));
             this.User.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.User.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.User.Location = new System.Drawing.Point(675, 16);
+            this.User.Location = new System.Drawing.Point(692, 16);
             this.User.Name = "User";
             this.User.Size = new System.Drawing.Size(88, 16);
             this.User.TabIndex = 1;
@@ -195,7 +195,7 @@ namespace CapaPresentacion
             this.menuAcercaDe});
             this.barraMenu.Location = new System.Drawing.Point(0, 0);
             this.barraMenu.Name = "barraMenu";
-            this.barraMenu.Size = new System.Drawing.Size(800, 63);
+            this.barraMenu.Size = new System.Drawing.Size(817, 63);
             this.barraMenu.TabIndex = 0;
             this.barraMenu.Text = "menuStrip1";
             // 
@@ -241,7 +241,7 @@ namespace CapaPresentacion
             this.subMenuCategoria.IconColor = System.Drawing.Color.Black;
             this.subMenuCategoria.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.subMenuCategoria.Name = "subMenuCategoria";
-            this.subMenuCategoria.Size = new System.Drawing.Size(180, 22);
+            this.subMenuCategoria.Size = new System.Drawing.Size(131, 22);
             this.subMenuCategoria.Text = "Categoria";
             this.subMenuCategoria.Click += new System.EventHandler(this.subMenuCategoria_Click);
             // 
@@ -253,7 +253,7 @@ namespace CapaPresentacion
             this.subMenuProducto.IconColor = System.Drawing.Color.Black;
             this.subMenuProducto.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.subMenuProducto.Name = "subMenuProducto";
-            this.subMenuProducto.Size = new System.Drawing.Size(180, 22);
+            this.subMenuProducto.Size = new System.Drawing.Size(131, 22);
             this.subMenuProducto.Text = "Producto";
             this.subMenuProducto.Click += new System.EventHandler(this.subMenuProducto_Click);
             // 
@@ -409,7 +409,7 @@ namespace CapaPresentacion
             this.contenedor.Dock = System.Windows.Forms.DockStyle.Fill;
             this.contenedor.Location = new System.Drawing.Point(0, 90);
             this.contenedor.Name = "contenedor";
-            this.contenedor.Size = new System.Drawing.Size(800, 360);
+            this.contenedor.Size = new System.Drawing.Size(817, 521);
             this.contenedor.TabIndex = 2;
             // 
             // Inicio
@@ -417,13 +417,14 @@ namespace CapaPresentacion
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(26)))), ((int)(((byte)(26)))));
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(817, 611);
             this.Controls.Add(this.contenedor);
             this.Controls.Add(this.contenedorMenu);
             this.Controls.Add(this.panelTitulo);
             this.Name = "Inicio";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Form1";
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.Inicio_Load);
             this.panelTitulo.ResumeLayout(false);
             this.panelTitulo.PerformLayout();
