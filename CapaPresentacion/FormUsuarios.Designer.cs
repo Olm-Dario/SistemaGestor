@@ -33,8 +33,8 @@ namespace CapaPresentacion
             this.panel1 = new System.Windows.Forms.Panel();
             this.textNombre = new System.Windows.Forms.TextBox();
             this.label8 = new System.Windows.Forms.Label();
-            this.comboBox2 = new System.Windows.Forms.ComboBox();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.cboEstado = new System.Windows.Forms.ComboBox();
+            this.cboRol = new System.Windows.Forms.ComboBox();
             this.textConfirmarClave = new System.Windows.Forms.TextBox();
             this.textClave = new System.Windows.Forms.TextBox();
             this.textCorreo = new System.Windows.Forms.TextBox();
@@ -79,8 +79,8 @@ namespace CapaPresentacion
             this.panel1.Controls.Add(this.btnGuardar);
             this.panel1.Controls.Add(this.textNombre);
             this.panel1.Controls.Add(this.label8);
-            this.panel1.Controls.Add(this.comboBox2);
-            this.panel1.Controls.Add(this.comboBox1);
+            this.panel1.Controls.Add(this.cboEstado);
+            this.panel1.Controls.Add(this.cboRol);
             this.panel1.Controls.Add(this.textConfirmarClave);
             this.panel1.Controls.Add(this.textClave);
             this.panel1.Controls.Add(this.textCorreo);
@@ -115,28 +115,29 @@ namespace CapaPresentacion
             this.label8.TabIndex = 14;
             this.label8.Text = "Nombre";
             // 
-            // comboBox2
+            // cboEstado
             // 
-            this.comboBox2.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.comboBox2.FormattingEnabled = true;
-            this.comboBox2.Location = new System.Drawing.Point(38, 388);
-            this.comboBox2.Name = "comboBox2";
-            this.comboBox2.Size = new System.Drawing.Size(158, 21);
-            this.comboBox2.TabIndex = 13;
+            this.cboEstado.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cboEstado.FormattingEnabled = true;
+            this.cboEstado.Location = new System.Drawing.Point(38, 388);
+            this.cboEstado.Name = "cboEstado";
+            this.cboEstado.Size = new System.Drawing.Size(158, 21);
+            this.cboEstado.TabIndex = 13;
             // 
-            // comboBox1
+            // cboRol
             // 
-            this.comboBox1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(38, 345);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(158, 21);
-            this.comboBox1.TabIndex = 12;
+            this.cboRol.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cboRol.FormattingEnabled = true;
+            this.cboRol.Location = new System.Drawing.Point(38, 345);
+            this.cboRol.Name = "cboRol";
+            this.cboRol.Size = new System.Drawing.Size(158, 21);
+            this.cboRol.TabIndex = 12;
             // 
             // textConfirmarClave
             // 
             this.textConfirmarClave.Location = new System.Drawing.Point(38, 303);
             this.textConfirmarClave.Name = "textConfirmarClave";
+            this.textConfirmarClave.PasswordChar = '*';
             this.textConfirmarClave.Size = new System.Drawing.Size(158, 20);
             this.textConfirmarClave.TabIndex = 11;
             // 
@@ -144,6 +145,7 @@ namespace CapaPresentacion
             // 
             this.textClave.Location = new System.Drawing.Point(38, 260);
             this.textClave.Name = "textClave";
+            this.textClave.PasswordChar = '*';
             this.textClave.Size = new System.Drawing.Size(158, 20);
             this.textClave.TabIndex = 10;
             // 
@@ -438,6 +440,7 @@ namespace CapaPresentacion
             this.Controls.Add(this.panel1);
             this.Name = "FormUsuarios";
             this.Text = "FormUsuarios";
+            this.Load += new System.EventHandler(this.FormUsuarios_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
@@ -451,8 +454,8 @@ namespace CapaPresentacion
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.TextBox textNombre;
         private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.ComboBox comboBox2;
-        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.ComboBox cboEstado;
+        private System.Windows.Forms.ComboBox cboRol;
         private System.Windows.Forms.TextBox textConfirmarClave;
         private System.Windows.Forms.TextBox textClave;
         private System.Windows.Forms.TextBox textCorreo;
