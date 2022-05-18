@@ -25,3 +25,39 @@ begin
 		set @Mensaje = 'El numero de documento ya existe'
 
 end
+
+go
+
+-- PROCEDIMIENTO ALMACENADO PARA LA ACTUALIZACIÓN DE CLIENTE
+CREATE PROC sp_ModificarCliente(
+@IdCliente int,
+@Documento varchar(50),
+@Nombre varchar(50),
+@Apellido varchar(50),
+@Correo varchar(50),
+@Telefono varchar(50),
+@Estado bit,
+@Resultado bit output,
+@Mensaje varchar(500) output
+)as
+begin
+	SET @Resultado = 1
+	DECLARE @IDPERSONA INT
+	IF NOT EXISTS (SELECT * FROM CLIENTE WHERE Documento = @Documento and IdCliente !=@IdCliente)
+	begin
+		update CLIENTE set
+		Documento = @Documento,
+		Nombre = @Nombre,
+		Apellido = @Apellido,
+		Correo = @Correo,
+		Telefono = @Telefono,
+		Estado = @Estado
+		WHERE IdCliente = @IdCliente
+	end
+
+	else
+	begin
+		SET @Resultado = 0
+		SET @Mensaje = 'El numero de documento ya existe'
+	end
+end
