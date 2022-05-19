@@ -66,8 +66,6 @@ namespace CapaPresentacion
             cboRol.DisplayMember = "Texto";
             cboRol.ValueMember = "Valor";
             cboRol.SelectedIndex = 0;
-
-
         }
 
         //Evento que pinta una imagen en un boton del datagridview
@@ -101,12 +99,18 @@ namespace CapaPresentacion
 
         private void dgvDataUsuario_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
+            //Verificamos si la celda que clickeamos es el boton "btnSeleccionar"
             if (dgvDataUsuario.Columns[e.ColumnIndex].Name == "btnSeleccionar")
             {
+                //Guardamos el indice de la fila
                 int indice = e.RowIndex;
+
 
                 if (indice >= 0)
                 {
+                    //Tomo los valores de la fila segun su indice
+                    //Paso los valores de la fila a los textBox
+                    textIndice.Text = indice.ToString();
                     textId.Text = dgvDataUsuario.Rows[indice].Cells["Id"].Value.ToString();
                     textDocumento.Text = dgvDataUsuario.Rows[indice].Cells["Documento"].Value.ToString();
                     textApellido.Text = dgvDataUsuario.Rows[indice].Cells["Apellido"].Value.ToString();
@@ -115,8 +119,69 @@ namespace CapaPresentacion
                     textClave.Text = dgvDataUsuario.Rows[indice].Cells["Clave"].Value.ToString();
                     textConfirmarClave.Text = dgvDataUsuario.Rows[indice].Cells["Clave"].Value.ToString();
 
+                    //Recorro las opciones del ComboBox Rol
+                    foreach (OpcionCombo oc in cboRol.Items)
+                    {
+                        if (Convert.ToInt32(oc.Valor) == Convert.ToInt32(dgvDataUsuario.Rows[indice].Cells["IdRol"].Value))
+                        {
+                            //Obtengo el indice del comboBox
+                            int indiceCombo = cboRol.Items.IndexOf(oc);
+
+                            //Dejamos seleccionado el indice buscado
+                            cboRol.SelectedIndex = indiceCombo;
+                            break;
+                        }
+                    }
+
+                    //Recorro las opciones del ComboBox Estado
+                    foreach (OpcionCombo oc in cboEstado.Items)
+                    {
+                        if (Convert.ToInt32(oc.Valor) == Convert.ToInt32(dgvDataUsuario.Rows[indice].Cells["EstadoValor"].Value))
+                        {
+                            //Obtengo el indice del comboBox
+                            int indiceCombo = cboEstado.Items.IndexOf(oc);
+
+                            //Dejamos seleccionado el indice buscado
+                            cboEstado.SelectedIndex = indiceCombo;
+                            break;
+                        }
+                    }
+
                 }
             }
+        }
+
+        private void btnGuardar_Click(object sender, EventArgs e)
+        {
+            dgvDataUsuario.Rows.Add(new object[] 
+            { 
+                "",
+                textId.Text,
+                textDocumento.Text,
+                textApellido.Text,
+                textNombre.Text,
+                textCorreo.Text,
+                textClave,
+                ((OpcionCombo)cboRol.SelectedItem).Valor.ToString(),
+                ((OpcionCombo)cboRol.SelectedItem).Texto.ToString(),
+                ((OpcionCombo)cboEstado.SelectedItem).Valor.ToString(),
+                ((OpcionCombo)cboEstado.SelectedItem).Texto.ToString()
+            });
+            limpiar();
+        }
+
+        private void limpiar()
+        {
+            textIndice.Text = "-1";
+            textId.Text = "0";
+            textDocumento.Text = "0";
+            textApellido.Text = "0";
+            textNombre.Text = "0";
+            textCorreo.Text = "0";
+            textClave.Text = "0";
+            textConfirmarClave.Text = "0";
+            cboRol.SelectedIndex = 0;
+            cboEstado.SelectedIndex = 0;
         }
     }
 }
