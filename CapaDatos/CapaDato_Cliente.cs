@@ -142,7 +142,7 @@ namespace CapaDatos
 
             try
             {
-                using (SqlConnection conexion = new SqlConnection(Conexion.Cadena))
+                using (SqlConnection conexion = new SqlConnection(Conexion.cadena))
                 {
                     SqlCommand cmd = new SqlCommand("DELETE FROM Cliente WHERE IdCliente = @id", conexion);
                     cmd.Parameters.AddWithValue("@id", obj.idCliente);
