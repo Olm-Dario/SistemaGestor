@@ -11,7 +11,7 @@ namespace CapaDatos
 {
     public class CapaDato_Cliente
     {
-
+        //Metodo que lista todos los clientes en la base de datos
         public List<Cliente> Listar()
         {
 
@@ -56,6 +56,45 @@ namespace CapaDatos
 
             return lista;
         }
-        
+
+        //Metodo para registrar clientes en la BD
+        public int Registrar(Cliente obj, out string Mensaje)
+        {
+            int idClientegenerado = 0;
+            Mensaje = string.Empty;
+
+            try
+            {
+                using (SqlConnection conexion = new SqlConnection(Conexion.cadena))
+                {
+                    SqlCommand cmd = new SqlCommand("sp_RegistrarCliente", conexion);
+                    cmd.Parameters.AddWithValue("Documento", obj.documento);
+                    cmd.Parameters.AddWithValue("Nombre", obj.nombre);
+                    cmd.Parameters.AddWithValue("Apellido", obj.apellido);
+                    cmd.Parameters.AddWithValue("Correo", obj.correo);
+                    cmd.Parameters.AddWithValue("Telefono", obj.telefono);
+                    cmd.Parameters.AddWithValue("Estado", obj.estado);
+                    cmd.Parameters.Add("Resultado", SqlDbType.Int).Direction = ParameterDirection.Output;
+                    cmd.Parameters.Add("Mensaje", SqlDbType.VarChar, 500).Direction = ParameterDirection.Output;
+                    cmd.CommandType = CommandType.StoredProcedure;
+                    conexion.Open();
+
+                    cmd.ExecuteNonQuery();
+
+                    idClientegenerado = Convert.ToInt32(cmd.Parameters["Resultado"].Value);
+                    Mensaje = cmd.Parameters["Mensaje"].Value.ToString();
+
+                }
+            }
+            catch (Exception ex)
+            {
+                idClientegenerado = 0;
+                Mensaje = ex.Message;
+            }
+
+            return idClientegenerado;
+        }
     }
+
+   
 }
