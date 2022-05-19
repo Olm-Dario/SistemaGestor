@@ -135,6 +135,33 @@ namespace CapaDatos
         }
 
 
+        public bool Eliminar(Cliente obj, out string Mensaje)
+        {
+            bool respuesta = false;
+            Mensaje = string.Empty;
+
+            try
+            {
+                using (SqlConnection conexion = new SqlConnection(Conexion.Cadena))
+                {
+                    SqlCommand cmd = new SqlCommand("DELETE FROM Cliente WHERE IdCliente = @id", conexion);
+                    cmd.Parameters.AddWithValue("@id", obj.idCliente);
+                    cmd.CommandType = CommandType.Text;
+                    conexion.Open();
+
+                    respuesta = cmd.ExecuteNonQuery() > 0;
+
+
+                }
+            }
+            catch (Exception ex)
+            {
+                respuesta = false;
+                Mensaje = ex.Message;
+            }
+
+            return respuesta;
+        }
     }
 
    
