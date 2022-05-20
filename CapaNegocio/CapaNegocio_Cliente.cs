@@ -57,6 +57,46 @@ namespace CapaNegocio
                 return objCD_cliente.Registrar(obj, out Mensaje);
             }
         }
+
+        public bool Editar(Cliente obj, out string Mensaje)
+        {
+            Mensaje = string.Empty;
+
+            if (obj.documento == "")
+            {
+                Mensaje += "Es necesario el documento del cliente\n";
+            }
+
+            if (obj.nombre == "")
+            {
+                Mensaje += "Es necesario el nombre del cliente\n";
+            }
+
+            if (obj.apellido == "")
+            {
+                Mensaje += "Es necesario el apellido del cliente\n";
+            }
+
+            if (obj.correo == "")
+            {
+                Mensaje += "Es necesario el correo del cliente\n";
+            }
+
+            if (obj.telefono == "")
+            {
+                Mensaje += "Es necesario el telefono del cliente\n";
+            }
+
+
+            if (Mensaje != string.Empty)
+            {
+                return false;
+            }
+            else
+            {
+                return objCD_cliente.Editar(obj, out Mensaje);
+            }
+        }
     }
 }
 
