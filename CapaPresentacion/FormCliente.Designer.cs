@@ -45,7 +45,14 @@ namespace CapaPresentacion
             this.textDocumento = new System.Windows.Forms.TextBox();
             this.label10 = new System.Windows.Forms.Label();
             this.dgvDataCliente = new System.Windows.Forms.DataGridView();
+            this.label4 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.label7 = new System.Windows.Forms.Label();
             this.btnSeleccionar = new System.Windows.Forms.DataGridViewButtonColumn();
+            this.EstadoValor = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Id = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Documento = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Apellido = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -53,12 +60,6 @@ namespace CapaPresentacion
             this.Correo = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Telefono = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Estado = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.label4 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.label7 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dgvDataCliente)).BeginInit();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
@@ -68,14 +69,14 @@ namespace CapaPresentacion
             this.textIndice.Location = new System.Drawing.Point(182, 48);
             this.textIndice.Name = "textIndice";
             this.textIndice.Size = new System.Drawing.Size(14, 20);
-            this.textIndice.TabIndex = 21;
+            this.textIndice.TabIndex = 0;
             // 
             // textId
             // 
             this.textId.Location = new System.Drawing.Point(202, 48);
             this.textId.Name = "textId";
             this.textId.Size = new System.Drawing.Size(14, 20);
-            this.textId.TabIndex = 20;
+            this.textId.TabIndex = 0;
             // 
             // label9
             // 
@@ -102,11 +103,12 @@ namespace CapaPresentacion
             this.btnEliminar.Location = new System.Drawing.Point(38, 420);
             this.btnEliminar.Name = "btnEliminar";
             this.btnEliminar.Size = new System.Drawing.Size(158, 23);
-            this.btnEliminar.TabIndex = 18;
+            this.btnEliminar.TabIndex = 9;
             this.btnEliminar.Text = "Eliminar";
             this.btnEliminar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnEliminar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnEliminar.UseVisualStyleBackColor = false;
+            this.btnEliminar.Click += new System.EventHandler(this.btnEliminar_Click);
             // 
             // btnEditar
             // 
@@ -123,7 +125,7 @@ namespace CapaPresentacion
             this.btnEditar.Location = new System.Drawing.Point(38, 391);
             this.btnEditar.Name = "btnEditar";
             this.btnEditar.Size = new System.Drawing.Size(158, 23);
-            this.btnEditar.TabIndex = 17;
+            this.btnEditar.TabIndex = 8;
             this.btnEditar.Text = "Editar";
             this.btnEditar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnEditar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
@@ -144,18 +146,19 @@ namespace CapaPresentacion
             this.btnGuardar.Location = new System.Drawing.Point(38, 362);
             this.btnGuardar.Name = "btnGuardar";
             this.btnGuardar.Size = new System.Drawing.Size(158, 23);
-            this.btnGuardar.TabIndex = 16;
+            this.btnGuardar.TabIndex = 7;
             this.btnGuardar.Text = "Guardar";
             this.btnGuardar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnGuardar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnGuardar.UseVisualStyleBackColor = false;
+            this.btnGuardar.Click += new System.EventHandler(this.btnGuardar_Click);
             // 
             // textNombre
             // 
             this.textNombre.Location = new System.Drawing.Point(38, 130);
             this.textNombre.Name = "textNombre";
             this.textNombre.Size = new System.Drawing.Size(158, 20);
-            this.textNombre.TabIndex = 15;
+            this.textNombre.TabIndex = 2;
             // 
             // label8
             // 
@@ -173,36 +176,35 @@ namespace CapaPresentacion
             this.cboEstado.Location = new System.Drawing.Point(38, 306);
             this.cboEstado.Name = "cboEstado";
             this.cboEstado.Size = new System.Drawing.Size(158, 21);
-            this.cboEstado.TabIndex = 13;
+            this.cboEstado.TabIndex = 6;
             // 
             // textTelefono
             // 
             this.textTelefono.Location = new System.Drawing.Point(38, 260);
             this.textTelefono.Name = "textTelefono";
-            this.textTelefono.PasswordChar = '*';
             this.textTelefono.Size = new System.Drawing.Size(158, 20);
-            this.textTelefono.TabIndex = 10;
+            this.textTelefono.TabIndex = 5;
             // 
             // textCorreo
             // 
             this.textCorreo.Location = new System.Drawing.Point(38, 218);
             this.textCorreo.Name = "textCorreo";
             this.textCorreo.Size = new System.Drawing.Size(158, 20);
-            this.textCorreo.TabIndex = 9;
+            this.textCorreo.TabIndex = 4;
             // 
             // textApellido
             // 
             this.textApellido.Location = new System.Drawing.Point(38, 174);
             this.textApellido.Name = "textApellido";
             this.textApellido.Size = new System.Drawing.Size(158, 20);
-            this.textApellido.TabIndex = 8;
+            this.textApellido.TabIndex = 3;
             // 
             // textDocumento
             // 
             this.textDocumento.Location = new System.Drawing.Point(38, 86);
             this.textDocumento.Name = "textDocumento";
             this.textDocumento.Size = new System.Drawing.Size(158, 20);
-            this.textDocumento.TabIndex = 7;
+            this.textDocumento.TabIndex = 1;
             // 
             // label10
             // 
@@ -229,6 +231,7 @@ namespace CapaPresentacion
             this.dgvDataCliente.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvDataCliente.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.btnSeleccionar,
+            this.EstadoValor,
             this.Id,
             this.Documento,
             this.Apellido,
@@ -241,61 +244,9 @@ namespace CapaPresentacion
             this.dgvDataCliente.Name = "dgvDataCliente";
             this.dgvDataCliente.ReadOnly = true;
             this.dgvDataCliente.Size = new System.Drawing.Size(846, 373);
-            this.dgvDataCliente.TabIndex = 22;
-            // 
-            // btnSeleccionar
-            // 
-            this.btnSeleccionar.HeaderText = "";
-            this.btnSeleccionar.Name = "btnSeleccionar";
-            this.btnSeleccionar.ReadOnly = true;
-            this.btnSeleccionar.Width = 20;
-            // 
-            // Id
-            // 
-            this.Id.HeaderText = "IdCliente";
-            this.Id.Name = "Id";
-            this.Id.ReadOnly = true;
-            this.Id.Visible = false;
-            // 
-            // Documento
-            // 
-            this.Documento.HeaderText = "Nº Documento";
-            this.Documento.Name = "Documento";
-            this.Documento.ReadOnly = true;
-            this.Documento.Width = 150;
-            // 
-            // Apellido
-            // 
-            this.Apellido.HeaderText = "Apellido";
-            this.Apellido.Name = "Apellido";
-            this.Apellido.ReadOnly = true;
-            this.Apellido.Width = 150;
-            // 
-            // Nombre
-            // 
-            this.Nombre.HeaderText = "Nombre";
-            this.Nombre.Name = "Nombre";
-            this.Nombre.ReadOnly = true;
-            this.Nombre.Width = 150;
-            // 
-            // Correo
-            // 
-            this.Correo.HeaderText = "Correo";
-            this.Correo.Name = "Correo";
-            this.Correo.ReadOnly = true;
-            // 
-            // Telefono
-            // 
-            this.Telefono.HeaderText = "Telefono";
-            this.Telefono.Name = "Telefono";
-            this.Telefono.ReadOnly = true;
-            this.Telefono.Visible = false;
-            // 
-            // Estado
-            // 
-            this.Estado.HeaderText = "Estado";
-            this.Estado.Name = "Estado";
-            this.Estado.ReadOnly = true;
+            this.dgvDataCliente.TabIndex = 10;
+            this.dgvDataCliente.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvDataCliente_CellContentClick);
+            this.dgvDataCliente.CellPainting += new System.Windows.Forms.DataGridViewCellPaintingEventHandler(this.dgvDataCliente_CellPainting);
             // 
             // label4
             // 
@@ -369,6 +320,67 @@ namespace CapaPresentacion
             this.label7.TabIndex = 6;
             this.label7.Text = "Estado";
             // 
+            // btnSeleccionar
+            // 
+            this.btnSeleccionar.HeaderText = "";
+            this.btnSeleccionar.Name = "btnSeleccionar";
+            this.btnSeleccionar.ReadOnly = true;
+            this.btnSeleccionar.Width = 20;
+            // 
+            // EstadoValor
+            // 
+            this.EstadoValor.HeaderText = "EstadoValor";
+            this.EstadoValor.Name = "EstadoValor";
+            this.EstadoValor.ReadOnly = true;
+            this.EstadoValor.Visible = false;
+            // 
+            // Id
+            // 
+            this.Id.HeaderText = "IdCliente";
+            this.Id.Name = "Id";
+            this.Id.ReadOnly = true;
+            this.Id.Visible = false;
+            // 
+            // Documento
+            // 
+            this.Documento.HeaderText = "Documento";
+            this.Documento.Name = "Documento";
+            this.Documento.ReadOnly = true;
+            this.Documento.Width = 150;
+            // 
+            // Apellido
+            // 
+            this.Apellido.HeaderText = "Apellido";
+            this.Apellido.Name = "Apellido";
+            this.Apellido.ReadOnly = true;
+            this.Apellido.Width = 150;
+            // 
+            // Nombre
+            // 
+            this.Nombre.HeaderText = "Nombre";
+            this.Nombre.Name = "Nombre";
+            this.Nombre.ReadOnly = true;
+            this.Nombre.Width = 150;
+            // 
+            // Correo
+            // 
+            this.Correo.HeaderText = "Correo";
+            this.Correo.Name = "Correo";
+            this.Correo.ReadOnly = true;
+            // 
+            // Telefono
+            // 
+            this.Telefono.HeaderText = "Telefono";
+            this.Telefono.Name = "Telefono";
+            this.Telefono.ReadOnly = true;
+            this.Telefono.Visible = false;
+            // 
+            // Estado
+            // 
+            this.Estado.HeaderText = "Estado";
+            this.Estado.Name = "Estado";
+            this.Estado.ReadOnly = true;
+            // 
             // FormCliente
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -409,7 +421,9 @@ namespace CapaPresentacion
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Label label7;
         private System.Windows.Forms.DataGridViewButtonColumn btnSeleccionar;
+        private System.Windows.Forms.DataGridViewTextBoxColumn EstadoValor;
         private System.Windows.Forms.DataGridViewTextBoxColumn Id;
         private System.Windows.Forms.DataGridViewTextBoxColumn Documento;
         private System.Windows.Forms.DataGridViewTextBoxColumn Apellido;
@@ -417,6 +431,5 @@ namespace CapaPresentacion
         private System.Windows.Forms.DataGridViewTextBoxColumn Correo;
         private System.Windows.Forms.DataGridViewTextBoxColumn Telefono;
         private System.Windows.Forms.DataGridViewTextBoxColumn Estado;
-        private System.Windows.Forms.Label label7;
     }
 }
