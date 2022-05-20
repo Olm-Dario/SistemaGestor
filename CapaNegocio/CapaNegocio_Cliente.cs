@@ -97,6 +97,11 @@ namespace CapaNegocio
                 return objCD_cliente.Editar(obj, out Mensaje);
             }
         }
+
+        public bool Eliminar(Cliente obj, out string Mensaje)
+        {
+            return objCD_cliente.Eliminar(obj, out Mensaje);
+        }
     }
 }
 
