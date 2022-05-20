@@ -39,11 +39,13 @@ namespace CapaPresentacion
             foreach (Cliente item in listaCliente)
             {
                 dgvDataCliente.Rows.Add(new object[]
-                {   "",
+                
+                {
+                    "",
                     item.idCliente,
                     item.documento,
-                    item.nombre,
                     item.apellido,
+                    item.nombre,
                     item.correo,
                     item.telefono,
                     item.estado == true ? 1 : 0,
@@ -57,9 +59,10 @@ namespace CapaPresentacion
         {
             string mensaje = string.Empty;
 
+
             Cliente objCliente = new Cliente()
             {
-                //idCliente = Convert.ToInt32(textId.Text),
+                idCliente = Convert.ToInt32(textId.Text),
                 documento = textDocumento.Text,
                 nombre = textNombre.Text,
                 apellido = textApellido.Text,
@@ -128,12 +131,12 @@ namespace CapaPresentacion
         private void Limpiar()
         {
             textIndice.Text = "-1";
-            textId.Text = "0";
-            textDocumento.Text = "0";
-            textApellido.Text = "0";
-            textNombre.Text = "0";
-            textCorreo.Text = "0";
-            textTelefono.Text = "0";
+            textId.Text = "";
+            textDocumento.Text = "";
+            textApellido.Text = "";
+            textNombre.Text = "";
+            textCorreo.Text = "";
+            textTelefono.Text = "";
             cboEstado.SelectedIndex = 0;
 
             textDocumento.Select();

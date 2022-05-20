@@ -52,13 +52,13 @@ namespace CapaPresentacion
             this.panel1 = new System.Windows.Forms.Panel();
             this.label7 = new System.Windows.Forms.Label();
             this.btnSeleccionar = new System.Windows.Forms.DataGridViewButtonColumn();
-            this.EstadoValor = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Id = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Documento = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Apellido = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Nombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Correo = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Telefono = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.EstadoValor = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Estado = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dgvDataCliente)).BeginInit();
             this.panel1.SuspendLayout();
@@ -231,19 +231,19 @@ namespace CapaPresentacion
             this.dgvDataCliente.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvDataCliente.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.btnSeleccionar,
-            this.EstadoValor,
             this.Id,
             this.Documento,
             this.Apellido,
             this.Nombre,
             this.Correo,
             this.Telefono,
+            this.EstadoValor,
             this.Estado});
-            this.dgvDataCliente.Location = new System.Drawing.Point(306, 71);
+            this.dgvDataCliente.Location = new System.Drawing.Point(249, 86);
             this.dgvDataCliente.MultiSelect = false;
             this.dgvDataCliente.Name = "dgvDataCliente";
             this.dgvDataCliente.ReadOnly = true;
-            this.dgvDataCliente.Size = new System.Drawing.Size(846, 373);
+            this.dgvDataCliente.Size = new System.Drawing.Size(914, 373);
             this.dgvDataCliente.TabIndex = 10;
             this.dgvDataCliente.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvDataCliente_CellContentClick);
             this.dgvDataCliente.CellPainting += new System.Windows.Forms.DataGridViewCellPaintingEventHandler(this.dgvDataCliente_CellPainting);
@@ -327,13 +327,6 @@ namespace CapaPresentacion
             this.btnSeleccionar.ReadOnly = true;
             this.btnSeleccionar.Width = 20;
             // 
-            // EstadoValor
-            // 
-            this.EstadoValor.HeaderText = "EstadoValor";
-            this.EstadoValor.Name = "EstadoValor";
-            this.EstadoValor.ReadOnly = true;
-            this.EstadoValor.Visible = false;
-            // 
             // Id
             // 
             this.Id.HeaderText = "IdCliente";
@@ -373,7 +366,12 @@ namespace CapaPresentacion
             this.Telefono.HeaderText = "Telefono";
             this.Telefono.Name = "Telefono";
             this.Telefono.ReadOnly = true;
-            this.Telefono.Visible = false;
+            // 
+            // EstadoValor
+            // 
+            this.EstadoValor.HeaderText = "EstadoValor";
+            this.EstadoValor.Name = "EstadoValor";
+            this.EstadoValor.ReadOnly = true;
             // 
             // Estado
             // 
@@ -423,13 +421,13 @@ namespace CapaPresentacion
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.DataGridViewButtonColumn btnSeleccionar;
-        private System.Windows.Forms.DataGridViewTextBoxColumn EstadoValor;
         private System.Windows.Forms.DataGridViewTextBoxColumn Id;
         private System.Windows.Forms.DataGridViewTextBoxColumn Documento;
         private System.Windows.Forms.DataGridViewTextBoxColumn Apellido;
         private System.Windows.Forms.DataGridViewTextBoxColumn Nombre;
         private System.Windows.Forms.DataGridViewTextBoxColumn Correo;
         private System.Windows.Forms.DataGridViewTextBoxColumn Telefono;
+        private System.Windows.Forms.DataGridViewTextBoxColumn EstadoValor;
         private System.Windows.Forms.DataGridViewTextBoxColumn Estado;
     }
 }
