@@ -29,7 +29,7 @@ namespace CapaPresentacion
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             this.textIndice = new System.Windows.Forms.TextBox();
             this.textId = new System.Windows.Forms.TextBox();
             this.label9 = new System.Windows.Forms.Label();
@@ -60,6 +60,11 @@ namespace CapaPresentacion
             this.label1 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
             this.label7 = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
+            this.textBuscar = new System.Windows.Forms.TextBox();
+            this.cboBuscar = new System.Windows.Forms.ComboBox();
+            this.btnBuscar = new FontAwesome.Sharp.IconButton();
+            this.btnLimpiarBusqueda = new FontAwesome.Sharp.IconButton();
             ((System.ComponentModel.ISupportInitialize)(this.dgvDataCliente)).BeginInit();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
@@ -211,7 +216,7 @@ namespace CapaPresentacion
             // 
             this.label10.AutoSize = true;
             this.label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F);
-            this.label10.Location = new System.Drawing.Point(317, 22);
+            this.label10.Location = new System.Drawing.Point(244, 48);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(156, 25);
             this.label10.TabIndex = 23;
@@ -220,15 +225,15 @@ namespace CapaPresentacion
             // dgvDataCliente
             // 
             this.dgvDataCliente.AllowUserToAddRows = false;
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F);
-            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle3.Padding = new System.Windows.Forms.Padding(2);
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvDataCliente.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F);
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle1.Padding = new System.Windows.Forms.Padding(2);
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvDataCliente.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.dgvDataCliente.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvDataCliente.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.btnSeleccionar,
@@ -380,6 +385,71 @@ namespace CapaPresentacion
             this.label7.TabIndex = 6;
             this.label7.Text = "Estado";
             // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(605, 57);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(62, 13);
+            this.label5.TabIndex = 0;
+            this.label5.Text = "Buscar Por:";
+            // 
+            // textBuscar
+            // 
+            this.textBuscar.Location = new System.Drawing.Point(842, 54);
+            this.textBuscar.Name = "textBuscar";
+            this.textBuscar.Size = new System.Drawing.Size(158, 20);
+            this.textBuscar.TabIndex = 1;
+            // 
+            // cboBuscar
+            // 
+            this.cboBuscar.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cboBuscar.FormattingEnabled = true;
+            this.cboBuscar.Location = new System.Drawing.Point(673, 54);
+            this.cboBuscar.Name = "cboBuscar";
+            this.cboBuscar.Size = new System.Drawing.Size(158, 21);
+            this.cboBuscar.TabIndex = 6;
+            // 
+            // btnBuscar
+            // 
+            this.btnBuscar.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.btnBuscar.BackColor = System.Drawing.Color.ForestGreen;
+            this.btnBuscar.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnBuscar.FlatAppearance.BorderColor = System.Drawing.Color.Black;
+            this.btnBuscar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnBuscar.ForeColor = System.Drawing.Color.White;
+            this.btnBuscar.IconChar = FontAwesome.Sharp.IconChar.Searchengin;
+            this.btnBuscar.IconColor = System.Drawing.Color.White;
+            this.btnBuscar.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.btnBuscar.IconSize = 25;
+            this.btnBuscar.Location = new System.Drawing.Point(1012, 52);
+            this.btnBuscar.Name = "btnBuscar";
+            this.btnBuscar.Size = new System.Drawing.Size(36, 23);
+            this.btnBuscar.TabIndex = 7;
+            this.btnBuscar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnBuscar.UseVisualStyleBackColor = false;
+            this.btnBuscar.Click += new System.EventHandler(this.btnGuardar_Click);
+            // 
+            // btnLimpiarBusqueda
+            // 
+            this.btnLimpiarBusqueda.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.btnLimpiarBusqueda.BackColor = System.Drawing.Color.RoyalBlue;
+            this.btnLimpiarBusqueda.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnLimpiarBusqueda.FlatAppearance.BorderColor = System.Drawing.Color.Black;
+            this.btnLimpiarBusqueda.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnLimpiarBusqueda.ForeColor = System.Drawing.Color.White;
+            this.btnLimpiarBusqueda.IconChar = FontAwesome.Sharp.IconChar.Broom;
+            this.btnLimpiarBusqueda.IconColor = System.Drawing.Color.White;
+            this.btnLimpiarBusqueda.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.btnLimpiarBusqueda.IconSize = 25;
+            this.btnLimpiarBusqueda.Location = new System.Drawing.Point(1054, 52);
+            this.btnLimpiarBusqueda.Name = "btnLimpiarBusqueda";
+            this.btnLimpiarBusqueda.Size = new System.Drawing.Size(36, 23);
+            this.btnLimpiarBusqueda.TabIndex = 8;
+            this.btnLimpiarBusqueda.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnLimpiarBusqueda.UseVisualStyleBackColor = false;
+            this.btnLimpiarBusqueda.Click += new System.EventHandler(this.btnLimpiar_Click);
+            // 
             // FormCliente
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -388,6 +458,11 @@ namespace CapaPresentacion
             this.Controls.Add(this.label10);
             this.Controls.Add(this.dgvDataCliente);
             this.Controls.Add(this.panel1);
+            this.Controls.Add(this.label5);
+            this.Controls.Add(this.btnLimpiarBusqueda);
+            this.Controls.Add(this.textBuscar);
+            this.Controls.Add(this.btnBuscar);
+            this.Controls.Add(this.cboBuscar);
             this.Name = "FormCliente";
             this.Text = "FormCliente";
             this.Load += new System.EventHandler(this.FormCliente_Load);
@@ -430,5 +505,10 @@ namespace CapaPresentacion
         private System.Windows.Forms.DataGridViewTextBoxColumn Telefono;
         private System.Windows.Forms.DataGridViewTextBoxColumn EstadoValor;
         private System.Windows.Forms.DataGridViewTextBoxColumn Estado;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.TextBox textBuscar;
+        private System.Windows.Forms.ComboBox cboBuscar;
+        private FontAwesome.Sharp.IconButton btnBuscar;
+        private FontAwesome.Sharp.IconButton btnLimpiarBusqueda;
     }
 }
