@@ -53,6 +53,21 @@ namespace CapaPresentacion
 
                 });
             }
+
+            //CARGA DEL ComboBusqueda
+
+            foreach(DataGridViewColumn column in dgvDataCliente.Columns)
+            {
+                if (column.Visible == true)
+                {
+                    cboBuscar.Items.Add(new OpcionCombo() { Valor = column.Name, Texto = column.HeaderText });
+
+                }
+            }
+            cboBuscar.DisplayMember = "Texto";
+            cboBuscar.ValueMember = "Valor";
+            cboBuscar.SelectedIndex = 0;
+
         }
 
         private void btnGuardar_Click(object sender, EventArgs e)
@@ -62,7 +77,7 @@ namespace CapaPresentacion
 
             Cliente objCliente = new Cliente()
             {
-                idCliente = Convert.ToInt32(textId.Text),
+                //idCliente = Convert.ToInt32(textId.Text),
                 documento = textDocumento.Text,
                 nombre = textNombre.Text,
                 apellido = textApellido.Text,
