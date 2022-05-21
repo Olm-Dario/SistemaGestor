@@ -229,7 +229,7 @@ namespace CapaPresentacion
 
                     if (respuesta)
                     {
-                        dgvDataCliente.Rows.RemoveAt(Convert.ToInt32(textIndice));
+                        dgvDataCliente.Rows.RemoveAt(Convert.ToInt32(textIndice.Text));
                         Limpiar();
                     }
                     else
@@ -238,6 +238,11 @@ namespace CapaPresentacion
                     }
                 }
             }
+        }
+
+        private void btnLimpiar_Click(object sender, EventArgs e)
+        {
+            Limpiar();
         }
     }
 }
