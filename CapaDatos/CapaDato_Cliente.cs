@@ -107,7 +107,7 @@ namespace CapaDatos
             {
                 using (SqlConnection conexion = new SqlConnection(Conexion.cadena))
                 {
-                    SqlCommand cmd = new SqlCommand("sp_RegistrarCliente", conexion);
+                    SqlCommand cmd = new SqlCommand("sp_ModificarCliente", conexion);
                     cmd.Parameters.AddWithValue("IdCliente", obj.idCliente);
                     cmd.Parameters.AddWithValue("Documento", obj.documento);
                     cmd.Parameters.AddWithValue("Nombre", obj.nombre);
@@ -115,7 +115,7 @@ namespace CapaDatos
                     cmd.Parameters.AddWithValue("Correo", obj.correo);
                     cmd.Parameters.AddWithValue("Telefono", obj.telefono);
                     cmd.Parameters.AddWithValue("Estado", obj.estado);
-                    cmd.Parameters.Add("Resultado", SqlDbType.Int).Direction = ParameterDirection.Output;
+                    cmd.Parameters.Add("Resultado", SqlDbType.Bit).Direction = ParameterDirection.Output;
                     cmd.Parameters.Add("Mensaje", SqlDbType.VarChar, 500).Direction = ParameterDirection.Output;
                     cmd.CommandType = CommandType.StoredProcedure;
                     conexion.Open();
