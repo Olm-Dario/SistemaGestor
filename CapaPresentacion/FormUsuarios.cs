@@ -170,6 +170,7 @@ namespace CapaPresentacion
             limpiar();
         }
 
+        //Limpia los textBox
         private void limpiar()
         {
             textIndice.Text = "-1";
