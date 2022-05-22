@@ -69,5 +69,56 @@ namespace CapaDatos
             return lista;
         }
 
+
+        public int Registrar(Usuario obj, out string Mensaje)
+        {
+            int idUsuarioGenerado = 0;
+            Mensaje = string.Empty;
+
+            try{
+
+                using (SqlConnection conexion = new SqlConnection(Conexion.cadena))
+                {
+                    //le pasamos el procedimiento almacenado
+                    SqlCommand cmd = new SqlCommand("SP_REGISTRARUSURARIO", conexion);
+
+                    //Le pasamos los parametros de entrada
+                    cmd.Parameters.AddWithValue("Documento", obj.documento);
+                    cmd.Parameters.AddWithValue("Nombre", obj.nombre);
+                    cmd.Parameters.AddWithValue("Apellido", obj.apellido);
+                    cmd.Parameters.AddWithValue("Correo", obj.correo);
+                    cmd.Parameters.AddWithValue("Clave", obj.clave);
+                    cmd.Parameters.AddWithValue("IdRol", obj.oRol.idRol);
+                    cmd.Parameters.AddWithValue("Estado", obj.estado);
+
+                    //Le pasamos los parametros de salida
+                    cmd.Parameters.Add("IdUsuarioResultado", SqlDbType.Int).Direction = ParameterDirection.Output;
+                    cmd.Parameters.Add("Mensaje", SqlDbType.VarChar).Direction = ParameterDirection.Output;
+
+                    //Le que el tipo de comando es un procedimiento almacenado
+                    cmd.CommandType = CommandType.StoredProcedure;
+
+                    //Abrimos la cadena de conexion para que se ejecute el comando
+                    conexion.Open();
+
+                    //Ejecutamos el comando
+                    cmd.ExecuteNonQuery();
+
+                    //Obtenemos los valores de los paramatros de salida despues de la ejecucion
+                    idUsuarioGenerado = Convert.ToInt32(cmd.Parameters["IdUsuarioResultado"].Value);
+                    Mensaje = cmd.Parameters["IdUsuarioResultado"].Value.ToString();
+
+                }
+
+            }
+            catch (Exception ex)
+            {
+                idUsuarioGenerado = 0;
+                Mensaje = ex.Message;
+            }
+
+            return idUsuarioGenerado;
+        }
+
     }
 }
