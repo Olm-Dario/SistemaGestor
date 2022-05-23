@@ -23,6 +23,7 @@ namespace CapaPresentacion
 
         private void FormCliente_Load(object sender, EventArgs e)
         {
+            textId.Text = "0";
             cboEstado.Items.Add(new OpcionCombo() { Valor = 1, Texto = "Activo" });
             cboEstado.Items.Add(new OpcionCombo() { Valor = 0, Texto = "No Activo" });
             cboEstado.DisplayMember = "Texto";
@@ -77,7 +78,7 @@ namespace CapaPresentacion
 
             Cliente objCliente = new Cliente()
             {
-                //idCliente = Convert.ToInt32(textId.Text),
+                idCliente = Convert.ToInt32(textId.Text),
                 documento = textDocumento.Text,
                 nombre = textNombre.Text,
                 apellido = textApellido.Text,
@@ -88,6 +89,9 @@ namespace CapaPresentacion
 
             if (objCliente.idCliente == 0)
             {
+
+               
+
                 int idClienteGenerado = new CapaNegocio_Cliente().Registrar(objCliente, out mensaje);
 
                 if (idClienteGenerado != 0)
@@ -113,6 +117,9 @@ namespace CapaPresentacion
             }
             else
             {
+                
+
+
                 bool resultado = new CapaNegocio_Cliente().Editar(objCliente, out mensaje);
 
                 if (resultado)
@@ -146,7 +153,7 @@ namespace CapaPresentacion
         private void Limpiar()
         {
             textIndice.Text = "-1";
-            textId.Text = "";
+            textId.Text = "0";
             textDocumento.Text = "";
             textApellido.Text = "";
             textNombre.Text = "";
