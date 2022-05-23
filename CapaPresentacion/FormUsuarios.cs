@@ -153,21 +153,51 @@ namespace CapaPresentacion
 
         private void btnGuardar_Click(object sender, EventArgs e)
         {
-            dgvDataUsuario.Rows.Add(new object[] 
-            { 
-                "",
-                textId.Text,
-                textDocumento.Text,
-                textApellido.Text,
-                textNombre.Text,
-                textCorreo.Text,
-                textClave,
-                ((OpcionCombo)cboRol.SelectedItem).Valor.ToString(),
-                ((OpcionCombo)cboRol.SelectedItem).Texto.ToString(),
-                ((OpcionCombo)cboEstado.SelectedItem).Valor.ToString(),
-                ((OpcionCombo)cboEstado.SelectedItem).Texto.ToString()
-            });
-            limpiar();
+            string mensaje = string.Empty;
+
+            //Tomamos todos los valores de los textBox y comboBox
+            //y lo pasamos al objeto de la clase Usuario
+            Usuario objUsuario = new Usuario() {
+                //idUsuario = Convert.ToInt32(textId.Text),
+                documento = textDocumento.Text,
+                nombre = textNombre.Text,
+                apellido = textApellido.Text,
+                correo = textCorreo.Text,
+                clave = textClave.Text,
+                oRol = new Rol() { idRol= Convert.ToInt32(((OpcionCombo)cboRol.SelectedItem).Valor) },
+                estado = Convert.ToInt32(((OpcionCombo)cboEstado.SelectedItem).Valor) == 1 ? true : false
+            };
+
+            //Obtengo el valor de respuesta de si se genero o no el registro del usuario
+            int idUsuarioGenerado = new CapaNegocio_Usuario().Registrar(objUsuario, out mensaje);
+
+            //Verifico si se registro o no el usuario
+            if(idUsuarioGenerado != 0)
+            {
+                //Cargo el dataGridView con los datos del registro del usuario
+                dgvDataUsuario.Rows.Add(new object[]
+                {
+                    "",
+                    idUsuarioGenerado,
+                    textDocumento.Text,
+                    textApellido.Text,
+                    textNombre.Text,
+                    textCorreo.Text,
+                    textClave,
+                    ((OpcionCombo)cboRol.SelectedItem).Valor.ToString(),
+                    ((OpcionCombo)cboRol.SelectedItem).Texto.ToString(),
+                    ((OpcionCombo)cboEstado.SelectedItem).Valor.ToString(),
+                    ((OpcionCombo)cboEstado.SelectedItem).Texto.ToString()
+
+                });
+
+                limpiar();
+            }
+            else
+            {
+                MessageBox.Show(mensaje);
+            }
+
         }
 
         //Limpia los textBox
@@ -175,12 +205,12 @@ namespace CapaPresentacion
         {
             textIndice.Text = "-1";
             textId.Text = "0";
-            textDocumento.Text = "0";
-            textApellido.Text = "0";
-            textNombre.Text = "0";
-            textCorreo.Text = "0";
-            textClave.Text = "0";
-            textConfirmarClave.Text = "0";
+            textDocumento.Text = "";
+            textApellido.Text = "";
+            textNombre.Text = "";
+            textCorreo.Text = "";
+            textClave.Text = "";
+            textConfirmarClave.Text = "";
             cboRol.SelectedIndex = 0;
             cboEstado.SelectedIndex = 0;
         }

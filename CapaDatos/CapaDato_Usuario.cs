@@ -93,7 +93,7 @@ namespace CapaDatos
 
                     //Le pasamos los parametros de salida
                     cmd.Parameters.Add("IdUsuarioResultado", SqlDbType.Int).Direction = ParameterDirection.Output;
-                    cmd.Parameters.Add("Mensaje", SqlDbType.VarChar).Direction = ParameterDirection.Output;
+                    cmd.Parameters.Add("Mensaje", SqlDbType.VarChar,500).Direction = ParameterDirection.Output;
 
                     //Le que el tipo de comando es un procedimiento almacenado
                     cmd.CommandType = CommandType.StoredProcedure;
@@ -145,7 +145,7 @@ namespace CapaDatos
 
                     //Le pasamos los parametros de salida
                     cmd.Parameters.Add("Respuesta", SqlDbType.Int).Direction = ParameterDirection.Output;
-                    cmd.Parameters.Add("Mensaje", SqlDbType.VarChar).Direction = ParameterDirection.Output;
+                    cmd.Parameters.Add("Mensaje", SqlDbType.VarChar,500).Direction = ParameterDirection.Output;
 
                     //Le que el tipo de comando es un procedimiento almacenado
                     cmd.CommandType = CommandType.StoredProcedure;
@@ -190,7 +190,7 @@ namespace CapaDatos
 
                     //Le pasamos los parametros de salida
                     cmd.Parameters.Add("Respuesta", SqlDbType.Int).Direction = ParameterDirection.Output;
-                    cmd.Parameters.Add("Mensaje", SqlDbType.VarChar).Direction = ParameterDirection.Output;
+                    cmd.Parameters.Add("Mensaje", SqlDbType.VarChar,500).Direction = ParameterDirection.Output;
 
                     //Le que el tipo de comando es un procedimiento almacenado
                     cmd.CommandType = CommandType.StoredProcedure;
