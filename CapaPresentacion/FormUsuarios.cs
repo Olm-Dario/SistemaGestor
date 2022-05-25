@@ -66,6 +66,9 @@ namespace CapaPresentacion
             cboRol.DisplayMember = "Texto";
             cboRol.ValueMember = "Valor";
             cboRol.SelectedIndex = 0;
+
+            //inicializamos en 0
+            textId.Text = "0";
         }
 
         //Evento que pinta una imagen en un boton del datagridview
@@ -158,7 +161,7 @@ namespace CapaPresentacion
             //Tomamos todos los valores de los textBox y comboBox
             //y lo pasamos al objeto de la clase Usuario
             Usuario objUsuario = new Usuario() {
-                //idUsuario = Convert.ToInt32(textId.Text),
+                idUsuario = Convert.ToInt32(textId.Text),
                 documento = textDocumento.Text,
                 nombre = textNombre.Text,
                 apellido = textApellido.Text,
@@ -168,15 +171,19 @@ namespace CapaPresentacion
                 estado = Convert.ToInt32(((OpcionCombo)cboEstado.SelectedItem).Valor) == 1 ? true : false
             };
 
-            //Obtengo el valor de respuesta de si se genero o no el registro del usuario
-            int idUsuarioGenerado = new CapaNegocio_Usuario().Registrar(objUsuario, out mensaje);
 
-            //Verifico si se registro o no el usuario
-            if(idUsuarioGenerado != 0)
+            //Verificamos si vamos a editar o registrar con el id
+            if (objUsuario.idUsuario == 0)
             {
-                //Cargo el dataGridView con los datos del registro del usuario
-                dgvDataUsuario.Rows.Add(new object[]
+                //Obtengo el valor de respuesta de si se genero o no el registro del usuario
+                int idUsuarioGenerado = new CapaNegocio_Usuario().Registrar(objUsuario, out mensaje);
+
+                //Verifico si se registro o no el usuario
+                if (idUsuarioGenerado != 0)
                 {
+                    //Cargo el dataGridView con los datos del registro del usuario
+                    dgvDataUsuario.Rows.Add(new object[]
+                    {
                     "",
                     idUsuarioGenerado,
                     textDocumento.Text,
@@ -189,18 +196,55 @@ namespace CapaPresentacion
                     ((OpcionCombo)cboEstado.SelectedItem).Valor.ToString(),
                     ((OpcionCombo)cboEstado.SelectedItem).Texto.ToString()
 
-                });
+                    });
 
-                limpiar();
+                    limpiar();
+                }
+                else
+                {
+                    MessageBox.Show(mensaje);
+                }
             }
             else
             {
-                MessageBox.Show(mensaje);
+                //Obtengo el valor de respuesta de si se genero o no la edicion del usuario
+                bool resultado = new CapaNegocio_Usuario().Editar(objUsuario, out mensaje);
+
+                if (resultado)
+                {
+                    //Selecciono la fila que voy a editar
+                    DataGridViewRow row = dgvDataUsuario.Rows[Convert.ToInt32(textIndice.Text)];
+
+                    //Cargo los datos editados al datagridview
+                    row.Cells["Id"].Value = textId.Text;
+                    row.Cells["Documento"].Value = textDocumento.Text;
+                    row.Cells["Apellido"].Value = textApellido.Text;
+                    row.Cells["Nombre"].Value = textNombre.Text;
+                    row.Cells["Correo"].Value = textCorreo.Text;
+                    row.Cells["Clave"].Value = textClave.Text;
+                    row.Cells["IdRol"].Value = ((OpcionCombo)cboRol.SelectedItem).Valor.ToString();
+                    row.Cells["Rol"].Value = ((OpcionCombo)cboRol.SelectedItem).Texto.ToString();
+                    row.Cells["EstadoValor"].Value = ((OpcionCombo)cboEstado.SelectedItem).Valor.ToString();
+                    row.Cells["Estado"].Value = ((OpcionCombo)cboEstado.SelectedItem).Texto.ToString();
+
+                    limpiar();
+                }
+                else
+                {
+                    MessageBox.Show(mensaje);
+                }
             }
+
+            
 
         }
 
-        //Limpia los textBox
+        private void btnEliminar_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        //Metodo que limpia los textBox
         private void limpiar()
         {
             textIndice.Text = "-1";
@@ -213,6 +257,9 @@ namespace CapaPresentacion
             textConfirmarClave.Text = "";
             cboRol.SelectedIndex = 0;
             cboEstado.SelectedIndex = 0;
+
+            textDocumento.Select();
         }
+
     }
 }

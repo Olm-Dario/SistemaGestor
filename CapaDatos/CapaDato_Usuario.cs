@@ -157,7 +157,7 @@ namespace CapaDatos
                     cmd.ExecuteNonQuery();
 
                     //Obtenemos los valores de los paramatros de salida despues de la ejecucion
-                    respuesta = Convert.ToBoolean(cmd.Parameters["IdUsuarioResultado"].Value);
+                    respuesta = Convert.ToBoolean(cmd.Parameters["Respuesta"].Value);
                     Mensaje = cmd.Parameters["Mensaje"].Value.ToString();
 
                 }
