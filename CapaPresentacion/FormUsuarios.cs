@@ -255,7 +255,7 @@ namespace CapaPresentacion
                         idUsuario = Convert.ToInt32(textId.Text)
                     };
 
-                    bool respuesta = new CapaDato_Usuario().Eliminar(objUsuario, out mensaje);
+                    bool respuesta = new CapaNegocio_Usuario().Eliminar(objUsuario, out mensaje);
 
                     if (respuesta)
                     {
