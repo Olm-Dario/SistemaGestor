@@ -294,6 +294,7 @@ namespace CapaPresentacion
             this.dgvData.ReadOnly = true;
             this.dgvData.Size = new System.Drawing.Size(914, 373);
             this.dgvData.TabIndex = 29;
+            this.dgvData.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvData_CellContentClick);
             this.dgvData.CellPainting += new System.Windows.Forms.DataGridViewCellPaintingEventHandler(this.dgvData_CellPainting);
             // 
             // btnSeleccionar
