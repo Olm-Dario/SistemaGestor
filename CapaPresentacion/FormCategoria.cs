@@ -233,6 +233,10 @@ namespace CapaPresentacion
                 }
             }
         }
+        private void btnLimpiar_Click(object sender, EventArgs e)
+        {
+            limpiar();
+        }
 
         private void btnBuscar_Click(object sender, EventArgs e)
         {
@@ -264,5 +268,6 @@ namespace CapaPresentacion
                 row.Visible = true;
             }
         }
+
     }
 }
