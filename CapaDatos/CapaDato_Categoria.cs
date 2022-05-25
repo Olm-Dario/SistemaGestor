@@ -78,6 +78,7 @@ namespace CapaDatos
 
                     //Le pasamos los parametros de entrada
                     cmd.Parameters.AddWithValue("Descripcion", obj.descripcion);
+                    cmd.Parameters.AddWithValue("Estado", obj.estado);
 
                     //Le pasamos los parametros de salida
                     cmd.Parameters.Add("Resultado", SqlDbType.Int).Direction = ParameterDirection.Output;
@@ -123,6 +124,7 @@ namespace CapaDatos
                     //Le pasamos los parametros de entrada
                     cmd.Parameters.AddWithValue("IdCategoria", obj.idCategoria);
                     cmd.Parameters.AddWithValue("Descripcion", obj.descripcion);
+                    cmd.Parameters.AddWithValue("Estado", obj.estado);
 
                     //Le pasamos los parametros de salida
                     cmd.Parameters.Add("Resultado", SqlDbType.Int).Direction = ParameterDirection.Output;

@@ -1,13 +1,14 @@
 --PROCEDIMIENTO PARA GUARDAR CATEGORIA
 create proc SP_RegistrarCategoria(
 @Descripcion varchar(50),
+@Estado bit,
 @Resultado int output,
 @Mensaje varchar(500) output) as
 begin
 	set @Resultado = 0
 	if not exists (select * from CATEGORIA where Descripcion = @Descripcion)
 	begin
-		insert into CATEGORIA(Descripcion) values (@Descripcion)
+		insert into CATEGORIA(Descripcion,Estado) values (@Descripcion,@Estado)
 		set @Resultado = SCOPE_IDENTITY()
 	end
 	else
@@ -20,13 +21,15 @@ go
 create proc SP_EditarCategoria(
 @IdCategoria int,
 @Descripcion varchar(50),
+@Estado bit,
 @Resultado bit output,
 @Mensaje varchar(500) output) as
 begin
 	set @Resultado = 1
 	if not exists (select * from CATEGORIA where Descripcion = @Descripcion and IdCategoria != @IdCategoria)
 		update CATEGORIA set
-		Descripcion = @Descripcion
+		Descripcion = @Descripcion,
+		Estado = @Estado
 		where IdCategoria = @IdCategoria
 	else
 		begin
