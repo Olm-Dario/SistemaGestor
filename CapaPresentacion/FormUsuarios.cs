@@ -11,6 +11,7 @@ using System.Windows.Forms;
 using CapaPresentacion.Utilidades;
 using CapaEntidad;
 using CapaNegocio;
+using CapaDatos;
 
 namespace CapaPresentacion
 {
@@ -241,7 +242,32 @@ namespace CapaPresentacion
 
         private void btnEliminar_Click(object sender, EventArgs e)
         {
+            //Verifica que haya un usuario seleccionado
+            if (Convert.ToInt32(textId.Text) != 0)
+            {
+                //Verifica si el usuario dice que si a la eliminacion
+                if (MessageBox.Show("¿Desea Eliminar el usuario?", "Mensaje", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+                {
+                    string mensaje = string.Empty;
 
+                    Usuario objUsuario = new Usuario()
+                    {
+                        idUsuario = Convert.ToInt32(textId.Text)
+                    };
+
+                    bool respuesta = new CapaDato_Usuario().Eliminar(objUsuario, out mensaje);
+
+                    if (respuesta)
+                    {
+                        dgvDataUsuario.Rows.RemoveAt(Convert.ToInt32(textIndice.Text));
+                        limpiar();
+                    }
+                    else
+                    {
+                        MessageBox.Show(mensaje, "Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                    }
+                }
+            }
         }
 
         //Metodo que limpia los textBox
