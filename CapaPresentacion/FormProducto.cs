@@ -110,6 +110,57 @@ namespace CapaPresentacion
             }
         }
 
+        private void dgvData_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            //Verificamos si la celda que clickeamos es el boton "btnSeleccionar"
+            if (dgvData.Columns[e.ColumnIndex].Name == "btnSeleccionar")
+            {
+                //Guardamos el indice de la fila
+                int indice = e.RowIndex;
+
+
+                if (indice >= 0)
+                {
+                    //Tomo los valores de la fila segun su indice
+                    //Paso los valores de la fila a los textBox
+                    textIndice.Text = indice.ToString();
+                    textId.Text = dgvData.Rows[indice].Cells["Id"].Value.ToString();
+                    textCodigo.Text = dgvData.Rows[indice].Cells["Codigo"].Value.ToString();
+                    textNombre.Text = dgvData.Rows[indice].Cells["Nombre"].Value.ToString();
+                    textDescripcion.Text = dgvData.Rows[indice].Cells["Descripcion"].Value.ToString();
+
+
+                    //Recorro las opciones del ComboBox Categoria
+                    foreach (OpcionCombo oc in cboCategoria.Items)
+                    {
+                        if (Convert.ToInt32(oc.Valor) == Convert.ToInt32(dgvData.Rows[indice].Cells["IdCategoria"].Value))
+                        {
+                            //Obtengo el indice del comboBox
+                            int indiceCombo = cboCategoria.Items.IndexOf(oc);
+
+                            //Dejamos seleccionado el indice buscado
+                            cboCategoria.SelectedIndex = indiceCombo;
+                            break;
+                        }
+                    }
+
+                    //Recorro las opciones del ComboBox Estado
+                    foreach (OpcionCombo oc in cboEstado.Items)
+                    {
+                        if (Convert.ToInt32(oc.Valor) == Convert.ToInt32(dgvData.Rows[indice].Cells["EstadoValor"].Value))
+                        {
+                            //Obtengo el indice del comboBox
+                            int indiceCombo = cboEstado.Items.IndexOf(oc);
+
+                            //Dejamos seleccionado el indice buscado
+                            cboEstado.SelectedIndex = indiceCombo;
+                            break;
+                        }
+                    }
+
+                }
+            }
+        }
 
         private void btnGuardar_Click(object sender, EventArgs e)
         {
