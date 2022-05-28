@@ -35,6 +35,8 @@ namespace CapaPresentacion
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.cboCategoria = new System.Windows.Forms.ComboBox();
+            this.label3 = new System.Windows.Forms.Label();
             this.textIndice = new System.Windows.Forms.TextBox();
             this.textId = new System.Windows.Forms.TextBox();
             this.label9 = new System.Windows.Forms.Label();
@@ -51,23 +53,21 @@ namespace CapaPresentacion
             this.cboBuscar = new System.Windows.Forms.ComboBox();
             this.btnLimpiarBusqueda = new FontAwesome.Sharp.IconButton();
             this.label10 = new System.Windows.Forms.Label();
-            this.dgvDataCliente = new System.Windows.Forms.DataGridView();
-            this.cboCategoria = new System.Windows.Forms.ComboBox();
-            this.label3 = new System.Windows.Forms.Label();
+            this.dgvData = new System.Windows.Forms.DataGridView();
             this.btnSeleccionar = new System.Windows.Forms.DataGridViewButtonColumn();
             this.Id = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Codigo = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Nombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Descripcion = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.IdCategoria = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Categoria = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Stock = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.PrecioCompra = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.PrecioVenta = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Categoria = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.EstadoValor = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Estado = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvDataCliente)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvData)).BeginInit();
             this.SuspendLayout();
             // 
             // btnBuscar
@@ -139,6 +139,24 @@ namespace CapaPresentacion
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(233, 479);
             this.panel1.TabIndex = 30;
+            // 
+            // cboCategoria
+            // 
+            this.cboCategoria.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cboCategoria.FormattingEnabled = true;
+            this.cboCategoria.Location = new System.Drawing.Point(39, 219);
+            this.cboCategoria.Name = "cboCategoria";
+            this.cboCategoria.Size = new System.Drawing.Size(158, 21);
+            this.cboCategoria.TabIndex = 20;
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(36, 204);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(52, 13);
+            this.label3.TabIndex = 21;
+            this.label3.Text = "Categoria";
             // 
             // textIndice
             // 
@@ -319,9 +337,9 @@ namespace CapaPresentacion
             this.label10.TabIndex = 31;
             this.label10.Text = "Lista de Productos";
             // 
-            // dgvDataCliente
+            // dgvData
             // 
-            this.dgvDataCliente.AllowUserToAddRows = false;
+            this.dgvData.AllowUserToAddRows = false;
             dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
             dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F);
@@ -330,45 +348,27 @@ namespace CapaPresentacion
             dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
             dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvDataCliente.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
-            this.dgvDataCliente.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvDataCliente.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.dgvData.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            this.dgvData.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvData.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.btnSeleccionar,
             this.Id,
             this.Codigo,
             this.Nombre,
             this.Descripcion,
             this.IdCategoria,
+            this.Categoria,
             this.Stock,
             this.PrecioCompra,
             this.PrecioVenta,
-            this.Categoria,
             this.EstadoValor,
             this.Estado});
-            this.dgvDataCliente.Location = new System.Drawing.Point(269, 86);
-            this.dgvDataCliente.MultiSelect = false;
-            this.dgvDataCliente.Name = "dgvDataCliente";
-            this.dgvDataCliente.ReadOnly = true;
-            this.dgvDataCliente.Size = new System.Drawing.Size(914, 373);
-            this.dgvDataCliente.TabIndex = 29;
-            // 
-            // cboCategoria
-            // 
-            this.cboCategoria.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cboCategoria.FormattingEnabled = true;
-            this.cboCategoria.Location = new System.Drawing.Point(39, 219);
-            this.cboCategoria.Name = "cboCategoria";
-            this.cboCategoria.Size = new System.Drawing.Size(158, 21);
-            this.cboCategoria.TabIndex = 20;
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(36, 204);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(52, 13);
-            this.label3.TabIndex = 21;
-            this.label3.Text = "Categoria";
+            this.dgvData.Location = new System.Drawing.Point(269, 86);
+            this.dgvData.MultiSelect = false;
+            this.dgvData.Name = "dgvData";
+            this.dgvData.ReadOnly = true;
+            this.dgvData.Size = new System.Drawing.Size(914, 373);
+            this.dgvData.TabIndex = 29;
             // 
             // btnSeleccionar
             // 
@@ -389,14 +389,13 @@ namespace CapaPresentacion
             this.Codigo.HeaderText = "Codigo";
             this.Codigo.Name = "Codigo";
             this.Codigo.ReadOnly = true;
-            this.Codigo.Width = 150;
+            this.Codigo.Width = 80;
             // 
             // Nombre
             // 
             this.Nombre.HeaderText = "Nombre";
             this.Nombre.Name = "Nombre";
             this.Nombre.ReadOnly = true;
-            this.Nombre.Width = 150;
             // 
             // Descripcion
             // 
@@ -410,30 +409,34 @@ namespace CapaPresentacion
             this.IdCategoria.HeaderText = "IdCategoria";
             this.IdCategoria.Name = "IdCategoria";
             this.IdCategoria.ReadOnly = true;
-            // 
-            // Stock
-            // 
-            this.Stock.HeaderText = "Stock";
-            this.Stock.Name = "Stock";
-            this.Stock.ReadOnly = true;
-            // 
-            // PrecioCompra
-            // 
-            this.PrecioCompra.HeaderText = "Precio Compra";
-            this.PrecioCompra.Name = "PrecioCompra";
-            this.PrecioCompra.ReadOnly = true;
-            // 
-            // PrecioVenta
-            // 
-            this.PrecioVenta.HeaderText = "Precio Venta";
-            this.PrecioVenta.Name = "PrecioVenta";
-            this.PrecioVenta.ReadOnly = true;
+            this.IdCategoria.Visible = false;
             // 
             // Categoria
             // 
             this.Categoria.HeaderText = "Categoria";
             this.Categoria.Name = "Categoria";
             this.Categoria.ReadOnly = true;
+            // 
+            // Stock
+            // 
+            this.Stock.HeaderText = "Stock";
+            this.Stock.Name = "Stock";
+            this.Stock.ReadOnly = true;
+            this.Stock.Width = 80;
+            // 
+            // PrecioCompra
+            // 
+            this.PrecioCompra.HeaderText = "Precio Compra";
+            this.PrecioCompra.Name = "PrecioCompra";
+            this.PrecioCompra.ReadOnly = true;
+            this.PrecioCompra.Width = 80;
+            // 
+            // PrecioVenta
+            // 
+            this.PrecioVenta.HeaderText = "Precio Venta";
+            this.PrecioVenta.Name = "PrecioVenta";
+            this.PrecioVenta.ReadOnly = true;
+            this.PrecioVenta.Width = 80;
             // 
             // EstadoValor
             // 
@@ -459,12 +462,13 @@ namespace CapaPresentacion
             this.Controls.Add(this.cboBuscar);
             this.Controls.Add(this.btnLimpiarBusqueda);
             this.Controls.Add(this.label10);
-            this.Controls.Add(this.dgvDataCliente);
+            this.Controls.Add(this.dgvData);
             this.Name = "FormProducto";
             this.Text = "FormProducto";
+            this.Load += new System.EventHandler(this.FormProducto_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvDataCliente)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvData)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -493,7 +497,7 @@ namespace CapaPresentacion
         private System.Windows.Forms.ComboBox cboBuscar;
         private FontAwesome.Sharp.IconButton btnLimpiarBusqueda;
         private System.Windows.Forms.Label label10;
-        private System.Windows.Forms.DataGridView dgvDataCliente;
+        private System.Windows.Forms.DataGridView dgvData;
         private System.Windows.Forms.ComboBox cboCategoria;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.DataGridViewButtonColumn btnSeleccionar;
@@ -502,10 +506,10 @@ namespace CapaPresentacion
         private System.Windows.Forms.DataGridViewTextBoxColumn Nombre;
         private System.Windows.Forms.DataGridViewTextBoxColumn Descripcion;
         private System.Windows.Forms.DataGridViewTextBoxColumn IdCategoria;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Categoria;
         private System.Windows.Forms.DataGridViewTextBoxColumn Stock;
         private System.Windows.Forms.DataGridViewTextBoxColumn PrecioCompra;
         private System.Windows.Forms.DataGridViewTextBoxColumn PrecioVenta;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Categoria;
         private System.Windows.Forms.DataGridViewTextBoxColumn EstadoValor;
         private System.Windows.Forms.DataGridViewTextBoxColumn Estado;
     }

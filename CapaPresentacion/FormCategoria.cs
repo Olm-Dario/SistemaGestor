@@ -11,7 +11,7 @@ using System.Windows.Forms;
 using CapaPresentacion.Utilidades;
 using CapaEntidad;
 using CapaNegocio;
-using CapaDatos;
+
 
 namespace CapaPresentacion
 {
