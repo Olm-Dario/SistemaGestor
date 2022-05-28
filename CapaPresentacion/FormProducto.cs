@@ -240,6 +240,35 @@ namespace CapaPresentacion
                 }
             }
         }
+        private void btnEliminar_Click(object sender, EventArgs e)
+        {
+            //Verifica que haya un producto seleccionado
+            if (Convert.ToInt32(textId.Text) != 0)
+            {
+                //Verifica si el usuario dice que si a la eliminacion
+                if (MessageBox.Show("¿Desea Eliminar el Producto?", "Mensaje", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+                {
+                    string mensaje = string.Empty;
+
+                    Producto obj = new Producto()
+                    {
+                        idProducto = Convert.ToInt32(textId.Text)
+                    };
+
+                    bool respuesta = new CapaNegocio_Producto().Eliminar(obj, out mensaje);
+
+                    if (respuesta)
+                    {
+                        dgvData.Rows.RemoveAt(Convert.ToInt32(textIndice.Text));
+                        limpiar();
+                    }
+                    else
+                    {
+                        MessageBox.Show(mensaje, "Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                    }
+                }
+            }
+        }
 
 
         //Metodo que limpia los textBox
