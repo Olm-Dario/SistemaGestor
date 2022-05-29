@@ -1,5 +1,4 @@
-﻿using CapaDatos;
-using CapaEntidad;
+﻿using CapaEntidad;
 using CapaNegocio;
 using CapaPresentacion.Utilidades;
 using System;
@@ -247,7 +246,7 @@ namespace CapaPresentacion
                         idCliente = Convert.ToInt32(textId.Text)
                     };
 
-                    bool respuesta = new CapaDato_Cliente().Eliminar(objCliente, out mensaje);
+                    bool respuesta = new CapaNegocio_Cliente().Eliminar(objCliente, out mensaje);
 
                     if (respuesta)
                     {
