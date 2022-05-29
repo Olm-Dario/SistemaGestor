@@ -157,6 +157,10 @@ namespace CapaPresentacion
                 }
             }
         }
+        private void btnLimpiar_Click(object sender, EventArgs e)
+        {
+            Limpiar();
+        }
         private void dgvData_CellPainting(object sender, DataGridViewCellPaintingEventArgs e)
         {
             if (e.RowIndex < 0)
@@ -240,6 +244,15 @@ namespace CapaPresentacion
                 }
             }
         }
+        private void btnLimpiarBusqueda_Click(object sender, EventArgs e)
+        {
+            textBuscar.Text = "";
+
+            foreach (DataGridViewRow row in dgvData.Rows)
+            {
+                row.Visible = true;
+            }
+        }
 
         private void Limpiar()
         {
@@ -254,14 +267,6 @@ namespace CapaPresentacion
             textDocumento.Select();
         }
 
-        private void btnLimpiarBusqueda_Click(object sender, EventArgs e)
-        {
-            textBuscar.Text = "";
 
-            foreach (DataGridViewRow row in dgvData.Rows)
-            {
-                row.Visible = true;
-            }
-        }
     }
 }
