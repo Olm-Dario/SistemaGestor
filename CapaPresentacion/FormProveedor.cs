@@ -157,6 +157,42 @@ namespace CapaPresentacion
 
             }
         }
+        private void dgvData_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            //Verificamos si la celda que clickeamos es el boton "btnSeleccionar"
+            if (dgvData.Columns[e.ColumnIndex].Name == "btnSeleccionar")
+            {
+                //Guardamos el indice de la fila
+                int indice = e.RowIndex;
+
+                if (indice >= 0)
+                {
+                    //Tomo los valores de la fila segun su indice
+                    //Paso los valores de la fila a los textBox
+                    textIndice.Text = indice.ToString();
+                    textId.Text = dgvData.Rows[indice].Cells["Id"].Value.ToString();
+                    textDocumento.Text = dgvData.Rows[indice].Cells["Documento"].Value.ToString();
+                    textRazonSocial.Text = dgvData.Rows[indice].Cells["RazonSocial"].Value.ToString();
+                    textCorreo.Text = dgvData.Rows[indice].Cells["Correo"].Value.ToString();
+                    textTelefono.Text = dgvData.Rows[indice].Cells["Telefono"].Value.ToString();
+
+                    //Recorro las opciones del ComboBox Estado
+                    foreach (OpcionCombo oc in cboEstado.Items)
+                    {
+                        if (Convert.ToInt32(oc.Valor) == Convert.ToInt32(dgvData.Rows[indice].Cells["EstadoValor"].Value))
+                        {
+                            //Obtengo el indice del comboBox
+                            int indiceCombo = cboEstado.Items.IndexOf(oc);
+
+                            //Dejamos seleccionado el indice buscado
+                            cboEstado.SelectedIndex = indiceCombo;
+                            break;
+                        }
+                    }
+
+                }
+            }
+        }
 
         private void Limpiar()
         {
