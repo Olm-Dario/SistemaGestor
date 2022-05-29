@@ -130,6 +130,33 @@ namespace CapaPresentacion
 
             }
         }
+        private void dgvData_CellPainting(object sender, DataGridViewCellPaintingEventArgs e)
+        {
+            if (e.RowIndex < 0)
+            {
+                return;
+            }
+            if (e.ColumnIndex == 0)
+            {
+                e.Paint(e.CellBounds, DataGridViewPaintParts.All);
+
+                //Almaceno el ancho y alto de la imagen
+                var w = Properties.Resources.check20.Width;
+                var h = Properties.Resources.check20.Height;
+
+                //Ajustamos la imagen al boton dondo lo colocaremos
+                var x = e.CellBounds.Left + (e.CellBounds.Width - w) / 2;
+                var y = e.CellBounds.Top + (e.CellBounds.Height - h) / 2;
+
+                //Colocamos la imagen en el boton
+                e.Graphics.DrawImage(Properties.Resources.check20, new Rectangle(x, y, w, h));
+
+                //Le decimos que si esta permitido el evento click
+                //Esto lo hacemos mas que nada por las dudas que no funcione el evento luego de pintar la imagen en el boton
+                e.Handled = true;
+
+            }
+        }
 
         private void Limpiar()
         {
@@ -143,10 +170,6 @@ namespace CapaPresentacion
 
             textDocumento.Select();
         }
-
-
-
-
 
     }
 }
