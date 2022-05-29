@@ -8,6 +8,10 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
+using CapaEntidad;
+using CapaNegocio;
+using CapaPresentacion.Utilidades;
+
 namespace CapaPresentacion
 {
     public partial class FormProveedor : Form
@@ -16,5 +20,133 @@ namespace CapaPresentacion
         {
             InitializeComponent();
         }
+
+        private void FormProveedor_Load(object sender, EventArgs e)
+        {
+            textId.Text = "0";
+            cboEstado.Items.Add(new OpcionCombo() { Valor = 1, Texto = "Activo" });
+            cboEstado.Items.Add(new OpcionCombo() { Valor = 0, Texto = "No Activo" });
+            cboEstado.DisplayMember = "Texto";
+            cboEstado.ValueMember = "Valor";
+            cboEstado.SelectedIndex = 0;
+
+            //Muestra todos los usuarios
+            List<Proveedor> listaCliente = new CapaNegocio_Proveedor().listar();
+
+            foreach (Proveedor item in listaCliente)
+            {
+                dgvData.Rows.Add(new object[]
+
+                {
+                    "",
+                    item.idProveedor,
+                    item.documento,
+                    item.razonSocial,
+                    item.correo,
+                    item.telefono,
+                    item.estado == true ? 1 : 0,
+                    item.estado == true ? "Activo" : "No Activo"
+
+                });
+            }
+
+            //CARGA DEL ComboBusqueda
+
+            foreach (DataGridViewColumn column in dgvData.Columns)
+            {
+                if (column.Visible == true)
+                {
+                    cboBuscar.Items.Add(new OpcionCombo() { Valor = column.Name, Texto = column.HeaderText });
+
+                }
+            }
+            cboBuscar.DisplayMember = "Texto";
+            cboBuscar.ValueMember = "Valor";
+            cboBuscar.SelectedIndex = 0;
+        }
+
+        private void btnGuardar_Click(object sender, EventArgs e)
+        {
+            string mensaje = string.Empty;
+
+
+            Proveedor obj = new Proveedor()
+            {
+                idProveedor = Convert.ToInt32(textId.Text),
+                documento = textDocumento.Text,
+                razonSocial = textRazonSocial.Text,
+                correo = textCorreo.Text,
+                telefono = textTelefono.Text,
+                estado = Convert.ToInt32(((OpcionCombo)cboEstado.SelectedItem).Valor) == 1
+            };
+
+            if (obj.idProveedor == 0)
+            {
+                int idProveedorGenerado = new CapaNegocio_Proveedor().Registrar(obj, out mensaje);
+
+                if (idProveedorGenerado != 0)
+                {
+                    dgvData.Rows.Add(new object[] {
+                        "",
+                        idProveedorGenerado,
+                        textDocumento.Text,
+                        textRazonSocial.Text,
+                        textCorreo.Text,
+                        textTelefono.Text,
+                        ((OpcionCombo)cboEstado.SelectedItem).Valor.ToString(),
+                        ((OpcionCombo)cboEstado.SelectedItem).Texto.ToString()
+                    });
+
+                    Limpiar();
+                }
+                else
+                {
+                    MessageBox.Show(mensaje);
+                }
+            }
+            else
+            {
+                bool resultado = new CapaNegocio_Proveedor().Editar(obj, out mensaje);
+
+                if (resultado)
+                {
+                    DataGridViewRow row = dgvData.Rows[Convert.ToInt32(textIndice.Text)];
+
+                    row.Cells["Id"].Value = textId.Text;
+                    row.Cells["Documento"].Value = textDocumento.Text;
+                    row.Cells["RazonSocial"].Value = textRazonSocial.Text;
+                    row.Cells["Correo"].Value = textCorreo.Text;
+                    row.Cells["Telefono"].Value = textTelefono.Text;
+
+                    row.Cells["EstadoValor"].Value = ((OpcionCombo)cboEstado.SelectedItem).Valor.ToString();
+                    row.Cells["Estado"].Value = ((OpcionCombo)cboEstado.SelectedItem).Texto.ToString();
+
+                    Limpiar();
+                }
+                else
+                {
+                    MessageBox.Show(mensaje);
+                }
+
+            }
+        }
+
+        private void Limpiar()
+        {
+            textIndice.Text = "-1";
+            textId.Text = "0";
+            textDocumento.Text = "";
+            textRazonSocial.Text = "";
+            textCorreo.Text = "";
+            textTelefono.Text = "";
+            cboEstado.SelectedIndex = 0;
+
+            textDocumento.Select();
+        }
+
+
+
+
+
     }
 }

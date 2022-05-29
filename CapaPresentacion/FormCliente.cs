@@ -29,10 +29,6 @@ namespace CapaPresentacion
             cboEstado.ValueMember = "Valor";
             cboEstado.SelectedIndex = 0;
 
-
-
-
-
             //Muestra todos los usuarios
             List<Cliente> listaCliente = new CapaNegocio_Cliente().Listar();
 
