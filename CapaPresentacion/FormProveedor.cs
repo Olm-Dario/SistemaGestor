@@ -130,6 +130,33 @@ namespace CapaPresentacion
 
             }
         }
+        private void btnEliminar_Click(object sender, EventArgs e)
+        {
+            if (Convert.ToInt32(textId.Text) != 0)
+            {
+                if (MessageBox.Show("¿Desea Eliminar el proveedor?", "Mensaje", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+                {
+                    string mensaje = string.Empty;
+
+                    Proveedor obj = new Proveedor()
+                    {
+                        idProveedor = Convert.ToInt32(textId.Text)
+                    };
+
+                    bool respuesta = new CapaNegocio_Proveedor().Eliminar(obj, out mensaje);
+
+                    if (respuesta)
+                    {
+                        dgvData.Rows.RemoveAt(Convert.ToInt32(textIndice.Text));
+                        Limpiar();
+                    }
+                    else
+                    {
+                        MessageBox.Show(mensaje, "Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                    }
+                }
+            }
+        }
         private void dgvData_CellPainting(object sender, DataGridViewCellPaintingEventArgs e)
         {
             if (e.RowIndex < 0)
