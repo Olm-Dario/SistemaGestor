@@ -173,5 +173,10 @@ namespace CapaPresentacion
         {
             abrirFormulario(new FormReporte());
         }
+
+        private void negocioToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            abrirFormulario(new FormNegocio());
+        }
     }
 }
