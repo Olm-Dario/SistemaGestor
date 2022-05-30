@@ -53,6 +53,12 @@
     <Reference Include="WindowsBase" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="FormNegocio.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormNegocio.Designer.cs">
+      <DependentUpon>FormNegocio.cs</DependentUpon>
+    </Compile>
     <Compile Include="Utilidades\CustomColorTable.cs" />
     <Compile Include="FormCategoria.cs">
       <SubType>Form</SubType>
@@ -134,6 +140,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FormCliente.resx">
       <DependentUpon>FormCliente.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormNegocio.resx">
+      <DependentUpon>FormNegocio.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormProducto.resx">
       <DependentUpon>FormProducto.cs</DependentUpon>
