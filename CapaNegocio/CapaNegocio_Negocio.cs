@@ -47,6 +47,9 @@ namespace CapaNegocio
             return objcd_negocio.ObtenerLogo(out obtenido);
         }
 
-        
+        public bool ActualizarLogo(byte[] imagen, out string mensaje)
+        {
+            return objcd_negocio.ActualizarLogo(imagen, out mensaje);
+        }
     }
 }
