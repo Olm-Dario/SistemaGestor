@@ -17,5 +17,29 @@ namespace CapaNegocio
         {
             return objcd_negocio.ObtenerDatos();
         }
+
+        public bool GuardarDatos(Negocio obj, out string Mensaje)
+        {
+            Mensaje = string.Empty;
+
+            if(obj.Nombre == "")
+            {
+                Mensaje += "Es necesario el Nombre\n";
+            }
+
+            if (obj.Direccion == "")
+            {
+                Mensaje += "Es necesario la Direccion\n";
+            }
+
+            if (Mensaje != string.Empty)
+            {
+                return false;
+            }
+            else
+            {
+                return objcd_negocio.GuardarDatos(obj, out Mensaje);
+            }
+        }
     }
 }
