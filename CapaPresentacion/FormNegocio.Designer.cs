@@ -144,6 +144,7 @@ namespace CapaPresentacion
             this.btnSubir.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnSubir.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnSubir.UseVisualStyleBackColor = false;
+            this.btnSubir.Click += new System.EventHandler(this.btnSubir_Click);
             // 
             // label1
             // 
@@ -181,6 +182,7 @@ namespace CapaPresentacion
             this.Controls.Add(this.panel1);
             this.Name = "FormNegocio";
             this.Text = "FormNegocio";
+            this.Load += new System.EventHandler(this.FormNegocio_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.groupBox1.ResumeLayout(false);
