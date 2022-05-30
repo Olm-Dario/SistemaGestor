@@ -62,7 +62,7 @@ namespace CapaDatos
 
                     StringBuilder query = new StringBuilder();
                     query.AppendLine("update NEGOCIO set Nombre = @nombre,");
-                    query.AppendLine("Direccion = @direccion,");
+                    query.AppendLine("Direccion = @direccion");
                     query.AppendLine("where IdNegocio = 1");
 
                     SqlCommand cmd = new SqlCommand(query.ToString(),conexion);
@@ -98,7 +98,7 @@ namespace CapaDatos
                 using (SqlConnection conexion = new SqlConnection(Conexion.cadena))
                 {
                     conexion.Open();
-                    string query = "select IdNegocio,Nombre,Direccion from NEGOCIO where IdNegocio = 1";
+                    string query = "select Logo from NEGOCIO where IdNegocio = 1";
                     SqlCommand cmd = new SqlCommand(query, conexion);
                     cmd.CommandType = CommandType.Text;
 
