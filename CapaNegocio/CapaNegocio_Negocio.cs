@@ -41,5 +41,12 @@ namespace CapaNegocio
                 return objcd_negocio.GuardarDatos(obj, out Mensaje);
             }
         }
+
+        public byte[] ObtenerLogo(out bool obtenido)
+        {
+            return objcd_negocio.ObtenerLogo(out obtenido);
+        }
+
+        
     }
 }
