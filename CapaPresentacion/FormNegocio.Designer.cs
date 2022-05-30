@@ -161,6 +161,7 @@ namespace CapaPresentacion
             this.picLogo.Location = new System.Drawing.Point(16, 43);
             this.picLogo.Name = "picLogo";
             this.picLogo.Size = new System.Drawing.Size(120, 105);
+            this.picLogo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.picLogo.TabIndex = 0;
             this.picLogo.TabStop = false;
             // 

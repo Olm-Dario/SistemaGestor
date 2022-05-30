@@ -54,5 +54,28 @@ namespace CapaPresentacion
 
         }
 
-       
+        private void btnSubir_Click(object sender, EventArgs e)
+        {
+            string mensaje = string.Empty;
+            OpenFileDialog openFileDialog = new OpenFileDialog();
+
+            //Filtro que tipo de archivos me dejara ver el OpenFileDialog
+            openFileDialog.FileName = "Files|*.jpg;*.jpeg;*.png";
+
+
+            if (openFileDialog.ShowDialog() == DialogResult.OK)
+            {
+                byte[] byteimage = File.ReadAllBytes(openFileDialog.FileName);
+                bool respuesta = new CapaNegocio_Negocio().ActualizarLogo(byteimage, out mensaje);
+
+                if (respuesta)
+                    picLogo.Image = ByteToImage(byteimage);
+                else
+                    MessageBox.Show(mensaje, "Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                
+            }
+        }
+
+        
+    }
 }
