@@ -51,6 +51,25 @@ namespace CapaPresentacion.Modales
             }
         }
 
+        private void dgvData_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+            //Tomamos indice de fila y columna
+            int iRow = e.RowIndex;
+            int iColum = e.ColumnIndex;
 
+            //Verificamos si existe 
+            if (iRow >= 0 && iColum > 0)
+            {
+                _Proveedor = new Proveedor()
+                {
+                    idProveedor = Convert.ToInt32(dgvData.Rows[iRow].Cells["Id"].Value.ToString()),
+                    documento = dgvData.Rows[iRow].Cells["Documento"].Value.ToString(),
+                    razonSocial = dgvData.Rows[iRow].Cells["RazonSocial"].Value.ToString()
+                };
+
+                this.DialogResult = DialogResult.OK;
+                this.Close();
+            }
+        }
     }
 }

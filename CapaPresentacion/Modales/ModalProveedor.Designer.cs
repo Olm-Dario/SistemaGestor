@@ -105,6 +105,7 @@ namespace CapaPresentacion.Modales
             this.dgvData.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvData.Size = new System.Drawing.Size(357, 329);
             this.dgvData.TabIndex = 37;
+            this.dgvData.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvData_CellDoubleClick);
             // 
             // Id
             // 
@@ -175,6 +176,8 @@ namespace CapaPresentacion.Modales
             this.Controls.Add(this.btnLimpiarBusqueda);
             this.Controls.Add(this.label10);
             this.Controls.Add(this.dgvData);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.SizableToolWindow;
+            this.MaximumSize = new System.Drawing.Size(409, 489);
             this.Name = "ModalProveedor";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "ModalProveedor";
