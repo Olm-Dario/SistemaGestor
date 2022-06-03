@@ -54,7 +54,7 @@ namespace CapaPresentacion
 
             foreach (DataGridViewColumn column in dgvData.Columns)
             {
-                if (column.Visible == true)
+                if (column.Visible == true && column.Name != "btnSeleccionar")
                 {
                     cboBuscar.Items.Add(new OpcionCombo() { Valor = column.Name, Texto = column.HeaderText });
 
