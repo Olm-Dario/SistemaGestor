@@ -55,5 +55,23 @@ namespace CapaPresentacion
                     textDocProveedor.Select();
             }
         }
+
+        private void btnBuscarProducto_Click(object sender, EventArgs e)
+        {
+            using (var modal = new ModalProducto())
+            {
+                var result = modal.ShowDialog();
+
+                if (result == DialogResult.OK)
+                {
+                    textIdProducto.Text = modal._Producto.idProducto.ToString();
+                    textCodProducto.Text = modal._Producto.codigo;
+                    textProducto.Text = modal._Producto.nombre;
+                    textPrecioCompra.Select();
+                }
+                else
+                    textCodProducto.Select();
+            }
+        }
     }
 }
