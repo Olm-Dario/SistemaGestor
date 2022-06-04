@@ -59,6 +59,12 @@
     <Compile Include="FormNegocio.Designer.cs">
       <DependentUpon>FormNegocio.cs</DependentUpon>
     </Compile>
+    <Compile Include="Modales\ModalProducto.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Modales\ModalProducto.Designer.cs">
+      <DependentUpon>ModalProducto.cs</DependentUpon>
+    </Compile>
     <Compile Include="Modales\ModalProveedor.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -167,6 +173,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Login.resx">
       <DependentUpon>Login.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Modales\ModalProducto.resx">
+      <DependentUpon>ModalProducto.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Modales\ModalProveedor.resx">
       <DependentUpon>ModalProveedor.cs</DependentUpon>
