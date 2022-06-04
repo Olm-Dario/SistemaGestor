@@ -55,5 +55,29 @@ namespace CapaPresentacion.Modales
                 });
             }
         }
+
+        private void dgvData_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+            //Tomamos indice de fila y columna
+            int iRow = e.RowIndex;
+            int iColum = e.ColumnIndex;
+
+            //Verificamos si existe 
+            if (iRow >= 0 && iColum > 0)
+            {
+                _Producto = new Producto()
+                {
+                    idProducto = Convert.ToInt32(dgvData.Rows[iRow].Cells["Id"].Value.ToString()),
+                    codigo = dgvData.Rows[iRow].Cells["Codigo"].Value.ToString(),
+                    nombre = dgvData.Rows[iRow].Cells["Nombre"].Value.ToString(),
+                    stock = Convert.ToInt32(dgvData.Rows[iRow].Cells["Stock"].Value.ToString()),
+                    precioCompra = Convert.ToDecimal(dgvData.Rows[iRow].Cells["PrecioCompra"].Value.ToString()),
+                    precioVenta = Convert.ToDecimal(dgvData.Rows[iRow].Cells["PrecioVenta"].Value.ToString())
+                };
+
+                this.DialogResult = DialogResult.OK;
+                this.Close();
+            }
+        }
     }
 }
