@@ -10,6 +10,7 @@ using System.Windows.Forms;
 
 using CapaEntidad;
 using CapaPresentacion.Utilidades;
+using CapaPresentacion.Modales;
 
 namespace CapaPresentacion
 {
@@ -40,7 +41,19 @@ namespace CapaPresentacion
 
         private void btnBuscarProveedor_Click(object sender, EventArgs e)
         {
+            using (var modal = new ModalProveedor())
+            {
+                var result = modal.ShowDialog();
 
+                if (result == DialogResult.OK)
+                {
+                    textIdProveedor.Text = modal._Proveedor.idProveedor.ToString();
+                    textNombreProveedor.Text = modal._Proveedor.razonSocial;
+                    textDocProveedor.Text = modal._Proveedor.documento;
+                }
+                else
+                    textDocProveedor.Select();
+            }
         }
     }
 }
