@@ -153,7 +153,21 @@ namespace CapaPresentacion
                     textCantidad.Value.ToString(),
                     (textCantidad.Value * precioCompra).ToString("0.00")
                 });
+
+                limpiarProducto();
             }
         }
+
+        private void limpiarProducto()
+        {
+            textIdProducto.Text = "0";
+            textCodProducto.Text = "";
+            textCodProducto.BackColor = Color.White;
+            textProducto.Text = "";
+            textPrecioCompra.Text = "";
+            textPrecioVenta.Text = "";
+            textCantidad.Value = 1;
+        }
+
     }
 }
