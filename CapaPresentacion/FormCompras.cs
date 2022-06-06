@@ -215,5 +215,23 @@ namespace CapaPresentacion
 
             }
         }
+
+        private void dgvData_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            //Verificamos si la celda que clickeamos es el boton "btnSeleccionar"
+            if (dgvData.Columns[e.ColumnIndex].Name == "btneliminar")
+            {
+                //Guardamos el indice de la fila
+                int indice = e.RowIndex;
+
+                if (indice >= 0)
+                {
+                    dgvData.Rows.RemoveAt(indice);
+                    calcularTotal();
+                }
+            }
+        }
+
+
     }
 }
