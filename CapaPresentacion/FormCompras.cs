@@ -154,7 +154,9 @@ namespace CapaPresentacion
                     (textCantidad.Value * precioCompra).ToString("0.00")
                 });
 
+                calcularTotal();
                 limpiarProducto();
+                textCodProducto.Select();
             }
         }
 
@@ -167,6 +169,23 @@ namespace CapaPresentacion
             textPrecioCompra.Text = "";
             textPrecioVenta.Text = "";
             textCantidad.Value = 1;
+        }
+
+        private void calcularTotal()
+        {
+            decimal total = 0;
+
+            //Varificamos si hay o no un registro
+            if (dgvData.Rows.Count > 0)
+            {
+                foreach (DataGridViewRow row in dgvData.Rows)
+                {
+                    total += Convert.ToDecimal(row.Cells["SubTotal"].Value.ToString());
+                }
+            }
+
+            //Mostramos el valo del total
+            textTotalPagar.Text = total.ToString("0.00");
         }
 
     }
