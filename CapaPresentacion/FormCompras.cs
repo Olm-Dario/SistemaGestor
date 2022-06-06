@@ -101,5 +101,59 @@ namespace CapaPresentacion
                 }
             }
         }
+
+        private void btnAgregarProducto_Click(object sender, EventArgs e)
+        {
+            //Cuando pasemos valores deben tener la "," y no el "." si es un valor decimal
+            decimal precioCompra = 0;
+            decimal precioVenta = 0;
+            bool productoExiste = false;
+
+            //Verificamos si pusimos un producto o no
+            if (int.Parse(textIdProducto.Text) == 0)
+            {
+                MessageBox.Show("Debe seleccionar un producto", "Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                return;
+            }
+
+            //Verificamos si el precio de compra tiene el formato correcto
+            if (!decimal.TryParse(textPrecioCompra.Text, out precioCompra))
+            {
+                MessageBox.Show("Precio de compra - Formato moneda incorrecto", "Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                textPrecioCompra.Select();
+                return;
+            }
+
+            //Verificamos si el precio de venta tiene el formato correcto
+            if (!decimal.TryParse(textPrecioVenta.Text, out precioVenta))
+            {
+                MessageBox.Show("Precio de venta - Formato moneda incorrecto", "Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                textPrecioCompra.Select();
+                return;
+            }
+
+            //Verificamos si hay un producto en el datagrid
+            foreach (DataGridViewRow fila in dgvData.Rows)
+            {
+                if (fila.Cells["IdProducto"].Value.ToString() == textIdProducto.Text)
+                {
+                    productoExiste = true;
+                    break;
+                }
+            }
+
+            //Agregamos el producto
+            if (!productoExiste)
+            {
+                dgvData.Rows.Add(new object[] { 
+                    textIdProducto.Text,
+                    textProducto.Text,
+                    precioCompra.ToString("0.00"),
+                    precioVenta.ToString("0.00"),
+                    textCantidad.Value.ToString(),
+                    (textCantidad.Value * precioCompra).ToString("0.00")
+                });
+            }
+        }
     }
 }

@@ -34,7 +34,7 @@ namespace CapaPresentacion
             this.textTotalPagar = new System.Windows.Forms.TextBox();
             this.label11 = new System.Windows.Forms.Label();
             this.btnAgregarProducto = new FontAwesome.Sharp.IconButton();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.dgvData = new System.Windows.Forms.DataGridView();
             this.IdProducto = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Producto = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.PrecioCompra = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -69,7 +69,7 @@ namespace CapaPresentacion
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvData)).BeginInit();
             this.groupBox3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.textCantidad)).BeginInit();
             this.groupBox2.SuspendLayout();
@@ -83,7 +83,7 @@ namespace CapaPresentacion
             this.panel1.Controls.Add(this.textTotalPagar);
             this.panel1.Controls.Add(this.label11);
             this.panel1.Controls.Add(this.btnAgregarProducto);
-            this.panel1.Controls.Add(this.dataGridView1);
+            this.panel1.Controls.Add(this.dgvData);
             this.panel1.Controls.Add(this.groupBox3);
             this.panel1.Controls.Add(this.groupBox2);
             this.panel1.Controls.Add(this.label10);
@@ -138,12 +138,14 @@ namespace CapaPresentacion
             this.btnAgregarProducto.Text = "Agregar";
             this.btnAgregarProducto.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.btnAgregarProducto.UseVisualStyleBackColor = true;
+            this.btnAgregarProducto.Click += new System.EventHandler(this.btnAgregarProducto_Click);
             // 
-            // dataGridView1
+            // dgvData
             // 
-            this.dataGridView1.BackgroundColor = System.Drawing.Color.White;
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.dgvData.AllowUserToAddRows = false;
+            this.dgvData.BackgroundColor = System.Drawing.Color.White;
+            this.dgvData.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvData.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.IdProducto,
             this.Producto,
             this.PrecioCompra,
@@ -151,10 +153,10 @@ namespace CapaPresentacion
             this.Cantidad,
             this.SubTotal,
             this.btneliminar});
-            this.dataGridView1.Location = new System.Drawing.Point(29, 227);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(585, 252);
-            this.dataGridView1.TabIndex = 26;
+            this.dgvData.Location = new System.Drawing.Point(29, 227);
+            this.dgvData.Name = "dgvData";
+            this.dgvData.Size = new System.Drawing.Size(585, 252);
+            this.dgvData.TabIndex = 26;
             // 
             // IdProducto
             // 
@@ -300,7 +302,6 @@ namespace CapaPresentacion
             // 
             // textProducto
             // 
-            this.textProducto.Enabled = false;
             this.textProducto.Location = new System.Drawing.Point(191, 42);
             this.textProducto.Name = "textProducto";
             this.textProducto.ReadOnly = true;
@@ -478,7 +479,7 @@ namespace CapaPresentacion
             this.Load += new System.EventHandler(this.FormCompras_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvData)).EndInit();
             this.groupBox3.ResumeLayout(false);
             this.groupBox3.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.textCantidad)).EndInit();
@@ -520,7 +521,7 @@ namespace CapaPresentacion
         private FontAwesome.Sharp.IconButton btnBuscarProveedor;
         private System.Windows.Forms.TextBox textIdProveedor;
         private FontAwesome.Sharp.IconButton btnAgregarProducto;
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView dgvData;
         private System.Windows.Forms.DataGridViewTextBoxColumn IdProducto;
         private System.Windows.Forms.DataGridViewTextBoxColumn Producto;
         private System.Windows.Forms.DataGridViewTextBoxColumn PrecioCompra;
