@@ -236,6 +236,7 @@ namespace CapaPresentacion
             this.textPrecioCompra.Name = "textPrecioCompra";
             this.textPrecioCompra.Size = new System.Drawing.Size(73, 20);
             this.textPrecioCompra.TabIndex = 12;
+            this.textPrecioCompra.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textPrecioCompra_KeyPress);
             // 
             // label7
             // 
