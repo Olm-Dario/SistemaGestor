@@ -92,5 +92,64 @@ namespace CapaDatos
             return Respuesta;
         }
 
+        public Compra ObtenerCompra(string numero)
+        {
+            Compra obj = new Compra();
+
+            //Se conecta a la base de datos
+            using (SqlConnection conexion = new SqlConnection(Conexion.cadena))
+            {
+                try
+                {
+                    //Guardamos la consulta en una variable
+                    StringBuilder query = new StringBuilder();
+
+                    query.AppendLine("select c.IdCompra,u.Apellido,u.Nombre,pr.Documento,pr.RazonSocial,");
+                    query.AppendLine("c.TipoDocumento,c.NumeroDocumento,c.MontoTotal,convert(char(10), c.FechaRegistro, 103)[FechaRegistro]");
+                    query.AppendLine("from COMPRA c");
+                    query.AppendLine("inner join USUARIO u on u.IdUsuario = c.IdUsuario");
+                    query.AppendLine("inner join PROVEEDOR pr on pr.IdProveedor = c.IdProveedor");
+                    query.AppendLine("where c.NumeroDocumento = @numero");
+
+                    //Ejecutamos la sentancia sql a la base
+                    SqlCommand cmd = new SqlCommand(query.ToString(), conexion);
+                    cmd.Parameters.AddWithValue("@numero", numero);
+
+                    //Le decimos que es un texto ya que "query" es un string
+                    cmd.CommandType = CommandType.Text;
+
+                    //Abrimos la cadena de conexion para que se ejecute el comando
+                    conexion.Open();
+
+                    //Se lee el comando sql
+                    using (SqlDataReader dr = cmd.ExecuteReader())
+                    {
+                        //Cada vez que lee lo guarda en la lista
+                        while (dr.Read())
+                        {
+                            obj = new Compra()
+                            {
+                                idCompra = Convert.ToInt32(dr["IdCompra"]),
+                                oUsuario = new Usuario() { apellido = dr["Apellido"].ToString(), nombre = dr["Nombre"].ToString() },
+                                oProveedor = new Proveedor() { documento = dr["Documento"].ToString(), razonSocial = dr["RazonSocial"].ToString() },
+                                tipoDocumento = dr["TipoDocumento"].ToString(),
+                                numeroDocumento = dr["NumeroDocumento"].ToString(),
+                                montoTotal = Convert.ToDecimal(dr["MontoTotal"].ToString()),
+                                fechaRegistro = dr["FechaRegistro"].ToString()
+                            };
+                        }
+                    }
+
+                }
+                catch (Exception ex)
+                {
+                    //En caso de error
+                    obj = new Compra();
+                }
+            }
+
+            return obj;
+        }
+
     }
 }
