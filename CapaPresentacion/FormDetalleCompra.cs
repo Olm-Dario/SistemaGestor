@@ -44,5 +44,17 @@ namespace CapaPresentacion
 
             }
         }
+
+        private void btnBorrar_Click(object sender, EventArgs e)
+        {
+            textFecha.Text = "";
+            textTipoDocumento.Text = "";
+            textUsuario.Text = "";
+            textDocProveedor.Text = "";
+            textNombreProveedor.Text = "";
+
+            dgvData.Rows.Clear();
+            textMontoTotal.Text = "0.00";
+        }
     }
 }
