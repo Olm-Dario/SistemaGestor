@@ -151,5 +151,56 @@ namespace CapaDatos
             return obj;
         }
 
+        public List<Detalle_Compra> ObtenerDetalleCompra(int idCompra)
+        {
+            List<Detalle_Compra> oLista = new List<Detalle_Compra>();
+
+            try
+            {
+                //Se conecta a la base de datos
+                using (SqlConnection conexion = new SqlConnection(Conexion.cadena))
+                {
+                    //Abrimos la cadena de conexion para que se ejecute el comando
+                    conexion.Open();
+
+                    //Guardamos la consulta en una variable
+                    StringBuilder query = new StringBuilder();
+
+                    query.AppendLine("select  p.Nombre, dc.PrecioCompra,dc.Cantidad, dc.MontoTotal from DETALLE_COMPRA dc");
+                    query.AppendLine("inner join PRODUCTO p on p.IdProducto = dc.IdProducto");
+                    query.AppendLine("where dc.IdCompra = @idCompra");
+
+                    //Ejecutamos la sentancia sql a la base
+                    SqlCommand cmd = new SqlCommand(query.ToString(), conexion);
+                    cmd.Parameters.AddWithValue("@idCompra", idCompra);
+
+                    //Le decimos que es un texto ya que "query" es un string
+                    cmd.CommandType = CommandType.Text;
+
+                    //Se lee el comando sql
+                    using (SqlDataReader dr = cmd.ExecuteReader())
+                    {
+                        //Cada vez que lee lo guarda en la lista
+                        while (dr.Read())
+                        {
+                            oLista.Add(new Detalle_Compra()
+                            {
+                                oProducto = new Producto() { nombre = dr["Nombre"].ToString() },
+                                precioCompra = Convert.ToDecimal(dr["PrecioCompra"].ToString()),
+                                cantidad = Convert.ToInt32(dr["Cantidad"].ToString()),
+                                montoTotal = Convert.ToDecimal(dr["MontoTotal"].ToString())
+                            });
+                        }
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                oLista = new List<Detalle_Compra>();
+            }
+
+            return oLista;
+        }
+
     }
 }
