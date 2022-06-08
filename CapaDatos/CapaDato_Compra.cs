@@ -72,10 +72,10 @@ namespace CapaDatos
                     //Le decimos que es un texto ya que "query" es un string
                     cmd.CommandType = CommandType.StoredProcedure;
 
-                    cmd.ExecuteNonQuery();
-
                     //Abrimos la cadena de conexion para que se ejecute el comando
                     conexion.Open();
+                    
+                    cmd.ExecuteNonQuery();
 
                     //Obtenemos los valores de los paramatros de salida despues de la ejecucion
                     Respuesta = Convert.ToBoolean(cmd.Parameters["Resultado"].Value);
