@@ -367,6 +367,7 @@ namespace CapaPresentacion
             this.btnAgregarProducto.Text = "Agregar";
             this.btnAgregarProducto.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.btnAgregarProducto.UseVisualStyleBackColor = true;
+            this.btnAgregarProducto.Click += new System.EventHandler(this.btnAgregarProducto_Click);
             // 
             // dgvData
             // 

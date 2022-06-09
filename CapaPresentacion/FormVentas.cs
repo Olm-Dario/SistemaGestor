@@ -108,6 +108,89 @@ namespace CapaPresentacion
             }
         }
 
+        private void btnAgregarProducto_Click(object sender, EventArgs e)
+        {
+            //Cuando pasemos valores deben tener la "," y no el "." si es un valor decimal
+            decimal precio = 0;
+            bool productoExiste = false;
+
+            //Verificamos si pusimos un producto o no
+            if (int.Parse(textIdProducto.Text) == 0)
+            {
+                MessageBox.Show("Debe seleccionar un producto", "Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                return;
+            }
+
+            //Verificamos si el precio de compra tiene el formato correcto
+            if (!decimal.TryParse(textPrecio.Text, out precio))
+            {
+                MessageBox.Show("Precio - Formato moneda incorrecto", "Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                textPrecio.Select();
+                return;
+            }
+
+            //Verificamos si la cantidad supera al stock
+            if (Convert.ToInt32(textStock.Text) < Convert.ToInt32(textCantidad.Value.ToString()))
+            {
+                MessageBox.Show("La cantidad no puede ser mayor al stock", "Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                return;
+            }
+
+            //Verificamos si hay un producto en el datagrid
+            foreach (DataGridViewRow fila in dgvData.Rows)
+            {
+                if (fila.Cells["IdProducto"].Value.ToString() == textIdProducto.Text)
+                {
+                    productoExiste = true;
+                    break;
+                }
+            }
+
+            //Agregamos el producto
+            if (!productoExiste)
+            {
+                dgvData.Rows.Add(new object[] {
+                    textIdProducto.Text,
+                    textProducto.Text,
+                    precio.ToString("0.00"),
+                    textCantidad.Value.ToString(),
+                    (textCantidad.Value * precio).ToString("0.00")
+                });
+
+                calcularTotal();
+                limpiarProducto();
+                textCodProducto.Select();
+            }
+        }
+        private void calcularTotal()
+        {
+            decimal total = 0;
+
+            //Varificamos si hay o no un registro
+            if (dgvData.Rows.Count > 0)
+            {
+                foreach (DataGridViewRow row in dgvData.Rows)
+                {
+                    total += Convert.ToDecimal(row.Cells["SubTotal"].Value.ToString());
+                }
+            }
+
+            //Mostramos el valo del total
+            textTotalPagar.Text = total.ToString("0.00");
+        }
+
+        private void limpiarProducto()
+        {
+            textIdProducto.Text = "0";
+            textCodProducto.Text = "";
+            textCodProducto.BackColor = Color.White;
+            textProducto.Text = "";
+            textPrecio.Text = "";
+            textStock.Text = "";
+            textCantidad.Value = 1;
+        }
+
+
 
 
     }
