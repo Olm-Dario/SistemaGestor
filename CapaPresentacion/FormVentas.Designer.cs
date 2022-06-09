@@ -485,6 +485,7 @@ namespace CapaPresentacion
             this.textCodProducto.Name = "textCodProducto";
             this.textCodProducto.Size = new System.Drawing.Size(121, 20);
             this.textCodProducto.TabIndex = 2;
+            this.textCodProducto.KeyDown += new System.Windows.Forms.KeyEventHandler(this.textCodProducto_KeyDown);
             // 
             // label5
             // 

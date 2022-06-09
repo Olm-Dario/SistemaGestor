@@ -77,5 +77,38 @@ namespace CapaPresentacion
                     textCodProducto.Select();
             }
         }
+
+        private void textCodProducto_KeyDown(object sender, KeyEventArgs e)
+        {
+            //Verificamos si se presiona la tecla enter
+            if (e.KeyData == Keys.Enter)
+            {
+                //Buscamos dentro de la lista de productos si hay un producto que coincida
+                //con el codigo que estoy pasando y verificamos tambien si su estado esta en activo
+                Producto oProducto = new CapaNegocio_Producto().listar().Where(p => p.codigo == textCodProducto.Text && p.estado == true).FirstOrDefault();
+
+                if (oProducto != null)
+                {
+                    textCodProducto.BackColor = Color.Honeydew;
+                    textIdProducto.Text = oProducto.idProducto.ToString();
+                    textProducto.Text = oProducto.nombre;
+                    textPrecio.Text = oProducto.precioVenta.ToString("0.00");
+                    textStock.Text = oProducto.stock.ToString();
+                    textCantidad.Select();
+                }
+                else
+                {
+                    textCodProducto.BackColor = Color.MistyRose;
+                    textIdProducto.Text = "0";
+                    textProducto.Text = "";
+                    textPrecio.Text = "";
+                    textStock.Text = "";
+                    textCantidad.Value = 1;
+                }
+            }
+        }
+
+
+
     }
 }
