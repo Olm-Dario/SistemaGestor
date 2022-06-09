@@ -340,6 +340,7 @@ namespace CapaPresentacion
             this.btnDescargar.Text = "Descargar PDF";
             this.btnDescargar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnDescargar.UseVisualStyleBackColor = false;
+            this.btnDescargar.Click += new System.EventHandler(this.btnDescargar_Click);
             // 
             // FormDetalleCompra
             // 
