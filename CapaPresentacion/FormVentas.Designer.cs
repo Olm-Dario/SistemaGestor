@@ -386,6 +386,7 @@ namespace CapaPresentacion
             this.dgvData.Name = "dgvData";
             this.dgvData.Size = new System.Drawing.Size(585, 252);
             this.dgvData.TabIndex = 26;
+            this.dgvData.CellPainting += new System.Windows.Forms.DataGridViewCellPaintingEventHandler(this.dgvData_CellPainting);
             // 
             // IdProducto
             // 
