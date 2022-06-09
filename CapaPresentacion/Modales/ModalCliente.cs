@@ -96,5 +96,5 @@ namespace CapaPresentacion.Modales
             }
         }
     }
-    }
 }
+

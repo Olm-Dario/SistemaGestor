@@ -469,6 +469,7 @@ namespace CapaPresentacion
             this.btnBuscarProducto.TabIndex = 10;
             this.btnBuscarProducto.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnBuscarProducto.UseVisualStyleBackColor = false;
+            this.btnBuscarProducto.Click += new System.EventHandler(this.btnBuscarProducto_Click);
             // 
             // textProducto
             // 
