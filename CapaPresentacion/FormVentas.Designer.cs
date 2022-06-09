@@ -49,7 +49,7 @@ namespace CapaPresentacion
             this.label9 = new System.Windows.Forms.Label();
             this.textPrecio = new System.Windows.Forms.TextBox();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.textPagaCon = new System.Windows.Forms.TextBox();
             this.label13 = new System.Windows.Forms.Label();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.label12 = new System.Windows.Forms.Label();
@@ -268,11 +268,12 @@ namespace CapaPresentacion
             this.textPrecio.Name = "textPrecio";
             this.textPrecio.Size = new System.Drawing.Size(73, 20);
             this.textPrecio.TabIndex = 12;
+            this.textPrecio.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textPrecio_KeyPress);
             // 
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.White;
-            this.panel1.Controls.Add(this.textBox2);
+            this.panel1.Controls.Add(this.textPagaCon);
             this.panel1.Controls.Add(this.label13);
             this.panel1.Controls.Add(this.textBox1);
             this.panel1.Controls.Add(this.label12);
@@ -290,12 +291,12 @@ namespace CapaPresentacion
             this.panel1.Size = new System.Drawing.Size(749, 496);
             this.panel1.TabIndex = 1;
             // 
-            // textBox2
+            // textPagaCon
             // 
-            this.textBox2.Location = new System.Drawing.Point(623, 363);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(106, 20);
-            this.textBox2.TabIndex = 32;
+            this.textPagaCon.Location = new System.Drawing.Point(623, 363);
+            this.textPagaCon.Name = "textPagaCon";
+            this.textPagaCon.Size = new System.Drawing.Size(106, 20);
+            this.textPagaCon.TabIndex = 32;
             // 
             // label13
             // 
@@ -571,7 +572,7 @@ namespace CapaPresentacion
         private System.Windows.Forms.DataGridViewTextBoxColumn Cantidad;
         private System.Windows.Forms.DataGridViewTextBoxColumn SubTotal;
         private System.Windows.Forms.DataGridViewButtonColumn btneliminar;
-        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.TextBox textPagaCon;
         private System.Windows.Forms.Label label13;
         private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.Label label12;
