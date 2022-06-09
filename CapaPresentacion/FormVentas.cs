@@ -149,17 +149,25 @@ namespace CapaPresentacion
             //Agregamos el producto
             if (!productoExiste)
             {
-                dgvData.Rows.Add(new object[] {
+                bool respuesta = new CapaNegocio_Venta().RestarStock(
+                    Convert.ToInt32(textIdProducto.Text),
+                    Convert.ToInt32(textCantidad.Value.ToString())
+                );
+
+                if (respuesta)
+                {
+                    dgvData.Rows.Add(new object[] {
                     textIdProducto.Text,
                     textProducto.Text,
                     precio.ToString("0.00"),
                     textCantidad.Value.ToString(),
                     (textCantidad.Value * precio).ToString("0.00")
-                });
+                    });
 
-                calcularTotal();
-                limpiarProducto();
-                textCodProducto.Select();
+                    calcularTotal();
+                    limpiarProducto();
+                    textCodProducto.Select();
+                }
             }
         }
         private void calcularTotal()
@@ -228,8 +236,16 @@ namespace CapaPresentacion
 
                 if (indice >= 0)
                 {
-                    dgvData.Rows.RemoveAt(indice);
-                    calcularTotal();
+                    bool respuesta = new CapaNegocio_Venta().SumarStock(
+                    Convert.ToInt32(dgvData.Rows[indice].Cells["IdProducto"].Value.ToString()),
+                    Convert.ToInt32(dgvData.Rows[indice].Cells["Cantidad"].Value.ToString())
+                    );
+
+                    if (respuesta)
+                    {
+                        dgvData.Rows.RemoveAt(indice);
+                        calcularTotal();
+                    }
                 }
             }
         }
