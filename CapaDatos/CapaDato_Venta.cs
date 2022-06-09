@@ -45,7 +45,7 @@ namespace CapaDatos
                 try
                 {
                     StringBuilder query = new StringBuilder();
-                    query.AppendLine("update producto set stock - @cantidad where idproducto = @idproducto");
+                    query.AppendLine("update producto set stock = stock - @cantidad where idproducto = @idproducto");
 
                     SqlCommand cmd = new SqlCommand(query.ToString(), conexion);
                     cmd.Parameters.AddWithValue("@cantidad", cantidad);
@@ -72,7 +72,7 @@ namespace CapaDatos
                 try
                 {
                     StringBuilder query = new StringBuilder();
-                    query.AppendLine("update producto set stock + @cantidad where idproducto = @idproducto");
+                    query.AppendLine("update producto set stock = stock + @cantidad where idproducto = @idproducto");
 
                     SqlCommand cmd = new SqlCommand(query.ToString(), conexion);
                     cmd.Parameters.AddWithValue("@cantidad", cantidad);
