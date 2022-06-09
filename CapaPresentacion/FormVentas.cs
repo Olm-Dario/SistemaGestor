@@ -291,5 +291,37 @@ namespace CapaPresentacion
                 }
             }
         }
+
+        private void calcularCambio()
+        {
+            if (textTotalPagar.Text.Trim() == "")
+            {
+                MessageBox.Show("No existen productos en la venta","Mensaje",MessageBoxButtons.OK,MessageBoxIcon.Exclamation);
+                return;
+            }
+
+            decimal pagacon;
+            decimal total = Convert.ToDecimal(textTotalPagar.Text);
+
+            if (textPagaCon.Text.Trim() == "")
+            {
+                textPagaCon.Text = "0";
+            }
+
+            if (decimal.TryParse(textPagaCon.Text.Trim(), out pagacon))
+            {
+                if (pagacon < total)
+                {
+                    textCambio.Text = "0.00";
+                }
+                else
+                {
+                    decimal cambio = pagacon - total;
+                    textCambio.Text = cambio.ToString("0.00");
+                }
+            }
+
+        }
+
     }
 }

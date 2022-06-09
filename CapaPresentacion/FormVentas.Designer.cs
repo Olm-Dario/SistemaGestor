@@ -51,7 +51,7 @@ namespace CapaPresentacion
             this.panel1 = new System.Windows.Forms.Panel();
             this.textPagaCon = new System.Windows.Forms.TextBox();
             this.label13 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.textCambio = new System.Windows.Forms.TextBox();
             this.label12 = new System.Windows.Forms.Label();
             this.btnRegistrar = new FontAwesome.Sharp.IconButton();
             this.textTotalPagar = new System.Windows.Forms.TextBox();
@@ -275,7 +275,7 @@ namespace CapaPresentacion
             this.panel1.BackColor = System.Drawing.Color.White;
             this.panel1.Controls.Add(this.textPagaCon);
             this.panel1.Controls.Add(this.label13);
-            this.panel1.Controls.Add(this.textBox1);
+            this.panel1.Controls.Add(this.textCambio);
             this.panel1.Controls.Add(this.label12);
             this.panel1.Controls.Add(this.btnRegistrar);
             this.panel1.Controls.Add(this.textTotalPagar);
@@ -308,12 +308,12 @@ namespace CapaPresentacion
             this.label13.TabIndex = 31;
             this.label13.Text = "Paga con:";
             // 
-            // textBox1
+            // textCambio
             // 
-            this.textBox1.Location = new System.Drawing.Point(623, 403);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(106, 20);
-            this.textBox1.TabIndex = 30;
+            this.textCambio.Location = new System.Drawing.Point(623, 403);
+            this.textCambio.Name = "textCambio";
+            this.textCambio.Size = new System.Drawing.Size(106, 20);
+            this.textCambio.TabIndex = 30;
             // 
             // label12
             // 
@@ -575,7 +575,7 @@ namespace CapaPresentacion
         private System.Windows.Forms.DataGridViewButtonColumn btneliminar;
         private System.Windows.Forms.TextBox textPagaCon;
         private System.Windows.Forms.Label label13;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox textCambio;
         private System.Windows.Forms.Label label12;
     }
 }
