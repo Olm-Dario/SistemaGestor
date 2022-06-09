@@ -141,7 +141,7 @@ namespace CapaPresentacion
 
         private void subMenuRegistrarVenta_Click(object sender, EventArgs e)
         {
-            abrirFormulario(new FormVentas());
+            abrirFormulario(new FormVentas(usuarioActual));
         }
 
         private void subMenuVerDetalleVenta_Click(object sender, EventArgs e)
