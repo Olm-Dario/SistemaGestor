@@ -262,5 +262,34 @@ namespace CapaPresentacion
                 }
             }
         }
+
+        private void textPagaCon_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            //Verificamos si lo que ingresamos es un numero o no
+            if (Char.IsDigit(e.KeyChar))
+            {
+                e.Handled = false;
+            }
+            else
+            {
+                //Verificamos si el primer caracter es un punto
+                if (textPagaCon.Text.Trim().Length == 0 && e.KeyChar.ToString() == ".")
+                {
+                    e.Handled = true;
+                }
+                else
+                {
+                    //Verificamos si presionamos un control como la flecha de borrar
+                    if (Char.IsControl(e.KeyChar) || e.KeyChar.ToString() == ".")
+                    {
+                        e.Handled = false;
+                    }
+                    else
+                    {
+                        e.Handled = true;
+                    }
+                }
+            }
+        }
     }
 }

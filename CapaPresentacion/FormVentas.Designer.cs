@@ -297,6 +297,7 @@ namespace CapaPresentacion
             this.textPagaCon.Name = "textPagaCon";
             this.textPagaCon.Size = new System.Drawing.Size(106, 20);
             this.textPagaCon.TabIndex = 32;
+            this.textPagaCon.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textPagaCon_KeyPress);
             // 
             // label13
             // 
