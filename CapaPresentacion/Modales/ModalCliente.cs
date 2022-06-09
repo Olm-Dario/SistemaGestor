@@ -44,25 +44,25 @@ namespace CapaPresentacion.Modales
             }
         }
 
-        //private void dgvData_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
-        //{
-        //    //Tomamos indice de fila y columna
-        //    int iRow = e.RowIndex;
-        //    int iColum = e.ColumnIndex;
+        private void dgvData_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+            //Tomamos indice de fila y columna
+            int iRow = e.RowIndex;
+            int iColum = e.ColumnIndex;
 
-        //    //Verificamos si existe 
-        //    if (iRow >= 0 && iColum >= 0)
-        //    {
-        //        _Cliente = new Cliente()
-        //        {
-        //            documento = dgvData.Rows[iRow].Cells["Documento"].Value.ToString(),
-        //            apellido = dgvData.Rows[iRow].Cells["Apellido"].Value.ToString(),
-        //            nombre = dgvData.Rows[iRow].Cells["Nombre"].Value.ToString() 
-        //        };
+            //Verificamos si existe 
+            if (iRow >= 0 && iColum >= 0)
+            {
+                _Cliente = new Cliente()
+                {
+                    documento = dgvData.Rows[iRow].Cells["Documento"].Value.ToString(),
+                    apellido = dgvData.Rows[iRow].Cells["Apellido"].Value.ToString(),
+                    nombre = dgvData.Rows[iRow].Cells["Nombre"].Value.ToString()
+                };
 
-        //        this.DialogResult = DialogResult.OK;
-        //        this.Close();
-        //    }
-        //}
+                this.DialogResult = DialogResult.OK;
+                this.Close();
+            }
+        }
     }
 }
