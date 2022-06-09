@@ -38,7 +38,7 @@ namespace CapaPresentacion
             this.btnBuscarCliente = new FontAwesome.Sharp.IconButton();
             this.textIdProveedor = new System.Windows.Forms.TextBox();
             this.textNombreCliente = new System.Windows.Forms.TextBox();
-            this.textDocCliente = new System.Windows.Forms.TextBox();
+            this.textDocumentoCliente = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
@@ -49,11 +49,21 @@ namespace CapaPresentacion
             this.label9 = new System.Windows.Forms.Label();
             this.textPrecio = new System.Windows.Forms.TextBox();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.label13 = new System.Windows.Forms.Label();
+            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.label12 = new System.Windows.Forms.Label();
             this.btnRegistrar = new FontAwesome.Sharp.IconButton();
             this.textTotalPagar = new System.Windows.Forms.TextBox();
             this.label11 = new System.Windows.Forms.Label();
             this.btnAgregarProducto = new FontAwesome.Sharp.IconButton();
             this.dgvData = new System.Windows.Forms.DataGridView();
+            this.IdProducto = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Producto = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Precio = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Cantidad = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.SubTotal = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.btneliminar = new System.Windows.Forms.DataGridViewButtonColumn();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.label7 = new System.Windows.Forms.Label();
             this.btnBuscarProducto = new FontAwesome.Sharp.IconButton();
@@ -61,16 +71,6 @@ namespace CapaPresentacion
             this.textCodProducto = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
-            this.IdProducto = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Producto = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Precio = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Cantidad = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.SubTotal = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.btneliminar = new System.Windows.Forms.DataGridViewButtonColumn();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.label12 = new System.Windows.Forms.Label();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.label13 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.textCantidad)).BeginInit();
             this.groupBox2.SuspendLayout();
             this.groupBox1.SuspendLayout();
@@ -133,7 +133,7 @@ namespace CapaPresentacion
             this.groupBox2.Controls.Add(this.btnBuscarCliente);
             this.groupBox2.Controls.Add(this.textIdProveedor);
             this.groupBox2.Controls.Add(this.textNombreCliente);
-            this.groupBox2.Controls.Add(this.textDocCliente);
+            this.groupBox2.Controls.Add(this.textDocumentoCliente);
             this.groupBox2.Controls.Add(this.label3);
             this.groupBox2.Controls.Add(this.label4);
             this.groupBox2.Location = new System.Drawing.Point(347, 60);
@@ -160,6 +160,7 @@ namespace CapaPresentacion
             this.btnBuscarCliente.TabIndex = 11;
             this.btnBuscarCliente.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnBuscarCliente.UseVisualStyleBackColor = false;
+            this.btnBuscarCliente.Click += new System.EventHandler(this.btnBuscarCliente_Click);
             // 
             // textIdProveedor
             // 
@@ -176,13 +177,13 @@ namespace CapaPresentacion
             this.textNombreCliente.Size = new System.Drawing.Size(167, 20);
             this.textNombreCliente.TabIndex = 3;
             // 
-            // textDocCliente
+            // textDocumentoCliente
             // 
-            this.textDocCliente.Location = new System.Drawing.Point(6, 37);
-            this.textDocCliente.Name = "textDocCliente";
-            this.textDocCliente.ReadOnly = true;
-            this.textDocCliente.Size = new System.Drawing.Size(126, 20);
-            this.textDocCliente.TabIndex = 2;
+            this.textDocumentoCliente.Location = new System.Drawing.Point(6, 37);
+            this.textDocumentoCliente.Name = "textDocumentoCliente";
+            this.textDocumentoCliente.ReadOnly = true;
+            this.textDocumentoCliente.Size = new System.Drawing.Size(126, 20);
+            this.textDocumentoCliente.TabIndex = 2;
             // 
             // label3
             // 
@@ -289,6 +290,38 @@ namespace CapaPresentacion
             this.panel1.Size = new System.Drawing.Size(749, 496);
             this.panel1.TabIndex = 1;
             // 
+            // textBox2
+            // 
+            this.textBox2.Location = new System.Drawing.Point(623, 363);
+            this.textBox2.Name = "textBox2";
+            this.textBox2.Size = new System.Drawing.Size(106, 20);
+            this.textBox2.TabIndex = 32;
+            // 
+            // label13
+            // 
+            this.label13.AutoSize = true;
+            this.label13.Location = new System.Drawing.Point(620, 347);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(56, 13);
+            this.label13.TabIndex = 31;
+            this.label13.Text = "Paga con:";
+            // 
+            // textBox1
+            // 
+            this.textBox1.Location = new System.Drawing.Point(623, 403);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(106, 20);
+            this.textBox1.TabIndex = 30;
+            // 
+            // label12
+            // 
+            this.label12.AutoSize = true;
+            this.label12.Location = new System.Drawing.Point(620, 387);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(45, 13);
+            this.label12.TabIndex = 29;
+            this.label12.Text = "Cambio:";
+            // 
             // btnRegistrar
             // 
             this.btnRegistrar.BackColor = System.Drawing.Color.White;
@@ -352,6 +385,42 @@ namespace CapaPresentacion
             this.dgvData.Name = "dgvData";
             this.dgvData.Size = new System.Drawing.Size(585, 252);
             this.dgvData.TabIndex = 26;
+            // 
+            // IdProducto
+            // 
+            this.IdProducto.HeaderText = "IdProducto";
+            this.IdProducto.Name = "IdProducto";
+            this.IdProducto.Visible = false;
+            // 
+            // Producto
+            // 
+            this.Producto.FillWeight = 118.6548F;
+            this.Producto.HeaderText = "Producto";
+            this.Producto.Name = "Producto";
+            // 
+            // Precio
+            // 
+            this.Precio.FillWeight = 118.6548F;
+            this.Precio.HeaderText = "Precio";
+            this.Precio.Name = "Precio";
+            // 
+            // Cantidad
+            // 
+            this.Cantidad.FillWeight = 118.6548F;
+            this.Cantidad.HeaderText = "Cantidad";
+            this.Cantidad.Name = "Cantidad";
+            // 
+            // SubTotal
+            // 
+            this.SubTotal.FillWeight = 118.6548F;
+            this.SubTotal.HeaderText = "Sub Total";
+            this.SubTotal.Name = "SubTotal";
+            // 
+            // btneliminar
+            // 
+            this.btneliminar.FillWeight = 25.38071F;
+            this.btneliminar.HeaderText = "";
+            this.btneliminar.Name = "btneliminar";
             // 
             // groupBox3
             // 
@@ -434,74 +503,6 @@ namespace CapaPresentacion
             this.label6.TabIndex = 0;
             this.label6.Text = "Cod. Producto:";
             // 
-            // IdProducto
-            // 
-            this.IdProducto.HeaderText = "IdProducto";
-            this.IdProducto.Name = "IdProducto";
-            this.IdProducto.Visible = false;
-            // 
-            // Producto
-            // 
-            this.Producto.FillWeight = 118.6548F;
-            this.Producto.HeaderText = "Producto";
-            this.Producto.Name = "Producto";
-            // 
-            // Precio
-            // 
-            this.Precio.FillWeight = 118.6548F;
-            this.Precio.HeaderText = "Precio";
-            this.Precio.Name = "Precio";
-            // 
-            // Cantidad
-            // 
-            this.Cantidad.FillWeight = 118.6548F;
-            this.Cantidad.HeaderText = "Cantidad";
-            this.Cantidad.Name = "Cantidad";
-            // 
-            // SubTotal
-            // 
-            this.SubTotal.FillWeight = 118.6548F;
-            this.SubTotal.HeaderText = "Sub Total";
-            this.SubTotal.Name = "SubTotal";
-            // 
-            // btneliminar
-            // 
-            this.btneliminar.FillWeight = 25.38071F;
-            this.btneliminar.HeaderText = "";
-            this.btneliminar.Name = "btneliminar";
-            // 
-            // textBox1
-            // 
-            this.textBox1.Location = new System.Drawing.Point(623, 403);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(106, 20);
-            this.textBox1.TabIndex = 30;
-            // 
-            // label12
-            // 
-            this.label12.AutoSize = true;
-            this.label12.Location = new System.Drawing.Point(620, 387);
-            this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(45, 13);
-            this.label12.TabIndex = 29;
-            this.label12.Text = "Cambio:";
-            // 
-            // textBox2
-            // 
-            this.textBox2.Location = new System.Drawing.Point(623, 363);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(106, 20);
-            this.textBox2.TabIndex = 32;
-            // 
-            // label13
-            // 
-            this.label13.AutoSize = true;
-            this.label13.Location = new System.Drawing.Point(620, 347);
-            this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(56, 13);
-            this.label13.TabIndex = 31;
-            this.label13.Text = "Paga con:";
-            // 
             // FormVentas
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -536,7 +537,7 @@ namespace CapaPresentacion
         private FontAwesome.Sharp.IconButton btnBuscarCliente;
         private System.Windows.Forms.TextBox textIdProveedor;
         private System.Windows.Forms.TextBox textNombreCliente;
-        private System.Windows.Forms.TextBox textDocCliente;
+        private System.Windows.Forms.TextBox textDocumentoCliente;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label10;

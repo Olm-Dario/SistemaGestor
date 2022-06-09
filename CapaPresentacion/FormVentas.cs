@@ -17,9 +17,12 @@ namespace CapaPresentacion
 {
     public partial class FormVentas : Form
     {
-        public FormVentas()
+        private Usuario _Usuario;
+
+        public FormVentas(Usuario oUsuario = null)
         {
             InitializeComponent();
+            this._Usuario = oUsuario;
         }
 
         private void FormVentas_Load(object sender, EventArgs e)
@@ -36,6 +39,23 @@ namespace CapaPresentacion
 
             textIdProducto.Text = "0";
             textIdProveedor.Text = "0";
+        }
+
+        private void btnBuscarCliente_Click(object sender, EventArgs e)
+        {
+            using (var modal = new ModalCliente())
+            {
+                var result = modal.ShowDialog();
+
+                if (result == DialogResult.OK)
+                {
+                    textDocumentoCliente.Text = modal._Cliente.documento;
+                    textNombreCliente.Text = modal._Cliente.apellido + " " + modal._Cliente.nombre;
+                    textCodProducto.Select();
+                }
+                else
+                    textDocumentoCliente.Select();
+            }
         }
     }
 }
