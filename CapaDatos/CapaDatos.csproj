@@ -51,6 +51,7 @@
     <Compile Include="CapaDato_Proveedor.cs" />
     <Compile Include="CapaDato_Rol.cs" />
     <Compile Include="CapaDato_Usuario.cs" />
+    <Compile Include="CapaDato_Venta.cs" />
     <Compile Include="Conexion.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
