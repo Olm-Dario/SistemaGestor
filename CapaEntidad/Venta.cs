@@ -13,6 +13,7 @@ namespace CapaEntidad
         public string tipoDocumento { get; set; }
         public string numeroDocumento { get; set; }
         public string nombreCliente { get; set; }
+        public string documentoCliente { get; set; }
         public decimal montoPago { get; set; }
         public decimal montoCambio { get; set; }
         public decimal montoTotal { get; set; }
