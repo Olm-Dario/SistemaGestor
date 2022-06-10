@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace CapaEntidad
 {
-    class ReporteCompra
+    public class ReporteCompra
     {
         public string FechaRegistro { get; set; }
         public string TipoDocumento { get; set; }
