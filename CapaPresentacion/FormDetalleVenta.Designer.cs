@@ -116,6 +116,7 @@ namespace CapaPresentacion
             this.btnDescargar.Text = "Descargar PDF";
             this.btnDescargar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnDescargar.UseVisualStyleBackColor = false;
+            this.btnDescargar.Click += new System.EventHandler(this.btnDescargar_Click);
             // 
             // textMontoTotal
             // 
@@ -179,6 +180,7 @@ namespace CapaPresentacion
             this.btnBorrar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnBorrar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnBorrar.UseVisualStyleBackColor = false;
+            this.btnBorrar.Click += new System.EventHandler(this.btnBorrar_Click);
             // 
             // textBusqueda
             // 
@@ -389,6 +391,7 @@ namespace CapaPresentacion
             this.Controls.Add(this.panel1);
             this.Name = "FormDetalleVenta";
             this.Text = "FormDetalleVenta";
+            this.Load += new System.EventHandler(this.FormDetalleVenta_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvData)).EndInit();
             this.groupBox3.ResumeLayout(false);
             this.groupBox3.PerformLayout();
