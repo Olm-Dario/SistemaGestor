@@ -68,6 +68,12 @@
     <Compile Include="FormNegocio.Designer.cs">
       <DependentUpon>FormNegocio.cs</DependentUpon>
     </Compile>
+    <Compile Include="FormReporteCompas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormReporteCompas.Designer.cs">
+      <DependentUpon>FormReporteCompas.cs</DependentUpon>
+    </Compile>
     <Compile Include="Modales\ModalCliente.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -129,11 +135,11 @@
     <Compile Include="FormProveedor.Designer.cs">
       <DependentUpon>FormProveedor.cs</DependentUpon>
     </Compile>
-    <Compile Include="FormReporte.cs">
+    <Compile Include="FormReporteVentas.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FormReporte.Designer.cs">
-      <DependentUpon>FormReporte.cs</DependentUpon>
+    <Compile Include="FormReporteVentas.Designer.cs">
+      <DependentUpon>FormReporteVentas.cs</DependentUpon>
     </Compile>
     <Compile Include="FormUsuarios.cs">
       <SubType>Form</SubType>
