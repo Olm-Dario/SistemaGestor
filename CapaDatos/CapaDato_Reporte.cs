@@ -23,7 +23,7 @@ namespace CapaDatos
                     StringBuilder query = new StringBuilder();
                     SqlCommand cmd = new SqlCommand("sp_ReporteCompras", conexion);
                     cmd.Parameters.AddWithValue("fechainicio", fechaInicio);
-                    cmd.Parameters.AddWithValue("fechafin", fechaInicio);
+                    cmd.Parameters.AddWithValue("fechafin", fechaFin);
                     cmd.Parameters.AddWithValue("idproveedor", idProveedor);
                     cmd.CommandType = CommandType.StoredProcedure;
 
@@ -74,7 +74,7 @@ namespace CapaDatos
                     StringBuilder query = new StringBuilder();
                     SqlCommand cmd = new SqlCommand("sp_ReporteVentas", conexion);
                     cmd.Parameters.AddWithValue("fechainicio", fechaInicio);
-                    cmd.Parameters.AddWithValue("fechafin", fechaInicio);
+                    cmd.Parameters.AddWithValue("fechafin", fechaFin);
                     cmd.CommandType = CommandType.StoredProcedure;
 
                     conexion.Open();

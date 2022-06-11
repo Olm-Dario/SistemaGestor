@@ -176,7 +176,7 @@ namespace CapaPresentacion
 
         private void subMenuReporteCompras_Click(object sender, EventArgs e)
         {
-            abrirFormulario(new FormReporteCompas);
+            abrirFormulario(new FormReporteCompas());
         }
 
         private void subMenuReporteVentas_Click(object sender, EventArgs e)
