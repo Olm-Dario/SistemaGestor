@@ -75,16 +75,18 @@ namespace CapaPresentacion
             // 
             // textDireccion
             // 
+            this.textDireccion.Font = new System.Drawing.Font("Century Gothic", 8.25F);
             this.textDireccion.Location = new System.Drawing.Point(193, 111);
             this.textDireccion.Name = "textDireccion";
-            this.textDireccion.Size = new System.Drawing.Size(286, 20);
+            this.textDireccion.Size = new System.Drawing.Size(286, 21);
             this.textDireccion.TabIndex = 13;
             // 
             // textNombre
             // 
+            this.textNombre.Font = new System.Drawing.Font("Century Gothic", 8.25F);
             this.textNombre.Location = new System.Drawing.Point(193, 59);
             this.textNombre.Name = "textNombre";
-            this.textNombre.Size = new System.Drawing.Size(286, 20);
+            this.textNombre.Size = new System.Drawing.Size(286, 21);
             this.textNombre.TabIndex = 12;
             // 
             // btnGuardar
@@ -93,6 +95,7 @@ namespace CapaPresentacion
             this.btnGuardar.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnGuardar.FlatAppearance.BorderColor = System.Drawing.Color.Black;
             this.btnGuardar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnGuardar.Font = new System.Drawing.Font("Century Gothic", 8.25F);
             this.btnGuardar.ForeColor = System.Drawing.Color.Black;
             this.btnGuardar.IconChar = FontAwesome.Sharp.IconChar.Save;
             this.btnGuardar.IconColor = System.Drawing.Color.Black;
@@ -111,18 +114,20 @@ namespace CapaPresentacion
             // label3
             // 
             this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Century Gothic", 8.25F);
             this.label3.Location = new System.Drawing.Point(190, 95);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(52, 13);
+            this.label3.Size = new System.Drawing.Size(58, 16);
             this.label3.TabIndex = 10;
             this.label3.Text = "Direccion";
             // 
             // label2
             // 
             this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Century Gothic", 8.25F);
             this.label2.Location = new System.Drawing.Point(190, 43);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(104, 13);
+            this.label2.Size = new System.Drawing.Size(119, 16);
             this.label2.TabIndex = 9;
             this.label2.Text = "Nombre del Negocio";
             // 
@@ -132,6 +137,7 @@ namespace CapaPresentacion
             this.btnSubir.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnSubir.FlatAppearance.BorderColor = System.Drawing.Color.Black;
             this.btnSubir.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnSubir.Font = new System.Drawing.Font("Century Gothic", 8.25F);
             this.btnSubir.ForeColor = System.Drawing.Color.Black;
             this.btnSubir.IconChar = FontAwesome.Sharp.IconChar.Upload;
             this.btnSubir.IconColor = System.Drawing.Color.Black;
@@ -150,9 +156,10 @@ namespace CapaPresentacion
             // label1
             // 
             this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Century Gothic", 8.25F);
             this.label1.Location = new System.Drawing.Point(16, 20);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(31, 13);
+            this.label1.Size = new System.Drawing.Size(34, 16);
             this.label1.TabIndex = 1;
             this.label1.Text = "Logo";
             // 
@@ -169,10 +176,10 @@ namespace CapaPresentacion
             // label9
             // 
             this.label9.AutoSize = true;
-            this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F);
+            this.label9.Font = new System.Drawing.Font("Century Gothic", 15F);
             this.label9.Location = new System.Drawing.Point(28, 21);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(180, 25);
+            this.label9.Size = new System.Drawing.Size(209, 23);
             this.label9.TabIndex = 19;
             this.label9.Text = "Detalle del Negocio";
             // 

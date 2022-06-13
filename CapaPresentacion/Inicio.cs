@@ -57,7 +57,7 @@ namespace CapaPresentacion
             }
 
             //Esto es para que no se superpongan los botones al iniciar el programa
-            btnRestaurar.Visible = false;
+            btnRestaurar.Visible = true;
             
             //Rederiza el toolstrig 
             barraMenu.Renderer = new ToolStripProfessionalRenderer(new CustomColorTable());
@@ -115,7 +115,7 @@ namespace CapaPresentacion
             formulario.TopLevel = false;
             formulario.FormBorderStyle = FormBorderStyle.None;
             formulario.Dock = DockStyle.Fill;
-            formulario.BackColor = Color.SteelBlue;
+            formulario.BackColor = Color.FromArgb(15, 15, 15);
 
             //Lo pone el panel contenedor y lo muestra
             contenedor.Controls.Add(formulario);

@@ -55,9 +55,9 @@ namespace CapaPresentacion
             this.menuProveedores = new FontAwesome.Sharp.IconMenuItem();
             this.menuReportes = new FontAwesome.Sharp.IconMenuItem();
             this.subMenuReporteCompras = new System.Windows.Forms.ToolStripMenuItem();
+            this.subMenuReporteVentas = new System.Windows.Forms.ToolStripMenuItem();
             this.menuAcercaDe = new FontAwesome.Sharp.IconMenuItem();
             this.contenedor = new System.Windows.Forms.Panel();
-            this.subMenuReporteVentas = new System.Windows.Forms.ToolStripMenuItem();
             this.panelTitulo.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btnRestaurar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnMinimizar)).BeginInit();
@@ -245,7 +245,7 @@ namespace CapaPresentacion
             this.subMenuCategoria.IconColor = System.Drawing.Color.Black;
             this.subMenuCategoria.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.subMenuCategoria.Name = "subMenuCategoria";
-            this.subMenuCategoria.Size = new System.Drawing.Size(180, 22);
+            this.subMenuCategoria.Size = new System.Drawing.Size(131, 22);
             this.subMenuCategoria.Text = "Categoria";
             this.subMenuCategoria.Click += new System.EventHandler(this.subMenuCategoria_Click);
             // 
@@ -257,7 +257,7 @@ namespace CapaPresentacion
             this.subMenuProducto.IconColor = System.Drawing.Color.Black;
             this.subMenuProducto.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.subMenuProducto.Name = "subMenuProducto";
-            this.subMenuProducto.Size = new System.Drawing.Size(180, 22);
+            this.subMenuProducto.Size = new System.Drawing.Size(131, 22);
             this.subMenuProducto.Text = "Producto";
             this.subMenuProducto.Click += new System.EventHandler(this.subMenuProducto_Click);
             // 
@@ -266,7 +266,7 @@ namespace CapaPresentacion
             this.negocioToolStripMenuItem.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(48)))));
             this.negocioToolStripMenuItem.ForeColor = System.Drawing.Color.LightGray;
             this.negocioToolStripMenuItem.Name = "negocioToolStripMenuItem";
-            this.negocioToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.negocioToolStripMenuItem.Size = new System.Drawing.Size(131, 22);
             this.negocioToolStripMenuItem.Text = "Negocio";
             this.negocioToolStripMenuItem.Click += new System.EventHandler(this.negocioToolStripMenuItem_Click);
             // 
@@ -296,7 +296,7 @@ namespace CapaPresentacion
             this.subMenuRegistrarVenta.IconColor = System.Drawing.Color.LightGray;
             this.subMenuRegistrarVenta.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.subMenuRegistrarVenta.Name = "subMenuRegistrarVenta";
-            this.subMenuRegistrarVenta.Size = new System.Drawing.Size(180, 22);
+            this.subMenuRegistrarVenta.Size = new System.Drawing.Size(134, 22);
             this.subMenuRegistrarVenta.Text = "Resgistrar";
             this.subMenuRegistrarVenta.Click += new System.EventHandler(this.subMenuRegistrarVenta_Click);
             // 
@@ -308,7 +308,7 @@ namespace CapaPresentacion
             this.subMenuVerDetalleVenta.IconColor = System.Drawing.Color.LightGray;
             this.subMenuVerDetalleVenta.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.subMenuVerDetalleVenta.Name = "subMenuVerDetalleVenta";
-            this.subMenuVerDetalleVenta.Size = new System.Drawing.Size(180, 22);
+            this.subMenuVerDetalleVenta.Size = new System.Drawing.Size(134, 22);
             this.subMenuVerDetalleVenta.Text = "Ver Detalle";
             this.subMenuVerDetalleVenta.Click += new System.EventHandler(this.subMenuVerDetalleVenta_Click);
             // 
@@ -338,7 +338,7 @@ namespace CapaPresentacion
             this.subMenuRegistrarCompra.IconColor = System.Drawing.Color.Black;
             this.subMenuRegistrarCompra.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.subMenuRegistrarCompra.Name = "subMenuRegistrarCompra";
-            this.subMenuRegistrarCompra.Size = new System.Drawing.Size(180, 22);
+            this.subMenuRegistrarCompra.Size = new System.Drawing.Size(134, 22);
             this.subMenuRegistrarCompra.Text = "Registrar";
             this.subMenuRegistrarCompra.Click += new System.EventHandler(this.subMenuRegistrarCompra_Click);
             // 
@@ -350,7 +350,7 @@ namespace CapaPresentacion
             this.subMenuVerDetalleCompra.IconColor = System.Drawing.Color.Black;
             this.subMenuVerDetalleCompra.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.subMenuVerDetalleCompra.Name = "subMenuVerDetalleCompra";
-            this.subMenuVerDetalleCompra.Size = new System.Drawing.Size(180, 22);
+            this.subMenuVerDetalleCompra.Size = new System.Drawing.Size(134, 22);
             this.subMenuVerDetalleCompra.Text = "Ver Detalle";
             this.subMenuVerDetalleCompra.Click += new System.EventHandler(this.subMenuVerDetalleCompra_Click);
             // 
@@ -409,9 +409,18 @@ namespace CapaPresentacion
             this.subMenuReporteCompras.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(48)))));
             this.subMenuReporteCompras.ForeColor = System.Drawing.Color.LightGray;
             this.subMenuReporteCompras.Name = "subMenuReporteCompras";
-            this.subMenuReporteCompras.Size = new System.Drawing.Size(180, 22);
+            this.subMenuReporteCompras.Size = new System.Drawing.Size(167, 22);
             this.subMenuReporteCompras.Text = "Reporte Compra";
             this.subMenuReporteCompras.Click += new System.EventHandler(this.subMenuReporteCompras_Click);
+            // 
+            // subMenuReporteVentas
+            // 
+            this.subMenuReporteVentas.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(48)))));
+            this.subMenuReporteVentas.ForeColor = System.Drawing.Color.LightGray;
+            this.subMenuReporteVentas.Name = "subMenuReporteVentas";
+            this.subMenuReporteVentas.Size = new System.Drawing.Size(167, 22);
+            this.subMenuReporteVentas.Text = "Reporte Venta";
+            this.subMenuReporteVentas.Click += new System.EventHandler(this.subMenuReporteVentas_Click);
             // 
             // menuAcercaDe
             // 
@@ -427,6 +436,7 @@ namespace CapaPresentacion
             this.menuAcercaDe.Size = new System.Drawing.Size(80, 59);
             this.menuAcercaDe.Text = "Acerca de";
             this.menuAcercaDe.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.menuAcercaDe.Visible = false;
             // 
             // contenedor
             // 
@@ -435,15 +445,6 @@ namespace CapaPresentacion
             this.contenedor.Name = "contenedor";
             this.contenedor.Size = new System.Drawing.Size(980, 521);
             this.contenedor.TabIndex = 2;
-            // 
-            // subMenuReporteVentas
-            // 
-            this.subMenuReporteVentas.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(48)))));
-            this.subMenuReporteVentas.ForeColor = System.Drawing.Color.LightGray;
-            this.subMenuReporteVentas.Name = "subMenuReporteVentas";
-            this.subMenuReporteVentas.Size = new System.Drawing.Size(180, 22);
-            this.subMenuReporteVentas.Text = "Reporte Venta";
-            this.subMenuReporteVentas.Click += new System.EventHandler(this.subMenuReporteVentas_Click);
             // 
             // Inicio
             // 

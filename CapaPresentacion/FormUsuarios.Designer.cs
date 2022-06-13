@@ -30,6 +30,9 @@ namespace CapaPresentacion
         private void InitializeComponent()
         {
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panel1 = new System.Windows.Forms.Panel();
             this.textIndice = new System.Windows.Forms.TextBox();
             this.textId = new System.Windows.Forms.TextBox();
@@ -72,7 +75,7 @@ namespace CapaPresentacion
             // 
             // panel1
             // 
-            this.panel1.BackColor = System.Drawing.Color.DimGray;
+            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(28)))), ((int)(((byte)(28)))));
             this.panel1.Controls.Add(this.textIndice);
             this.panel1.Controls.Add(this.textId);
             this.panel1.Controls.Add(this.label9);
@@ -120,10 +123,11 @@ namespace CapaPresentacion
             // label9
             // 
             this.label9.AutoSize = true;
-            this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F);
-            this.label9.Location = new System.Drawing.Point(35, 20);
+            this.label9.Font = new System.Drawing.Font("Century Gothic", 15F);
+            this.label9.ForeColor = System.Drawing.Color.White;
+            this.label9.Location = new System.Drawing.Point(20, 22);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(171, 25);
+            this.label9.Size = new System.Drawing.Size(190, 23);
             this.label9.TabIndex = 19;
             this.label9.Text = "Detalle de Usuario";
             // 
@@ -134,6 +138,7 @@ namespace CapaPresentacion
             this.btnEliminar.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnEliminar.FlatAppearance.BorderColor = System.Drawing.Color.Black;
             this.btnEliminar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnEliminar.Font = new System.Drawing.Font("Century Gothic", 8.25F);
             this.btnEliminar.ForeColor = System.Drawing.Color.White;
             this.btnEliminar.IconChar = FontAwesome.Sharp.IconChar.TrashAlt;
             this.btnEliminar.IconColor = System.Drawing.Color.White;
@@ -156,6 +161,7 @@ namespace CapaPresentacion
             this.btnLimpiar.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnLimpiar.FlatAppearance.BorderColor = System.Drawing.Color.Black;
             this.btnLimpiar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnLimpiar.Font = new System.Drawing.Font("Century Gothic", 8.25F);
             this.btnLimpiar.ForeColor = System.Drawing.Color.White;
             this.btnLimpiar.IconChar = FontAwesome.Sharp.IconChar.Edit;
             this.btnLimpiar.IconColor = System.Drawing.Color.White;
@@ -178,6 +184,7 @@ namespace CapaPresentacion
             this.btnGuardar.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnGuardar.FlatAppearance.BorderColor = System.Drawing.Color.Black;
             this.btnGuardar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnGuardar.Font = new System.Drawing.Font("Century Gothic", 8.25F);
             this.btnGuardar.ForeColor = System.Drawing.Color.White;
             this.btnGuardar.IconChar = FontAwesome.Sharp.IconChar.Save;
             this.btnGuardar.IconColor = System.Drawing.Color.White;
@@ -195,151 +202,183 @@ namespace CapaPresentacion
             // 
             // textNombre
             // 
+            this.textNombre.Font = new System.Drawing.Font("Century Gothic", 8.25F);
             this.textNombre.Location = new System.Drawing.Point(38, 130);
             this.textNombre.Name = "textNombre";
-            this.textNombre.Size = new System.Drawing.Size(158, 20);
+            this.textNombre.Size = new System.Drawing.Size(158, 21);
             this.textNombre.TabIndex = 15;
             // 
             // label8
             // 
             this.label8.AutoSize = true;
+            this.label8.Font = new System.Drawing.Font("Century Gothic", 8.25F);
+            this.label8.ForeColor = System.Drawing.Color.White;
             this.label8.Location = new System.Drawing.Point(35, 115);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(44, 13);
+            this.label8.Size = new System.Drawing.Size(51, 16);
             this.label8.TabIndex = 14;
             this.label8.Text = "Nombre";
             // 
             // cboEstado
             // 
             this.cboEstado.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cboEstado.Font = new System.Drawing.Font("Century Gothic", 8.25F);
             this.cboEstado.FormattingEnabled = true;
             this.cboEstado.Location = new System.Drawing.Point(38, 388);
             this.cboEstado.Name = "cboEstado";
-            this.cboEstado.Size = new System.Drawing.Size(158, 21);
+            this.cboEstado.Size = new System.Drawing.Size(158, 24);
             this.cboEstado.TabIndex = 13;
             // 
             // cboRol
             // 
             this.cboRol.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cboRol.Font = new System.Drawing.Font("Century Gothic", 8.25F);
             this.cboRol.FormattingEnabled = true;
             this.cboRol.Location = new System.Drawing.Point(38, 345);
             this.cboRol.Name = "cboRol";
-            this.cboRol.Size = new System.Drawing.Size(158, 21);
+            this.cboRol.Size = new System.Drawing.Size(158, 24);
             this.cboRol.TabIndex = 12;
             // 
             // textConfirmarClave
             // 
+            this.textConfirmarClave.Font = new System.Drawing.Font("Century Gothic", 8.25F);
             this.textConfirmarClave.Location = new System.Drawing.Point(38, 303);
             this.textConfirmarClave.Name = "textConfirmarClave";
             this.textConfirmarClave.PasswordChar = '*';
-            this.textConfirmarClave.Size = new System.Drawing.Size(158, 20);
+            this.textConfirmarClave.Size = new System.Drawing.Size(158, 21);
             this.textConfirmarClave.TabIndex = 11;
             // 
             // textClave
             // 
+            this.textClave.Font = new System.Drawing.Font("Century Gothic", 8.25F);
             this.textClave.Location = new System.Drawing.Point(38, 260);
             this.textClave.Name = "textClave";
             this.textClave.PasswordChar = '*';
-            this.textClave.Size = new System.Drawing.Size(158, 20);
+            this.textClave.Size = new System.Drawing.Size(158, 21);
             this.textClave.TabIndex = 10;
             // 
             // textCorreo
             // 
+            this.textCorreo.Font = new System.Drawing.Font("Century Gothic", 8.25F);
             this.textCorreo.Location = new System.Drawing.Point(38, 218);
             this.textCorreo.Name = "textCorreo";
-            this.textCorreo.Size = new System.Drawing.Size(158, 20);
+            this.textCorreo.Size = new System.Drawing.Size(158, 21);
             this.textCorreo.TabIndex = 9;
             // 
             // textApellido
             // 
+            this.textApellido.Font = new System.Drawing.Font("Century Gothic", 8.25F);
             this.textApellido.Location = new System.Drawing.Point(38, 174);
             this.textApellido.Name = "textApellido";
-            this.textApellido.Size = new System.Drawing.Size(158, 20);
+            this.textApellido.Size = new System.Drawing.Size(158, 21);
             this.textApellido.TabIndex = 8;
             // 
             // textDocumento
             // 
+            this.textDocumento.Font = new System.Drawing.Font("Century Gothic", 8.25F);
             this.textDocumento.Location = new System.Drawing.Point(38, 86);
             this.textDocumento.Name = "textDocumento";
-            this.textDocumento.Size = new System.Drawing.Size(158, 20);
+            this.textDocumento.Size = new System.Drawing.Size(158, 21);
             this.textDocumento.TabIndex = 7;
             // 
             // label7
             // 
             this.label7.AutoSize = true;
+            this.label7.Font = new System.Drawing.Font("Century Gothic", 8.25F);
+            this.label7.ForeColor = System.Drawing.Color.White;
             this.label7.Location = new System.Drawing.Point(35, 373);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(40, 13);
+            this.label7.Size = new System.Drawing.Size(45, 16);
             this.label7.TabIndex = 6;
             this.label7.Text = "Estado";
             // 
             // label6
             // 
             this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("Century Gothic", 8.25F);
+            this.label6.ForeColor = System.Drawing.Color.White;
             this.label6.Location = new System.Drawing.Point(35, 330);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(23, 13);
+            this.label6.Size = new System.Drawing.Size(24, 16);
             this.label6.TabIndex = 5;
             this.label6.Text = "Rol";
             // 
             // label5
             // 
             this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("Century Gothic", 8.25F);
+            this.label5.ForeColor = System.Drawing.Color.White;
             this.label5.Location = new System.Drawing.Point(35, 289);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(108, 13);
+            this.label5.Size = new System.Drawing.Size(127, 16);
             this.label5.TabIndex = 4;
             this.label5.Text = "Confirmar Contraseña";
             // 
             // label4
             // 
             this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Century Gothic", 8.25F);
+            this.label4.ForeColor = System.Drawing.Color.White;
             this.label4.Location = new System.Drawing.Point(35, 246);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(61, 13);
+            this.label4.Size = new System.Drawing.Size(72, 16);
             this.label4.TabIndex = 3;
             this.label4.Text = "Contraseña";
             // 
             // label3
             // 
             this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Century Gothic", 8.25F);
+            this.label3.ForeColor = System.Drawing.Color.White;
             this.label3.Location = new System.Drawing.Point(35, 204);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(38, 13);
+            this.label3.Size = new System.Drawing.Size(44, 16);
             this.label3.TabIndex = 2;
             this.label3.Text = "Correo";
             // 
             // label2
             // 
             this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Century Gothic", 8.25F);
+            this.label2.ForeColor = System.Drawing.Color.White;
             this.label2.Location = new System.Drawing.Point(35, 160);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(44, 13);
+            this.label2.Size = new System.Drawing.Size(51, 16);
             this.label2.TabIndex = 1;
             this.label2.Text = "Apellido";
             // 
             // label1
             // 
             this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Century Gothic", 8.25F);
+            this.label1.ForeColor = System.Drawing.Color.White;
             this.label1.Location = new System.Drawing.Point(35, 71);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(77, 13);
+            this.label1.Size = new System.Drawing.Size(87, 16);
             this.label1.TabIndex = 0;
             this.label1.Text = "Nº Documento";
             // 
             // dgvDataUsuario
             // 
             this.dgvDataUsuario.AllowUserToAddRows = false;
+            this.dgvDataUsuario.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.dgvDataUsuario.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dgvDataUsuario.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(15)))), ((int)(((byte)(18)))));
+            this.dgvDataUsuario.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.dgvDataUsuario.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
             dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F);
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.LightGray;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Century Gothic", 9.25F);
             dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
             dataGridViewCellStyle1.Padding = new System.Windows.Forms.Padding(2);
             dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
             dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             this.dgvDataUsuario.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
-            this.dgvDataUsuario.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvDataUsuario.ColumnHeadersHeight = 35;
+            this.dgvDataUsuario.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
             this.dgvDataUsuario.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.btnSeleccionar,
             this.Id,
@@ -352,21 +391,42 @@ namespace CapaPresentacion
             this.Rol,
             this.EstadoValor,
             this.Estado});
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Century Gothic", 8.25F);
+            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.LightGray;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvDataUsuario.DefaultCellStyle = dataGridViewCellStyle2;
+            this.dgvDataUsuario.EnableHeadersVisualStyles = false;
             this.dgvDataUsuario.Location = new System.Drawing.Point(255, 86);
             this.dgvDataUsuario.MultiSelect = false;
             this.dgvDataUsuario.Name = "dgvDataUsuario";
             this.dgvDataUsuario.ReadOnly = true;
-            this.dgvDataUsuario.Size = new System.Drawing.Size(846, 373);
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(15)))), ((int)(((byte)(18)))));
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Century Gothic", 8.25F);
+            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvDataUsuario.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
+            this.dgvDataUsuario.RowHeadersVisible = false;
+            dataGridViewCellStyle4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(15)))), ((int)(((byte)(18)))));
+            dataGridViewCellStyle4.ForeColor = System.Drawing.Color.LightGray;
+            this.dgvDataUsuario.RowsDefaultCellStyle = dataGridViewCellStyle4;
+            this.dgvDataUsuario.Size = new System.Drawing.Size(868, 407);
             this.dgvDataUsuario.TabIndex = 1;
             this.dgvDataUsuario.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvDataUsuario_CellContentClick);
             this.dgvDataUsuario.CellPainting += new System.Windows.Forms.DataGridViewCellPaintingEventHandler(this.dgvDataUsuario_CellPainting);
             // 
             // btnSeleccionar
             // 
+            this.btnSeleccionar.FillWeight = 21.3198F;
             this.btnSeleccionar.HeaderText = "";
             this.btnSeleccionar.Name = "btnSeleccionar";
             this.btnSeleccionar.ReadOnly = true;
-            this.btnSeleccionar.Width = 20;
             // 
             // Id
             // 
@@ -377,27 +437,28 @@ namespace CapaPresentacion
             // 
             // Documento
             // 
+            this.Documento.FillWeight = 113.1134F;
             this.Documento.HeaderText = "Nº Documento";
             this.Documento.Name = "Documento";
             this.Documento.ReadOnly = true;
-            this.Documento.Width = 150;
             // 
             // Apellido
             // 
+            this.Apellido.FillWeight = 113.1134F;
             this.Apellido.HeaderText = "Apellido";
             this.Apellido.Name = "Apellido";
             this.Apellido.ReadOnly = true;
-            this.Apellido.Width = 150;
             // 
             // Nombre
             // 
+            this.Nombre.FillWeight = 113.1134F;
             this.Nombre.HeaderText = "Nombre";
             this.Nombre.Name = "Nombre";
             this.Nombre.ReadOnly = true;
-            this.Nombre.Width = 150;
             // 
             // Correo
             // 
+            this.Correo.FillWeight = 113.1134F;
             this.Correo.HeaderText = "Correo";
             this.Correo.Name = "Correo";
             this.Correo.ReadOnly = true;
@@ -418,6 +479,7 @@ namespace CapaPresentacion
             // 
             // Rol
             // 
+            this.Rol.FillWeight = 113.1134F;
             this.Rol.HeaderText = "Rol";
             this.Rol.Name = "Rol";
             this.Rol.ReadOnly = true;
@@ -431,6 +493,7 @@ namespace CapaPresentacion
             // 
             // Estado
             // 
+            this.Estado.FillWeight = 113.1134F;
             this.Estado.HeaderText = "Estado";
             this.Estado.Name = "Estado";
             this.Estado.ReadOnly = true;
@@ -438,10 +501,11 @@ namespace CapaPresentacion
             // label10
             // 
             this.label10.AutoSize = true;
-            this.label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F);
-            this.label10.Location = new System.Drawing.Point(266, 37);
+            this.label10.Font = new System.Drawing.Font("Century Gothic", 15F);
+            this.label10.ForeColor = System.Drawing.Color.DimGray;
+            this.label10.Location = new System.Drawing.Point(260, 37);
             this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(162, 25);
+            this.label10.Size = new System.Drawing.Size(167, 23);
             this.label10.TabIndex = 20;
             this.label10.Text = "Lista de Usuarios";
             // 
@@ -449,6 +513,7 @@ namespace CapaPresentacion
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(15)))), ((int)(((byte)(15)))));
             this.ClientSize = new System.Drawing.Size(1148, 527);
             this.Controls.Add(this.label10);
             this.Controls.Add(this.dgvDataUsuario);
@@ -490,6 +555,7 @@ namespace CapaPresentacion
         private System.Windows.Forms.TextBox textId;
         private System.Windows.Forms.DataGridView dgvDataUsuario;
         private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.TextBox textIndice;
         private System.Windows.Forms.DataGridViewButtonColumn btnSeleccionar;
         private System.Windows.Forms.DataGridViewTextBoxColumn Id;
         private System.Windows.Forms.DataGridViewTextBoxColumn Documento;
@@ -501,6 +567,5 @@ namespace CapaPresentacion
         private System.Windows.Forms.DataGridViewTextBoxColumn Rol;
         private System.Windows.Forms.DataGridViewTextBoxColumn EstadoValor;
         private System.Windows.Forms.DataGridViewTextBoxColumn Estado;
-        private System.Windows.Forms.TextBox textIndice;
     }
 }

@@ -29,6 +29,10 @@ namespace CapaPresentacion
         /// </summary>
         private void InitializeComponent()
         {
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             this.textCantidad = new System.Windows.Forms.NumericUpDown();
             this.textIdProducto = new System.Windows.Forms.TextBox();
             this.textStock = new System.Windows.Forms.TextBox();
@@ -81,6 +85,8 @@ namespace CapaPresentacion
             // 
             // textCantidad
             // 
+            this.textCantidad.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.textCantidad.Font = new System.Drawing.Font("Century Gothic", 8.25F);
             this.textCantidad.Location = new System.Drawing.Point(512, 43);
             this.textCantidad.Minimum = new decimal(new int[] {
             1,
@@ -88,7 +94,7 @@ namespace CapaPresentacion
             0,
             0});
             this.textCantidad.Name = "textCantidad";
-            this.textCantidad.Size = new System.Drawing.Size(73, 20);
+            this.textCantidad.Size = new System.Drawing.Size(73, 21);
             this.textCantidad.TabIndex = 16;
             this.textCantidad.Value = new decimal(new int[] {
             1,
@@ -100,42 +106,53 @@ namespace CapaPresentacion
             // 
             this.textIdProducto.Location = new System.Drawing.Point(99, 19);
             this.textIdProducto.Name = "textIdProducto";
-            this.textIdProducto.Size = new System.Drawing.Size(28, 20);
+            this.textIdProducto.Size = new System.Drawing.Size(28, 21);
             this.textIdProducto.TabIndex = 12;
+            this.textIdProducto.Visible = false;
             // 
             // textStock
             // 
+            this.textStock.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.textStock.Font = new System.Drawing.Font("Century Gothic", 8.25F);
             this.textStock.Location = new System.Drawing.Point(433, 43);
             this.textStock.Name = "textStock";
-            this.textStock.Size = new System.Drawing.Size(73, 20);
+            this.textStock.Size = new System.Drawing.Size(73, 21);
             this.textStock.TabIndex = 14;
             // 
             // label8
             // 
+            this.label8.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.label8.AutoSize = true;
+            this.label8.Font = new System.Drawing.Font("Century Gothic", 8.25F);
+            this.label8.ForeColor = System.Drawing.Color.LightGray;
             this.label8.Location = new System.Drawing.Point(430, 27);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(38, 13);
+            this.label8.Size = new System.Drawing.Size(40, 16);
             this.label8.TabIndex = 13;
             this.label8.Text = "Stock:";
             // 
             // label2
             // 
             this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Century Gothic", 8.25F);
+            this.label2.ForeColor = System.Drawing.Color.LightGray;
             this.label2.Location = new System.Drawing.Point(146, 20);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(86, 13);
+            this.label2.Size = new System.Drawing.Size(97, 16);
             this.label2.TabIndex = 1;
             this.label2.Text = "Tipo Documento";
             // 
             // groupBox2
             // 
+            this.groupBox2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.groupBox2.Controls.Add(this.btnBuscarCliente);
             this.groupBox2.Controls.Add(this.textIdProveedor);
             this.groupBox2.Controls.Add(this.textNombreCliente);
             this.groupBox2.Controls.Add(this.textDocumentoCliente);
             this.groupBox2.Controls.Add(this.label3);
             this.groupBox2.Controls.Add(this.label4);
+            this.groupBox2.Font = new System.Drawing.Font("Century Gothic", 8.25F);
+            this.groupBox2.ForeColor = System.Drawing.Color.LightGray;
             this.groupBox2.Location = new System.Drawing.Point(347, 60);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Size = new System.Drawing.Size(388, 68);
@@ -166,59 +183,71 @@ namespace CapaPresentacion
             // 
             this.textIdProveedor.Location = new System.Drawing.Point(354, 11);
             this.textIdProveedor.Name = "textIdProveedor";
-            this.textIdProveedor.Size = new System.Drawing.Size(28, 20);
+            this.textIdProveedor.Size = new System.Drawing.Size(28, 21);
             this.textIdProveedor.TabIndex = 9;
+            this.textIdProveedor.Visible = false;
             // 
             // textNombreCliente
             // 
+            this.textNombreCliente.Font = new System.Drawing.Font("Century Gothic", 8.25F);
             this.textNombreCliente.Location = new System.Drawing.Point(215, 37);
             this.textNombreCliente.Name = "textNombreCliente";
             this.textNombreCliente.ReadOnly = true;
-            this.textNombreCliente.Size = new System.Drawing.Size(167, 20);
+            this.textNombreCliente.Size = new System.Drawing.Size(167, 21);
             this.textNombreCliente.TabIndex = 3;
             // 
             // textDocumentoCliente
             // 
+            this.textDocumentoCliente.Font = new System.Drawing.Font("Century Gothic", 8.25F);
             this.textDocumentoCliente.Location = new System.Drawing.Point(6, 37);
             this.textDocumentoCliente.Name = "textDocumentoCliente";
             this.textDocumentoCliente.ReadOnly = true;
-            this.textDocumentoCliente.Size = new System.Drawing.Size(126, 20);
+            this.textDocumentoCliente.Size = new System.Drawing.Size(126, 21);
             this.textDocumentoCliente.TabIndex = 2;
             // 
             // label3
             // 
             this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Century Gothic", 8.25F);
+            this.label3.ForeColor = System.Drawing.Color.LightGray;
             this.label3.Location = new System.Drawing.Point(212, 20);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(91, 13);
+            this.label3.Size = new System.Drawing.Size(108, 16);
             this.label3.TabIndex = 1;
             this.label3.Text = "Nombre Completo";
             // 
             // label4
             // 
             this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Century Gothic", 8.25F);
+            this.label4.ForeColor = System.Drawing.Color.LightGray;
             this.label4.Location = new System.Drawing.Point(3, 20);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(102, 13);
+            this.label4.Size = new System.Drawing.Size(117, 16);
             this.label4.TabIndex = 0;
             this.label4.Text = "Numero Documento";
             // 
             // label10
             // 
             this.label10.AutoSize = true;
-            this.label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F);
+            this.label10.Font = new System.Drawing.Font("Century Gothic", 15F);
+            this.label10.ForeColor = System.Drawing.Color.LightGray;
             this.label10.Location = new System.Drawing.Point(18, 20);
             this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(146, 25);
+            this.label10.Size = new System.Drawing.Size(159, 23);
             this.label10.TabIndex = 24;
             this.label10.Text = "Registrar Venta";
             // 
             // groupBox1
             // 
+            this.groupBox1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.groupBox1.Controls.Add(this.cboTipoDocumento);
             this.groupBox1.Controls.Add(this.textFecha);
             this.groupBox1.Controls.Add(this.label2);
             this.groupBox1.Controls.Add(this.label1);
+            this.groupBox1.Font = new System.Drawing.Font("Century Gothic", 8.25F);
+            this.groupBox1.ForeColor = System.Drawing.Color.LightGray;
             this.groupBox1.Location = new System.Drawing.Point(23, 60);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(318, 68);
@@ -229,50 +258,62 @@ namespace CapaPresentacion
             // cboTipoDocumento
             // 
             this.cboTipoDocumento.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cboTipoDocumento.Font = new System.Drawing.Font("Century Gothic", 8.25F);
             this.cboTipoDocumento.FormattingEnabled = true;
             this.cboTipoDocumento.Location = new System.Drawing.Point(149, 36);
             this.cboTipoDocumento.Name = "cboTipoDocumento";
-            this.cboTipoDocumento.Size = new System.Drawing.Size(163, 21);
+            this.cboTipoDocumento.Size = new System.Drawing.Size(163, 24);
             this.cboTipoDocumento.TabIndex = 7;
             // 
             // textFecha
             // 
+            this.textFecha.Font = new System.Drawing.Font("Century Gothic", 8.25F);
             this.textFecha.Location = new System.Drawing.Point(6, 37);
             this.textFecha.Name = "textFecha";
             this.textFecha.ReadOnly = true;
-            this.textFecha.Size = new System.Drawing.Size(121, 20);
+            this.textFecha.Size = new System.Drawing.Size(121, 21);
             this.textFecha.TabIndex = 2;
             this.textFecha.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
             // label1
             // 
             this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Century Gothic", 8.25F);
+            this.label1.ForeColor = System.Drawing.Color.LightGray;
             this.label1.Location = new System.Drawing.Point(3, 20);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(37, 13);
+            this.label1.Size = new System.Drawing.Size(42, 16);
             this.label1.TabIndex = 0;
             this.label1.Text = "Fecha";
             // 
             // label9
             // 
+            this.label9.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.label9.AutoSize = true;
+            this.label9.Font = new System.Drawing.Font("Century Gothic", 8.25F);
+            this.label9.ForeColor = System.Drawing.Color.LightGray;
             this.label9.Location = new System.Drawing.Point(509, 26);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(52, 13);
+            this.label9.Size = new System.Drawing.Size(65, 16);
             this.label9.TabIndex = 15;
             this.label9.Text = "Cantidad:";
             // 
             // textPrecio
             // 
+            this.textPrecio.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.textPrecio.Font = new System.Drawing.Font("Century Gothic", 8.25F);
             this.textPrecio.Location = new System.Drawing.Point(354, 43);
             this.textPrecio.Name = "textPrecio";
-            this.textPrecio.Size = new System.Drawing.Size(73, 20);
+            this.textPrecio.Size = new System.Drawing.Size(73, 21);
             this.textPrecio.TabIndex = 12;
             this.textPrecio.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textPrecio_KeyPress);
             // 
             // panel1
             // 
-            this.panel1.BackColor = System.Drawing.Color.White;
+            this.panel1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(15)))), ((int)(((byte)(18)))));
             this.panel1.Controls.Add(this.textPagaCon);
             this.panel1.Controls.Add(this.label13);
             this.panel1.Controls.Add(this.textCambio);
@@ -286,49 +327,61 @@ namespace CapaPresentacion
             this.panel1.Controls.Add(this.groupBox2);
             this.panel1.Controls.Add(this.label10);
             this.panel1.Controls.Add(this.groupBox1);
-            this.panel1.Location = new System.Drawing.Point(67, 9);
+            this.panel1.Location = new System.Drawing.Point(12, 6);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(749, 496);
             this.panel1.TabIndex = 1;
             // 
             // textPagaCon
             // 
+            this.textPagaCon.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.textPagaCon.Font = new System.Drawing.Font("Century Gothic", 8.25F);
             this.textPagaCon.Location = new System.Drawing.Point(623, 363);
             this.textPagaCon.Name = "textPagaCon";
-            this.textPagaCon.Size = new System.Drawing.Size(106, 20);
+            this.textPagaCon.Size = new System.Drawing.Size(106, 21);
             this.textPagaCon.TabIndex = 32;
             this.textPagaCon.KeyDown += new System.Windows.Forms.KeyEventHandler(this.textPagaCon_KeyDown);
             this.textPagaCon.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textPagaCon_KeyPress);
             // 
             // label13
             // 
+            this.label13.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.label13.AutoSize = true;
+            this.label13.Font = new System.Drawing.Font("Century Gothic", 8.25F);
+            this.label13.ForeColor = System.Drawing.Color.LightGray;
             this.label13.Location = new System.Drawing.Point(620, 347);
             this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(56, 13);
+            this.label13.Size = new System.Drawing.Size(65, 16);
             this.label13.TabIndex = 31;
             this.label13.Text = "Paga con:";
             // 
             // textCambio
             // 
+            this.textCambio.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.textCambio.Font = new System.Drawing.Font("Century Gothic", 8.25F);
             this.textCambio.Location = new System.Drawing.Point(623, 403);
             this.textCambio.Name = "textCambio";
-            this.textCambio.Size = new System.Drawing.Size(106, 20);
+            this.textCambio.Size = new System.Drawing.Size(106, 21);
             this.textCambio.TabIndex = 30;
             // 
             // label12
             // 
+            this.label12.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.label12.AutoSize = true;
+            this.label12.Font = new System.Drawing.Font("Century Gothic", 8.25F);
+            this.label12.ForeColor = System.Drawing.Color.LightGray;
             this.label12.Location = new System.Drawing.Point(620, 387);
             this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(45, 13);
+            this.label12.Size = new System.Drawing.Size(55, 16);
             this.label12.TabIndex = 29;
             this.label12.Text = "Cambio:";
             // 
             // btnRegistrar
             // 
+            this.btnRegistrar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.btnRegistrar.BackColor = System.Drawing.Color.White;
-            this.btnRegistrar.IconChar = FontAwesome.Sharp.IconChar.RupeeSign;
+            this.btnRegistrar.Font = new System.Drawing.Font("Century Gothic", 8.25F);
+            this.btnRegistrar.IconChar = FontAwesome.Sharp.IconChar.Book;
             this.btnRegistrar.IconColor = System.Drawing.Color.ForestGreen;
             this.btnRegistrar.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnRegistrar.IconSize = 30;
@@ -343,23 +396,30 @@ namespace CapaPresentacion
             // 
             // textTotalPagar
             // 
+            this.textTotalPagar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.textTotalPagar.Font = new System.Drawing.Font("Century Gothic", 8.25F);
             this.textTotalPagar.Location = new System.Drawing.Point(623, 314);
             this.textTotalPagar.Name = "textTotalPagar";
-            this.textTotalPagar.Size = new System.Drawing.Size(106, 20);
+            this.textTotalPagar.Size = new System.Drawing.Size(106, 21);
             this.textTotalPagar.TabIndex = 9;
             this.textTotalPagar.Text = "0";
             // 
             // label11
             // 
+            this.label11.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.label11.AutoSize = true;
+            this.label11.Font = new System.Drawing.Font("Century Gothic", 8.25F);
+            this.label11.ForeColor = System.Drawing.Color.LightGray;
             this.label11.Location = new System.Drawing.Point(620, 298);
             this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(71, 13);
+            this.label11.Size = new System.Drawing.Size(81, 16);
             this.label11.TabIndex = 8;
             this.label11.Text = "Total a Pagar";
             // 
             // btnAgregarProducto
             // 
+            this.btnAgregarProducto.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnAgregarProducto.Font = new System.Drawing.Font("Century Gothic", 8.25F);
             this.btnAgregarProducto.IconChar = FontAwesome.Sharp.IconChar.Plus;
             this.btnAgregarProducto.IconColor = System.Drawing.Color.ForestGreen;
             this.btnAgregarProducto.IconFont = FontAwesome.Sharp.IconFont.Auto;
@@ -376,9 +436,23 @@ namespace CapaPresentacion
             // dgvData
             // 
             this.dgvData.AllowUserToAddRows = false;
+            this.dgvData.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.dgvData.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.dgvData.BackgroundColor = System.Drawing.Color.White;
-            this.dgvData.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvData.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(15)))), ((int)(((byte)(18)))));
+            this.dgvData.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.dgvData.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.LightGray;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Century Gothic", 9.25F);
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvData.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            this.dgvData.ColumnHeadersHeight = 35;
+            this.dgvData.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
             this.dgvData.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.IdProducto,
             this.Producto,
@@ -386,8 +460,29 @@ namespace CapaPresentacion
             this.Cantidad,
             this.SubTotal,
             this.btneliminar});
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Century Gothic", 8.25F);
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvData.DefaultCellStyle = dataGridViewCellStyle2;
+            this.dgvData.EnableHeadersVisualStyles = false;
             this.dgvData.Location = new System.Drawing.Point(29, 227);
             this.dgvData.Name = "dgvData";
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Century Gothic", 8.25F);
+            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvData.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
+            this.dgvData.RowHeadersVisible = false;
+            dataGridViewCellStyle4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(15)))), ((int)(((byte)(18)))));
+            dataGridViewCellStyle4.ForeColor = System.Drawing.Color.LightGray;
+            this.dgvData.RowsDefaultCellStyle = dataGridViewCellStyle4;
             this.dgvData.Size = new System.Drawing.Size(585, 252);
             this.dgvData.TabIndex = 26;
             this.dgvData.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvData_CellContentClick);
@@ -431,6 +526,8 @@ namespace CapaPresentacion
             // 
             // groupBox3
             // 
+            this.groupBox3.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.groupBox3.Controls.Add(this.textCantidad);
             this.groupBox3.Controls.Add(this.textIdProducto);
             this.groupBox3.Controls.Add(this.label9);
@@ -443,6 +540,8 @@ namespace CapaPresentacion
             this.groupBox3.Controls.Add(this.textCodProducto);
             this.groupBox3.Controls.Add(this.label5);
             this.groupBox3.Controls.Add(this.label6);
+            this.groupBox3.Font = new System.Drawing.Font("Century Gothic", 8.25F);
+            this.groupBox3.ForeColor = System.Drawing.Color.LightGray;
             this.groupBox3.Location = new System.Drawing.Point(23, 143);
             this.groupBox3.Name = "groupBox3";
             this.groupBox3.Size = new System.Drawing.Size(591, 78);
@@ -452,10 +551,13 @@ namespace CapaPresentacion
             // 
             // label7
             // 
+            this.label7.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.label7.AutoSize = true;
+            this.label7.Font = new System.Drawing.Font("Century Gothic", 8.25F);
+            this.label7.ForeColor = System.Drawing.Color.LightGray;
             this.label7.Location = new System.Drawing.Point(351, 27);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(40, 13);
+            this.label7.Size = new System.Drawing.Size(44, 16);
             this.label7.TabIndex = 11;
             this.label7.Text = "Precio:";
             // 
@@ -480,35 +582,43 @@ namespace CapaPresentacion
             // 
             // textProducto
             // 
+            this.textProducto.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.textProducto.Font = new System.Drawing.Font("Century Gothic", 8.25F);
             this.textProducto.Location = new System.Drawing.Point(188, 42);
             this.textProducto.Name = "textProducto";
             this.textProducto.ReadOnly = true;
-            this.textProducto.Size = new System.Drawing.Size(157, 20);
+            this.textProducto.Size = new System.Drawing.Size(157, 21);
             this.textProducto.TabIndex = 3;
             // 
             // textCodProducto
             // 
+            this.textCodProducto.Font = new System.Drawing.Font("Century Gothic", 8.25F);
             this.textCodProducto.Location = new System.Drawing.Point(6, 43);
             this.textCodProducto.Name = "textCodProducto";
-            this.textCodProducto.Size = new System.Drawing.Size(121, 20);
+            this.textCodProducto.Size = new System.Drawing.Size(121, 21);
             this.textCodProducto.TabIndex = 2;
             this.textCodProducto.KeyDown += new System.Windows.Forms.KeyEventHandler(this.textCodProducto_KeyDown);
             // 
             // label5
             // 
+            this.label5.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("Century Gothic", 8.25F);
+            this.label5.ForeColor = System.Drawing.Color.LightGray;
             this.label5.Location = new System.Drawing.Point(185, 26);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(53, 13);
+            this.label5.Size = new System.Drawing.Size(61, 16);
             this.label5.TabIndex = 1;
             this.label5.Text = "Producto:";
             // 
             // label6
             // 
             this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("Century Gothic", 8.25F);
+            this.label6.ForeColor = System.Drawing.Color.LightGray;
             this.label6.Location = new System.Drawing.Point(3, 26);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(78, 13);
+            this.label6.Size = new System.Drawing.Size(91, 16);
             this.label6.TabIndex = 0;
             this.label6.Text = "Cod. Producto:";
             // 
@@ -516,7 +626,8 @@ namespace CapaPresentacion
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(882, 514);
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(15)))), ((int)(((byte)(15)))));
+            this.ClientSize = new System.Drawing.Size(773, 514);
             this.Controls.Add(this.panel1);
             this.Name = "FormVentas";
             this.Text = "FormVentas";

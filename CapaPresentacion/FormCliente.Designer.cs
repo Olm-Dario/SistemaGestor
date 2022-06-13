@@ -29,7 +29,11 @@ namespace CapaPresentacion
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle11 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
             this.textIndice = new System.Windows.Forms.TextBox();
             this.textId = new System.Windows.Forms.TextBox();
             this.label9 = new System.Windows.Forms.Label();
@@ -75,6 +79,7 @@ namespace CapaPresentacion
             this.textIndice.Name = "textIndice";
             this.textIndice.Size = new System.Drawing.Size(14, 20);
             this.textIndice.TabIndex = 0;
+            this.textIndice.Visible = false;
             // 
             // textId
             // 
@@ -82,14 +87,16 @@ namespace CapaPresentacion
             this.textId.Name = "textId";
             this.textId.Size = new System.Drawing.Size(14, 20);
             this.textId.TabIndex = 0;
+            this.textId.Visible = false;
             // 
             // label9
             // 
             this.label9.AutoSize = true;
-            this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F);
-            this.label9.Location = new System.Drawing.Point(35, 20);
+            this.label9.Font = new System.Drawing.Font("Century Gothic", 15F);
+            this.label9.ForeColor = System.Drawing.Color.White;
+            this.label9.Location = new System.Drawing.Point(21, 22);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(165, 25);
+            this.label9.Size = new System.Drawing.Size(190, 23);
             this.label9.TabIndex = 19;
             this.label9.Text = "Detalle de Cliente";
             // 
@@ -100,6 +107,7 @@ namespace CapaPresentacion
             this.btnEliminar.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnEliminar.FlatAppearance.BorderColor = System.Drawing.Color.Black;
             this.btnEliminar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnEliminar.Font = new System.Drawing.Font("Century Gothic", 8.25F);
             this.btnEliminar.ForeColor = System.Drawing.Color.White;
             this.btnEliminar.IconChar = FontAwesome.Sharp.IconChar.TrashAlt;
             this.btnEliminar.IconColor = System.Drawing.Color.White;
@@ -122,6 +130,7 @@ namespace CapaPresentacion
             this.btnLimpiar.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnLimpiar.FlatAppearance.BorderColor = System.Drawing.Color.Black;
             this.btnLimpiar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnLimpiar.Font = new System.Drawing.Font("Century Gothic", 8.25F);
             this.btnLimpiar.ForeColor = System.Drawing.Color.White;
             this.btnLimpiar.IconChar = FontAwesome.Sharp.IconChar.Edit;
             this.btnLimpiar.IconColor = System.Drawing.Color.White;
@@ -144,6 +153,7 @@ namespace CapaPresentacion
             this.btnGuardar.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnGuardar.FlatAppearance.BorderColor = System.Drawing.Color.Black;
             this.btnGuardar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnGuardar.Font = new System.Drawing.Font("Century Gothic", 8.25F);
             this.btnGuardar.ForeColor = System.Drawing.Color.White;
             this.btnGuardar.IconChar = FontAwesome.Sharp.IconChar.Save;
             this.btnGuardar.IconColor = System.Drawing.Color.White;
@@ -161,80 +171,100 @@ namespace CapaPresentacion
             // 
             // textNombre
             // 
+            this.textNombre.Font = new System.Drawing.Font("Century Gothic", 8.25F);
             this.textNombre.Location = new System.Drawing.Point(38, 130);
             this.textNombre.Name = "textNombre";
-            this.textNombre.Size = new System.Drawing.Size(158, 20);
+            this.textNombre.Size = new System.Drawing.Size(158, 21);
             this.textNombre.TabIndex = 2;
             // 
             // label8
             // 
             this.label8.AutoSize = true;
+            this.label8.Font = new System.Drawing.Font("Century Gothic", 8.25F);
+            this.label8.ForeColor = System.Drawing.Color.White;
             this.label8.Location = new System.Drawing.Point(35, 115);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(44, 13);
+            this.label8.Size = new System.Drawing.Size(51, 16);
             this.label8.TabIndex = 14;
             this.label8.Text = "Nombre";
             // 
             // cboEstado
             // 
             this.cboEstado.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cboEstado.Font = new System.Drawing.Font("Century Gothic", 8.25F);
             this.cboEstado.FormattingEnabled = true;
             this.cboEstado.Location = new System.Drawing.Point(38, 306);
             this.cboEstado.Name = "cboEstado";
-            this.cboEstado.Size = new System.Drawing.Size(158, 21);
+            this.cboEstado.Size = new System.Drawing.Size(158, 24);
             this.cboEstado.TabIndex = 6;
             // 
             // textTelefono
             // 
+            this.textTelefono.Font = new System.Drawing.Font("Century Gothic", 8.25F);
             this.textTelefono.Location = new System.Drawing.Point(38, 260);
             this.textTelefono.Name = "textTelefono";
-            this.textTelefono.Size = new System.Drawing.Size(158, 20);
+            this.textTelefono.Size = new System.Drawing.Size(158, 21);
             this.textTelefono.TabIndex = 5;
             // 
             // textCorreo
             // 
+            this.textCorreo.Font = new System.Drawing.Font("Century Gothic", 8.25F);
             this.textCorreo.Location = new System.Drawing.Point(38, 218);
             this.textCorreo.Name = "textCorreo";
-            this.textCorreo.Size = new System.Drawing.Size(158, 20);
+            this.textCorreo.Size = new System.Drawing.Size(158, 21);
             this.textCorreo.TabIndex = 4;
             // 
             // textApellido
             // 
+            this.textApellido.Font = new System.Drawing.Font("Century Gothic", 8.25F);
             this.textApellido.Location = new System.Drawing.Point(38, 174);
             this.textApellido.Name = "textApellido";
-            this.textApellido.Size = new System.Drawing.Size(158, 20);
+            this.textApellido.Size = new System.Drawing.Size(158, 21);
             this.textApellido.TabIndex = 3;
             // 
             // textDocumento
             // 
+            this.textDocumento.Font = new System.Drawing.Font("Century Gothic", 8.25F);
             this.textDocumento.Location = new System.Drawing.Point(38, 86);
             this.textDocumento.Name = "textDocumento";
-            this.textDocumento.Size = new System.Drawing.Size(158, 20);
+            this.textDocumento.Size = new System.Drawing.Size(158, 21);
             this.textDocumento.TabIndex = 1;
             // 
             // label10
             // 
             this.label10.AutoSize = true;
-            this.label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F);
+            this.label10.Font = new System.Drawing.Font("Century Gothic", 15F);
+            this.label10.ForeColor = System.Drawing.Color.DimGray;
             this.label10.Location = new System.Drawing.Point(244, 48);
             this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(156, 25);
+            this.label10.Size = new System.Drawing.Size(167, 23);
             this.label10.TabIndex = 23;
             this.label10.Text = "Lista de Clientes";
             // 
             // dgvDataCliente
             // 
             this.dgvDataCliente.AllowUserToAddRows = false;
-            dataGridViewCellStyle11.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle11.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle11.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F);
-            dataGridViewCellStyle11.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle11.Padding = new System.Windows.Forms.Padding(2);
-            dataGridViewCellStyle11.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle11.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle11.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvDataCliente.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle11;
-            this.dgvDataCliente.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Century Gothic", 8.25F);
+            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.LightGray;
+            this.dgvDataCliente.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            this.dgvDataCliente.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.dgvDataCliente.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dgvDataCliente.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(15)))), ((int)(((byte)(18)))));
+            this.dgvDataCliente.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.dgvDataCliente.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.LightGray;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Century Gothic", 9.25F);
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle2.Padding = new System.Windows.Forms.Padding(2);
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvDataCliente.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            this.dgvDataCliente.ColumnHeadersHeight = 35;
+            this.dgvDataCliente.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
             this.dgvDataCliente.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.btnSeleccionar,
             this.Id,
@@ -245,11 +275,33 @@ namespace CapaPresentacion
             this.Telefono,
             this.EstadoValor,
             this.Estado});
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Century Gothic", 8.25F);
+            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.LightGray;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvDataCliente.DefaultCellStyle = dataGridViewCellStyle3;
+            this.dgvDataCliente.EnableHeadersVisualStyles = false;
             this.dgvDataCliente.Location = new System.Drawing.Point(249, 86);
             this.dgvDataCliente.MultiSelect = false;
             this.dgvDataCliente.Name = "dgvDataCliente";
             this.dgvDataCliente.ReadOnly = true;
-            this.dgvDataCliente.Size = new System.Drawing.Size(914, 373);
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(15)))), ((int)(((byte)(18)))));
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Century Gothic", 8.25F);
+            dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvDataCliente.RowHeadersDefaultCellStyle = dataGridViewCellStyle4;
+            this.dgvDataCliente.RowHeadersVisible = false;
+            dataGridViewCellStyle5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(15)))), ((int)(((byte)(18)))));
+            dataGridViewCellStyle5.Font = new System.Drawing.Font("Century Gothic", 8.25F);
+            dataGridViewCellStyle5.ForeColor = System.Drawing.Color.LightGray;
+            this.dgvDataCliente.RowsDefaultCellStyle = dataGridViewCellStyle5;
+            this.dgvDataCliente.Size = new System.Drawing.Size(941, 373);
             this.dgvDataCliente.TabIndex = 10;
             this.dgvDataCliente.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvDataCliente_CellContentClick);
             this.dgvDataCliente.CellPainting += new System.Windows.Forms.DataGridViewCellPaintingEventHandler(this.dgvDataCliente_CellPainting);
@@ -257,42 +309,50 @@ namespace CapaPresentacion
             // label4
             // 
             this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Century Gothic", 8.25F);
+            this.label4.ForeColor = System.Drawing.Color.White;
             this.label4.Location = new System.Drawing.Point(35, 246);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(49, 13);
+            this.label4.Size = new System.Drawing.Size(53, 16);
             this.label4.TabIndex = 3;
             this.label4.Text = "Telefono";
             // 
             // label3
             // 
             this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Century Gothic", 8.25F);
+            this.label3.ForeColor = System.Drawing.Color.White;
             this.label3.Location = new System.Drawing.Point(35, 204);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(38, 13);
+            this.label3.Size = new System.Drawing.Size(44, 16);
             this.label3.TabIndex = 2;
             this.label3.Text = "Correo";
             // 
             // label2
             // 
             this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Century Gothic", 8.25F);
+            this.label2.ForeColor = System.Drawing.Color.White;
             this.label2.Location = new System.Drawing.Point(35, 160);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(44, 13);
+            this.label2.Size = new System.Drawing.Size(51, 16);
             this.label2.TabIndex = 1;
             this.label2.Text = "Apellido";
             // 
             // label1
             // 
             this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Century Gothic", 8.25F);
+            this.label1.ForeColor = System.Drawing.Color.White;
             this.label1.Location = new System.Drawing.Point(35, 71);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(77, 13);
+            this.label1.Size = new System.Drawing.Size(87, 16);
             this.label1.TabIndex = 0;
             this.label1.Text = "Nº Documento";
             // 
             // panel1
             // 
-            this.panel1.BackColor = System.Drawing.Color.DimGray;
+            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(28)))), ((int)(((byte)(28)))));
             this.panel1.Controls.Add(this.textIndice);
             this.panel1.Controls.Add(this.textId);
             this.panel1.Controls.Add(this.label9);
@@ -320,68 +380,79 @@ namespace CapaPresentacion
             // label7
             // 
             this.label7.AutoSize = true;
+            this.label7.Font = new System.Drawing.Font("Century Gothic", 8.25F);
+            this.label7.ForeColor = System.Drawing.Color.White;
             this.label7.Location = new System.Drawing.Point(35, 291);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(40, 13);
+            this.label7.Size = new System.Drawing.Size(45, 16);
             this.label7.TabIndex = 6;
             this.label7.Text = "Estado";
             // 
             // label5
             // 
+            this.label5.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(605, 57);
+            this.label5.Font = new System.Drawing.Font("Century Gothic", 8.25F);
+            this.label5.ForeColor = System.Drawing.Color.DimGray;
+            this.label5.Location = new System.Drawing.Point(703, 57);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(62, 13);
+            this.label5.Size = new System.Drawing.Size(66, 16);
             this.label5.TabIndex = 0;
             this.label5.Text = "Buscar Por:";
             // 
             // textBuscar
             // 
-            this.textBuscar.Location = new System.Drawing.Point(842, 54);
+            this.textBuscar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.textBuscar.Font = new System.Drawing.Font("Century Gothic", 8.25F);
+            this.textBuscar.Location = new System.Drawing.Point(940, 54);
             this.textBuscar.Name = "textBuscar";
-            this.textBuscar.Size = new System.Drawing.Size(158, 20);
+            this.textBuscar.Size = new System.Drawing.Size(158, 21);
             this.textBuscar.TabIndex = 1;
             // 
             // cboBuscar
             // 
+            this.cboBuscar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.cboBuscar.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cboBuscar.Font = new System.Drawing.Font("Century Gothic", 8.25F);
             this.cboBuscar.FormattingEnabled = true;
-            this.cboBuscar.Location = new System.Drawing.Point(673, 54);
+            this.cboBuscar.Location = new System.Drawing.Point(771, 54);
             this.cboBuscar.Name = "cboBuscar";
-            this.cboBuscar.Size = new System.Drawing.Size(158, 21);
+            this.cboBuscar.Size = new System.Drawing.Size(158, 24);
             this.cboBuscar.TabIndex = 6;
             // 
             // btnBuscar
             // 
-            this.btnBuscar.BackColor = System.Drawing.Color.Black;
+            this.btnBuscar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnBuscar.BackColor = System.Drawing.Color.White;
             this.btnBuscar.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnBuscar.FlatAppearance.BorderColor = System.Drawing.Color.Black;
             this.btnBuscar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnBuscar.ForeColor = System.Drawing.Color.White;
             this.btnBuscar.IconChar = FontAwesome.Sharp.IconChar.Searchengin;
-            this.btnBuscar.IconColor = System.Drawing.Color.White;
+            this.btnBuscar.IconColor = System.Drawing.Color.DimGray;
             this.btnBuscar.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnBuscar.IconSize = 25;
-            this.btnBuscar.Location = new System.Drawing.Point(1012, 52);
+            this.btnBuscar.Location = new System.Drawing.Point(1110, 52);
             this.btnBuscar.Name = "btnBuscar";
             this.btnBuscar.Size = new System.Drawing.Size(36, 23);
             this.btnBuscar.TabIndex = 7;
             this.btnBuscar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnBuscar.UseVisualStyleBackColor = true;
+            this.btnBuscar.UseVisualStyleBackColor = false;
             this.btnBuscar.Click += new System.EventHandler(this.btnBuscar_Click);
             // 
             // btnLimpiarBusqueda
             // 
-            this.btnLimpiarBusqueda.BackColor = System.Drawing.Color.Black;
+            this.btnLimpiarBusqueda.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnLimpiarBusqueda.BackColor = System.Drawing.Color.White;
             this.btnLimpiarBusqueda.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnLimpiarBusqueda.FlatAppearance.BorderColor = System.Drawing.Color.Black;
             this.btnLimpiarBusqueda.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnLimpiarBusqueda.ForeColor = System.Drawing.Color.White;
             this.btnLimpiarBusqueda.IconChar = FontAwesome.Sharp.IconChar.Broom;
-            this.btnLimpiarBusqueda.IconColor = System.Drawing.Color.White;
+            this.btnLimpiarBusqueda.IconColor = System.Drawing.Color.DimGray;
             this.btnLimpiarBusqueda.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnLimpiarBusqueda.IconSize = 25;
-            this.btnLimpiarBusqueda.Location = new System.Drawing.Point(1054, 52);
+            this.btnLimpiarBusqueda.Location = new System.Drawing.Point(1152, 52);
             this.btnLimpiarBusqueda.Name = "btnLimpiarBusqueda";
             this.btnLimpiarBusqueda.Size = new System.Drawing.Size(36, 23);
             this.btnLimpiarBusqueda.TabIndex = 8;
@@ -391,10 +462,10 @@ namespace CapaPresentacion
             // 
             // btnSeleccionar
             // 
+            this.btnSeleccionar.FillWeight = 24.36548F;
             this.btnSeleccionar.HeaderText = "";
             this.btnSeleccionar.Name = "btnSeleccionar";
             this.btnSeleccionar.ReadOnly = true;
-            this.btnSeleccionar.Width = 20;
             // 
             // Id
             // 
@@ -405,45 +476,49 @@ namespace CapaPresentacion
             // 
             // Documento
             // 
+            this.Documento.FillWeight = 110.8049F;
             this.Documento.HeaderText = "N° Documento";
             this.Documento.Name = "Documento";
             this.Documento.ReadOnly = true;
-            this.Documento.Width = 150;
             // 
             // Apellido
             // 
+            this.Apellido.FillWeight = 110.8049F;
             this.Apellido.HeaderText = "Apellido";
             this.Apellido.Name = "Apellido";
             this.Apellido.ReadOnly = true;
-            this.Apellido.Width = 150;
             // 
             // Nombre
             // 
+            this.Nombre.FillWeight = 110.8049F;
             this.Nombre.HeaderText = "Nombre";
             this.Nombre.Name = "Nombre";
             this.Nombre.ReadOnly = true;
-            this.Nombre.Width = 150;
             // 
             // Correo
             // 
+            this.Correo.FillWeight = 110.8049F;
             this.Correo.HeaderText = "Correo";
             this.Correo.Name = "Correo";
             this.Correo.ReadOnly = true;
             // 
             // Telefono
             // 
+            this.Telefono.FillWeight = 110.8049F;
             this.Telefono.HeaderText = "Telefono";
             this.Telefono.Name = "Telefono";
             this.Telefono.ReadOnly = true;
             // 
             // EstadoValor
             // 
+            this.EstadoValor.FillWeight = 110.8049F;
             this.EstadoValor.HeaderText = "EstadoValor";
             this.EstadoValor.Name = "EstadoValor";
             this.EstadoValor.ReadOnly = true;
             // 
             // Estado
             // 
+            this.Estado.FillWeight = 110.8049F;
             this.Estado.HeaderText = "Estado";
             this.Estado.Name = "Estado";
             this.Estado.ReadOnly = true;
@@ -452,6 +527,7 @@ namespace CapaPresentacion
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(15)))), ((int)(((byte)(15)))));
             this.ClientSize = new System.Drawing.Size(1202, 479);
             this.Controls.Add(this.label10);
             this.Controls.Add(this.dgvDataCliente);
