@@ -165,7 +165,7 @@ namespace CapaPresentacion
             this.apellidoUser.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(48)))));
             this.apellidoUser.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.apellidoUser.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.apellidoUser.Location = new System.Drawing.Point(855, 32);
+            this.apellidoUser.Location = new System.Drawing.Point(798, 31);
             this.apellidoUser.Name = "apellidoUser";
             this.apellidoUser.Size = new System.Drawing.Size(51, 16);
             this.apellidoUser.TabIndex = 2;
@@ -178,7 +178,7 @@ namespace CapaPresentacion
             this.User.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(48)))));
             this.User.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.User.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.User.Location = new System.Drawing.Point(855, 16);
+            this.User.Location = new System.Drawing.Point(798, 15);
             this.User.Name = "User";
             this.User.Size = new System.Drawing.Size(88, 16);
             this.User.TabIndex = 1;

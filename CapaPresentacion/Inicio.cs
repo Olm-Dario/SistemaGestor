@@ -53,7 +53,10 @@ namespace CapaPresentacion
                 //"iconMenu" representa todos los menues en la "barraMenu"
                 bool encontrado = listaPermisos.Any(m => m.nombreMenu == iconMenu.Name);
 
-
+                if (encontrado == false)
+                {
+                    iconMenu.Visible = false;
+                }
             }
 
             //Esto es para que no se superpongan los botones al iniciar el programa
@@ -63,7 +66,7 @@ namespace CapaPresentacion
             barraMenu.Renderer = new ToolStripProfessionalRenderer(new CustomColorTable());
 
             //Muestro el nombre del usuario actual
-            apellidoUser.Text = usuarioActual.nombre;
+            apellidoUser.Text = usuarioActual.apellido + " " + usuarioActual.nombre;
         }
 
         //Codigo para desplazar la ventana con el mouse
