@@ -301,5 +301,11 @@
   <ItemGroup>
     <None Include="Resources\PlantillaVenta.html" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\muestra.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Resources\logo-recorte.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
