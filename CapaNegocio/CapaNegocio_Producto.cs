@@ -39,6 +39,11 @@ namespace CapaNegocio
                 Mensaje += "Es necesario la descripcion del Producto\n";
             }
 
+            if (Decimal.Compare(obj.precioVenta, 0m) == 0)
+            {
+                Mensaje += "Es necesario el precio del Producto\n";
+            }
+
             if (Mensaje != string.Empty)
             {
                 return 0;

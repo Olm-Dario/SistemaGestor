@@ -515,6 +515,7 @@ namespace CapaPresentacion
             this.EstadoValor.HeaderText = "EstadoValor";
             this.EstadoValor.Name = "EstadoValor";
             this.EstadoValor.ReadOnly = true;
+            this.EstadoValor.Visible = false;
             // 
             // Estado
             // 

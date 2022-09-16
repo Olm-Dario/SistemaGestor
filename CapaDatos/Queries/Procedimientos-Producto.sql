@@ -5,6 +5,8 @@ create proc SP_RegistrarProducto (
 @Codigo varchar(20),
 @Nombre varchar(30),
 @Descripcion varchar(30),
+@PrecioVenta decimal(10, 2),
+@Stock int,
 @IdCategoria int,
 @Estado bit,
 @Resultado bit output,
@@ -14,8 +16,8 @@ begin
 	set @Resultado = 0
 	if not exists (select * from PRODUCTO where Codigo = @Codigo)
 	begin
-		insert into PRODUCTO(Codigo,Nombre,Descripcion,IdCategoria,Estado)
-		values (@Codigo,@Nombre,@Descripcion,@IdCategoria,@Estado)
+		insert into PRODUCTO(Codigo,Nombre,Descripcion,PrecioVenta,Stock,IdCategoria,Estado)
+		values (@Codigo,@Nombre,@Descripcion,@PrecioVenta,@Stock,@IdCategoria,@Estado)
 		
 		set @Resultado = SCOPE_IDENTITY();
 	end
@@ -32,6 +34,8 @@ create proc SP_ModificarProducto (
 @Codigo varchar(20),
 @Nombre varchar(30),
 @Descripcion varchar(30),
+@PrecioVenta decimal(10, 2),
+@Stock int,
 @IdCategoria int,
 @Estado bit,
 @Resultado bit output,
@@ -45,6 +49,8 @@ begin
 		Codigo = @Codigo,
 		Nombre = @Nombre,
 		Descripcion = @Descripcion,
+		PrecioVenta= @PrecioVenta,
+		Stock = @Stock,
 		IdCategoria = @IdCategoria,
 		Estado = @Estado
 		where IdProducto = @IdProducto

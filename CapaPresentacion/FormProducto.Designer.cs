@@ -70,8 +70,13 @@ namespace CapaPresentacion
             this.PrecioVenta = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.EstadoValor = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Estado = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.label4 = new System.Windows.Forms.Label();
+            this.textPrecioVenta = new System.Windows.Forms.TextBox();
+            this.label6 = new System.Windows.Forms.Label();
+            this.numericStock = new System.Windows.Forms.NumericUpDown();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvData)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numericStock)).BeginInit();
             this.SuspendLayout();
             // 
             // btnBuscar
@@ -86,7 +91,7 @@ namespace CapaPresentacion
             this.btnBuscar.IconColor = System.Drawing.Color.Black;
             this.btnBuscar.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnBuscar.IconSize = 25;
-            this.btnBuscar.Location = new System.Drawing.Point(1103, 52);
+            this.btnBuscar.Location = new System.Drawing.Point(1127, 52);
             this.btnBuscar.Name = "btnBuscar";
             this.btnBuscar.Size = new System.Drawing.Size(36, 23);
             this.btnBuscar.TabIndex = 27;
@@ -99,7 +104,7 @@ namespace CapaPresentacion
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Century Gothic", 8.25F);
             this.label7.ForeColor = System.Drawing.Color.White;
-            this.label7.Location = new System.Drawing.Point(35, 248);
+            this.label7.Location = new System.Drawing.Point(35, 331);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(45, 16);
             this.label7.TabIndex = 6;
@@ -130,6 +135,10 @@ namespace CapaPresentacion
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(28)))), ((int)(((byte)(28)))));
+            this.panel1.Controls.Add(this.numericStock);
+            this.panel1.Controls.Add(this.textPrecioVenta);
+            this.panel1.Controls.Add(this.label6);
+            this.panel1.Controls.Add(this.label4);
             this.panel1.Controls.Add(this.cboCategoria);
             this.panel1.Controls.Add(this.label3);
             this.panel1.Controls.Add(this.textIndice);
@@ -149,7 +158,7 @@ namespace CapaPresentacion
             this.panel1.Dock = System.Windows.Forms.DockStyle.Left;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(233, 479);
+            this.panel1.Size = new System.Drawing.Size(233, 595);
             this.panel1.TabIndex = 30;
             // 
             // cboCategoria
@@ -213,7 +222,7 @@ namespace CapaPresentacion
             this.btnEliminar.IconColor = System.Drawing.Color.White;
             this.btnEliminar.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnEliminar.IconSize = 16;
-            this.btnEliminar.Location = new System.Drawing.Point(38, 420);
+            this.btnEliminar.Location = new System.Drawing.Point(38, 478);
             this.btnEliminar.Name = "btnEliminar";
             this.btnEliminar.Size = new System.Drawing.Size(158, 23);
             this.btnEliminar.TabIndex = 9;
@@ -236,7 +245,7 @@ namespace CapaPresentacion
             this.btnLimpiar.IconColor = System.Drawing.Color.White;
             this.btnLimpiar.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnLimpiar.IconSize = 16;
-            this.btnLimpiar.Location = new System.Drawing.Point(38, 391);
+            this.btnLimpiar.Location = new System.Drawing.Point(38, 449);
             this.btnLimpiar.Name = "btnLimpiar";
             this.btnLimpiar.Size = new System.Drawing.Size(158, 23);
             this.btnLimpiar.TabIndex = 8;
@@ -259,7 +268,7 @@ namespace CapaPresentacion
             this.btnGuardar.IconColor = System.Drawing.Color.White;
             this.btnGuardar.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnGuardar.IconSize = 16;
-            this.btnGuardar.Location = new System.Drawing.Point(38, 362);
+            this.btnGuardar.Location = new System.Drawing.Point(38, 420);
             this.btnGuardar.Name = "btnGuardar";
             this.btnGuardar.Size = new System.Drawing.Size(158, 23);
             this.btnGuardar.TabIndex = 7;
@@ -293,7 +302,7 @@ namespace CapaPresentacion
             this.cboEstado.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cboEstado.Font = new System.Drawing.Font("Century Gothic", 8.25F);
             this.cboEstado.FormattingEnabled = true;
-            this.cboEstado.Location = new System.Drawing.Point(38, 263);
+            this.cboEstado.Location = new System.Drawing.Point(38, 346);
             this.cboEstado.Name = "cboEstado";
             this.cboEstado.Size = new System.Drawing.Size(158, 24);
             this.cboEstado.TabIndex = 6;
@@ -320,7 +329,7 @@ namespace CapaPresentacion
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Century Gothic", 8.25F);
             this.label5.ForeColor = System.Drawing.Color.DimGray;
-            this.label5.Location = new System.Drawing.Point(696, 57);
+            this.label5.Location = new System.Drawing.Point(720, 57);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(66, 16);
             this.label5.TabIndex = 24;
@@ -330,7 +339,7 @@ namespace CapaPresentacion
             // 
             this.textBuscar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.textBuscar.Font = new System.Drawing.Font("Century Gothic", 8.25F);
-            this.textBuscar.Location = new System.Drawing.Point(933, 54);
+            this.textBuscar.Location = new System.Drawing.Point(957, 54);
             this.textBuscar.Name = "textBuscar";
             this.textBuscar.Size = new System.Drawing.Size(158, 21);
             this.textBuscar.TabIndex = 25;
@@ -341,7 +350,7 @@ namespace CapaPresentacion
             this.cboBuscar.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cboBuscar.Font = new System.Drawing.Font("Century Gothic", 8.25F);
             this.cboBuscar.FormattingEnabled = true;
-            this.cboBuscar.Location = new System.Drawing.Point(764, 54);
+            this.cboBuscar.Location = new System.Drawing.Point(788, 54);
             this.cboBuscar.Name = "cboBuscar";
             this.cboBuscar.Size = new System.Drawing.Size(158, 24);
             this.cboBuscar.TabIndex = 26;
@@ -358,7 +367,7 @@ namespace CapaPresentacion
             this.btnLimpiarBusqueda.IconColor = System.Drawing.Color.Black;
             this.btnLimpiarBusqueda.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnLimpiarBusqueda.IconSize = 25;
-            this.btnLimpiarBusqueda.Location = new System.Drawing.Point(1145, 52);
+            this.btnLimpiarBusqueda.Location = new System.Drawing.Point(1169, 52);
             this.btnLimpiarBusqueda.Name = "btnLimpiarBusqueda";
             this.btnLimpiarBusqueda.Size = new System.Drawing.Size(36, 23);
             this.btnLimpiarBusqueda.TabIndex = 28;
@@ -439,7 +448,7 @@ namespace CapaPresentacion
             dataGridViewCellStyle5.Font = new System.Drawing.Font("Century Gothic", 8.25F);
             dataGridViewCellStyle5.ForeColor = System.Drawing.Color.LightGray;
             this.dgvData.RowsDefaultCellStyle = dataGridViewCellStyle5;
-            this.dgvData.Size = new System.Drawing.Size(914, 373);
+            this.dgvData.Size = new System.Drawing.Size(938, 489);
             this.dgvData.TabIndex = 29;
             this.dgvData.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvData_CellContentClick);
             this.dgvData.CellPainting += new System.Windows.Forms.DataGridViewCellPaintingEventHandler(this.dgvData_CellPainting);
@@ -520,6 +529,7 @@ namespace CapaPresentacion
             this.EstadoValor.HeaderText = "EstadoValor";
             this.EstadoValor.Name = "EstadoValor";
             this.EstadoValor.ReadOnly = true;
+            this.EstadoValor.Visible = false;
             // 
             // Estado
             // 
@@ -528,12 +538,50 @@ namespace CapaPresentacion
             this.Estado.Name = "Estado";
             this.Estado.ReadOnly = true;
             // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Century Gothic", 8.25F);
+            this.label4.ForeColor = System.Drawing.Color.White;
+            this.label4.Location = new System.Drawing.Point(36, 250);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(37, 16);
+            this.label4.TabIndex = 22;
+            this.label4.Text = "Stock";
+            // 
+            // textPrecioVenta
+            // 
+            this.textPrecioVenta.Font = new System.Drawing.Font("Century Gothic", 8.25F);
+            this.textPrecioVenta.Location = new System.Drawing.Point(39, 306);
+            this.textPrecioVenta.Name = "textPrecioVenta";
+            this.textPrecioVenta.Size = new System.Drawing.Size(158, 21);
+            this.textPrecioVenta.TabIndex = 25;
+            this.textPrecioVenta.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textPrecio_KeyPress);
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("Century Gothic", 8.25F);
+            this.label6.ForeColor = System.Drawing.Color.White;
+            this.label6.Location = new System.Drawing.Point(36, 291);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(95, 16);
+            this.label6.TabIndex = 24;
+            this.label6.Text = "Precio de Venta";
+            // 
+            // numericStock
+            // 
+            this.numericStock.Location = new System.Drawing.Point(39, 268);
+            this.numericStock.Name = "numericStock";
+            this.numericStock.Size = new System.Drawing.Size(157, 20);
+            this.numericStock.TabIndex = 26;
+            // 
             // FormProducto
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(15)))), ((int)(((byte)(15)))));
-            this.ClientSize = new System.Drawing.Size(1202, 479);
+            this.ClientSize = new System.Drawing.Size(1226, 595);
             this.Controls.Add(this.btnBuscar);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.label5);
@@ -548,6 +596,7 @@ namespace CapaPresentacion
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvData)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numericStock)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -591,5 +640,9 @@ namespace CapaPresentacion
         private System.Windows.Forms.DataGridViewTextBoxColumn PrecioVenta;
         private System.Windows.Forms.DataGridViewTextBoxColumn EstadoValor;
         private System.Windows.Forms.DataGridViewTextBoxColumn Estado;
+        private System.Windows.Forms.TextBox textPrecioVenta;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.NumericUpDown numericStock;
     }
 }

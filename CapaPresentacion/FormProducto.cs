@@ -128,7 +128,7 @@ namespace CapaPresentacion
                     textCodigo.Text = dgvData.Rows[indice].Cells["Codigo"].Value.ToString();
                     textNombre.Text = dgvData.Rows[indice].Cells["Nombre"].Value.ToString();
                     textDescripcion.Text = dgvData.Rows[indice].Cells["Descripcion"].Value.ToString();
-
+                    textPrecioVenta.Text = dgvData.Rows[indice].Cells["PrecioVenta"].Value.ToString();
 
                     //Recorro las opciones del ComboBox Categoria
                     foreach (OpcionCombo oc in cboCategoria.Items)
@@ -166,6 +166,11 @@ namespace CapaPresentacion
         {
             string mensaje = string.Empty;
 
+            if(textPrecioVenta.Text == "")
+            {
+                textPrecioVenta.Text = "0";
+            }
+
             //Tomamos todos los valores de los textBox y comboBox
             //y lo pasamos al objeto de la clase Producto
             Producto obj = new Producto()
@@ -174,6 +179,8 @@ namespace CapaPresentacion
                 codigo = textCodigo.Text,
                 nombre = textNombre.Text,
                 descripcion = textDescripcion.Text,
+                precioVenta = Convert.ToDecimal(textPrecioVenta.Text),
+                stock = Convert.ToInt32(numericStock.Value),
                 oCategoria = new Categoria() { idCategoria = Convert.ToInt32(((OpcionCombo)cboCategoria.SelectedItem).Valor) },
                 estado = Convert.ToInt32(((OpcionCombo)cboEstado.SelectedItem).Valor) == 1 ? true : false
             };
@@ -198,9 +205,9 @@ namespace CapaPresentacion
                         textDescripcion.Text,
                         ((OpcionCombo)cboCategoria.SelectedItem).Valor.ToString(),
                         ((OpcionCombo)cboCategoria.SelectedItem).Texto.ToString(),
-                        "0",
+                        numericStock.Value.ToString(),
                         "0.00",
-                        "0.00",
+                        textPrecioVenta.Text,
                         ((OpcionCombo)cboEstado.SelectedItem).Valor.ToString(),
                         ((OpcionCombo)cboEstado.SelectedItem).Texto.ToString()
                     });
@@ -227,6 +234,8 @@ namespace CapaPresentacion
                     row.Cells["Codigo"].Value = textCodigo.Text;
                     row.Cells["Nombre"].Value = textNombre.Text;
                     row.Cells["Descripcion"].Value = textDescripcion.Text;
+                    row.Cells["Stock"].Value = numericStock.Text;
+                    row.Cells["PrecioVenta"].Value = textPrecioVenta.Text;
                     row.Cells["IdCategoria"].Value = ((OpcionCombo)cboCategoria.SelectedItem).Valor.ToString();
                     row.Cells["Categoria"].Value = ((OpcionCombo)cboCategoria.SelectedItem).Texto.ToString();
                     row.Cells["EstadoValor"].Value = ((OpcionCombo)cboEstado.SelectedItem).Valor.ToString();
@@ -311,10 +320,40 @@ namespace CapaPresentacion
             textCodigo.Text = "";
             textNombre.Text = "";
             textDescripcion.Text = "";
+            textPrecioVenta.Text = "0";
             cboCategoria.SelectedIndex = 0;
             cboEstado.SelectedIndex = 0;
 
             textCodigo.Select();
+        }
+
+        private void textPrecio_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            //Verificamos si lo que ingresamos es un numero o no
+            if (Char.IsDigit(e.KeyChar))
+            {
+                e.Handled = false;
+            }
+            else
+            {
+                //Verificamos si el primer caracter es un punto
+                if (textPrecioVenta.Text.Trim().Length == 0 && e.KeyChar.ToString() == ".")
+                {
+                    e.Handled = true;
+                }
+                else
+                {
+                    //Verificamos si presionamos un control como la flecha de borrar
+                    if (Char.IsControl(e.KeyChar) || e.KeyChar.ToString() == ".")
+                    {
+                        e.Handled = false;
+                    }
+                    else
+                    {
+                        e.Handled = true;
+                    }
+                }
+            }
         }
 
     }
